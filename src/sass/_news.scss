@@ -1,0 +1,107 @@
+.news{
+  .item{
+    border-top: 1px solid $border-color !important;
+    margin-bottom: 0 !important;
+    &:first-child{
+      border: 0 none !important;
+      padding-top: 0 !important;
+    }
+    .category{
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: $font-family3;
+      color: $default-color;
+      font-size: $font-size-base;
+    }
+    .date{
+      font-family: $font-family3;
+      color: $default-color;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1;
+      font-size: $h1-font-size;
+      span{
+        display: block;
+        line-height: 1;
+        font-size: $font-size-base;
+      }
+    }
+    a{
+      color: inherit;
+    }
+    i{
+      margin-top: 10px;
+    }
+  }
+}
+
+.news-carousel{
+  .card{
+    margin: 0 $spacer*2 0 0;
+  }
+  .slick-list{
+    padding-bottom: 5px;
+    width: 99%;
+  }
+  .slick-arrow{
+    height: 16px;
+    border: 0 none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    color: $default-color;
+    line-height: 1;
+    vertical-align: bottom;
+
+    &.slick-prev{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    &.slick-next{
+      display: inline-block;
+    }
+    i{
+      position: relative;
+      &.fa-arrow-left{
+        top: 1px;
+      }
+      &.fa-arrow-right{
+        top: 2px;
+      }
+    }
+  }
+  .slick-dots{
+    height: 16px;
+    float: left;
+    list-style: none;
+    padding: 0 $spacer/2 0 $spacer;
+    margin: 0;
+    li{
+      line-height: 1;
+      display: inline-block;
+      vertical-align: bottom;
+      &.slick-active{
+        button{
+          background-color: $default-color;
+        }
+      }
+      button{
+        line-height: 1;
+        vertical-align: bottom;
+        height: 13px;
+        width: 13px;
+        border: 0 none;
+        background: transparent;
+        padding: 0;
+        margin: 0 0 0 $spacer/2;
+        border-radius: 100%;
+        background-color: transparent;
+        font-size: 0;
+        border: $border-width solid $default-color;
+        color: $default-color;
+
+      }
+    }
+  }
+}

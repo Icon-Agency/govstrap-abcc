@@ -1,0 +1,145 @@
+body{
+  // default
+  @include theme-colour($default-color,darken($default-color,10%));
+  .banner{
+    a{
+      i{
+        color: $white;
+      }
+    }
+    .accent{
+      &:before{
+        border-color: $white;
+      }
+    }
+  }
+
+  &.theme-government{
+    @include theme-colour($blue,$safe-blue);
+  }
+
+  &.theme-abcc{
+    @include theme-colour($green,$safe-green);
+  }
+
+  &.theme-rights{
+    @include theme-colour($purple,$safe-purple);
+  }
+
+  &.theme-worker{
+    @include theme-colour($red,$safe-red);
+  }
+}
+
+.header{
+   .dropdown-menu{
+      &.theme-government{
+        color: $blue;
+      }
+
+      &.theme-abcc{
+        color: $green;
+      }
+
+      &.theme-rights{
+        a,
+        i{
+          color: $purple;
+        }
+        .theme-colour{
+          color: $purple;
+        }
+      }
+
+      &.theme-worker{
+        color: $red;
+      }
+   }
+}
+
+// Signposts
+//
+.signposts,
+.news{
+  .card{
+    //Default
+    @include signpost-card-theme($default-color,darken($default-color,10%));
+
+    &.card-government{
+      @include signpost-card-theme($blue,$safe-blue);
+    }
+
+    &.card-abcc{
+      @include signpost-card-theme($green,$safe-green);
+    }
+
+    &.card-rights{
+      @include signpost-card-theme($purple,$safe-purple);
+    }
+
+    &.card-worker{
+      @include signpost-card-theme($red,$safe-red);
+    }
+  }
+}
+
+
+// Quick links
+//
+.quick-links{
+  .item{
+    //Default
+    @include quick-links-theme($default-color,darken($default-color,10%));
+
+    &.card-government{
+      @include quick-links-theme($blue,$safe-blue);
+    }
+    &.card-abcc{
+      @include quick-links-theme($green,$safe-green);
+    }
+    &.card-rights{
+      @include quick-links-theme($purple,$safe-purple);
+    }
+    &.card-worker{
+      @include quick-links-theme($red,$safe-red);
+    }
+  }
+}
+
+// Top right accent symbol
+//
+.accent{
+  padding-top: $accent-size;
+  padding-left: $accent-size;
+  position: relative;
+  &.color-blue{
+    &:before{
+      border-color: $blue !important;
+    }
+  }
+  &.color-green{
+    &:before{
+      border-color: $green !important;
+    }
+  }
+  &.color-purple{
+    &:before{
+      border-color: $purple !important;
+    }
+  }
+  &.color-red{
+    &:before{
+      border-color: $red !important;
+    }
+  }
+  &:before{
+    height: $accent-size;
+    width: $accent-size;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    border-width: 10px 0 0 10px;
+    border-style: solid;
+  }
+}

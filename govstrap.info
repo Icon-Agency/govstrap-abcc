@@ -1,4 +1,4 @@
-name        = govStrap
+name        = govStrap (ABCC)
 description = Light weight bootstrap base theme for govCMS7.
 core        = 7.x
 
@@ -40,14 +40,13 @@ settings[govstrap_rebuild_registry] = 0
 ;; Javascript.
 ;;;;;;;;;;;;;;;;;;;;;
 
-scripts[] = js/bootstrap.min.js
-scripts[] = js/scripts.js
+scripts[] = js/webpack.common.js
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheet.
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = css/govstrap.css
+stylesheets[all][] = css/site.css
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Excludes

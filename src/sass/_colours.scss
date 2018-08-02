@@ -1,0 +1,108 @@
+//Background classes
+//
+.bg-pColor{
+  background-color: $pColor;
+}
+.bg-sColor{
+  background-color: $sColor;
+}
+.bg-tColor{
+  background-color: $tColor;
+}
+.bg-white{
+  background-color: $white;
+}
+.bg-black{
+  background-color: $black;
+}
+.bg-blue{
+  background-color: $blue;
+}
+.bg-indigo{
+  background-color: $indigo;
+}
+.bg-purple{
+  background-color: $purple;
+}
+.bg-pink{
+  background-color: $pink;
+}
+.bg-red{
+  background-color: $red;
+}
+.bg-orange{
+  background-color: $orange;
+}
+.bg-yellow{
+  background-color: $yellow;
+}
+.bg-green{
+  background-color: $green;
+}
+.bg-teal{
+  background-color: $teal;
+}
+.bg-cyan{
+  background-color: $cyan;
+}
+.bg-dark-blue{
+  background-color: $dark-blue;
+}
+.bg-footer{
+  background-color: $footer-bg;
+}
+.bg-footer-alt{
+  background-color: $footer-bg-alt;
+}
+
+// Safe background classes
+//
+.bg-safe-blue{
+  background-color: $safe-blue;
+}
+.bg-safe-green{
+  background-color: $safe-green;
+}
+.bg-safe-purple{
+  background-color: $safe-purple;
+}
+.bg-safe-red{
+  background-color: $safe-red;
+}
+
+
+//Text classes
+//
+.text-body{
+  color: $body-color;
+}
+.text-blue{
+  color: $blue !important;
+}
+.text-green{
+  color: $green !important;
+}
+.text-purple{
+  color: $purple !important;
+}
+.text-red{
+  color: $red !important;
+}
+.text-dark-blue{
+  color: $dark-blue;
+}
+.text-safe-blue{
+  color: $safe-blue !important;
+}
+.text-safe-green{
+  color: $safe-green !important;
+}
+.text-safe-purple{
+  color: $safe-purple !important;
+}
+.text-safe-red{
+  color: $safe-red !important;
+}
+.text-gray{
+  color: $gray !important;
+}

@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="73.94" height="75.43" viewBox="0 0 73.94 75.43">
+  <title>icon-inbox</title>
+  <g>
+    <g>
+      <polyline points="29.12 25.83 15.05 25.83 2 41.28" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="3"/>
+      <polyline points="71.94 41.28 58.89 25.83 44.57 25.83" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="3"/>
+      <path d="M721.72,539.6V547a5.45,5.45,0,0,1-5.45,5.44H701.43A5.44,5.44,0,0,1,696,547V539.6h-22.9v27.13a6,6,0,0,0,6,6H739a6,6,0,0,0,6-6V539.6Z" transform="translate(-672.09 -498.32)" fill="#cde8f7" stroke="#26a2dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+    <line x1="36.78" y1="42.32" x2="36.78" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="3"/>
+    <polyline points="47.08 32.02 36.78 42.32 26.47 32.02" fill="none" stroke="#26313f" stroke-miterlimit="10" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="77.34" height="64.08" viewBox="0 0 77.34 64.08">
+  <title>icon-email</title>
+  <g>
+    <path d="M296.93,524.57l-25.62,22.6a5.34,5.34,0,0,1-6.94,0l-25.62-22.6" transform="translate(-229.73 -517.87)" fill="none" stroke="#fff" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="26.18" y1="31.63" x2="9.02" y2="45.63" fill="none" stroke="#fff" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+  <polyline points="70.56 50.83 75.84 50.83 75.84 1.5 1.5 1.5 1.5 50.83 39.94 50.83" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+  <path d="M298.09,573.84a16.39,16.39,0,0,1-5.92,5.92,16.11,16.11,0,0,1-16.22,0,16.47,16.47,0,0,1-5.92-5.92,16.11,16.11,0,0,1,0-16.22A16.39,16.39,0,0,1,276,551.7a16,16,0,0,1,16.22,0,16.31,16.31,0,0,1,5.92,5.92,16,16,0,0,1,0,16.22Zm-3.89-11.58a.86.86,0,0,0,.33-.72.88.88,0,0,0-.33-.72l-1.44-1.5a1,1,0,0,0-1.5,0l-9.81,9.81-4.58-4.58a1,1,0,0,0-1.51,0l-1.44,1.5a.9.9,0,0,0-.32.72.88.88,0,0,0,.32.72l6.81,6.81a.88.88,0,0,0,.72.32.9.9,0,0,0,.72-.32Z" transform="translate(-229.73 -517.87)" fill="#26a2dc"/>
+</svg>

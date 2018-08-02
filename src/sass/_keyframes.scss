@@ -1,0 +1,76 @@
+// Banner keyframes
+//
+@keyframes zoomBackground {
+  0% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bgSlideInFromLeft {
+  0% {
+    opacity: 0;
+    background-position: -3% 0;
+  }
+  100% {
+    opacity: 1;
+    background-position: 0 0;
+  }
+}
+
+@keyframes bgSlideInFromRight {
+  0% {
+    opacity: 0;
+    background-position: 103% 0;
+  }
+  100% {
+    opacity: 1;
+    background-position: 100% 0;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+
+  }
+}
+
+.fade-in-up{
+  opacity: 0;
+  &.animated{
+    animation: 1.2s ease 0s 1 fadeInUp;
+    animation-delay: 0.3s, 0s;
+    animation-fill-mode: forwards;
+  }
+}

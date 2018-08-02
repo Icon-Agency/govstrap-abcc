@@ -4,9 +4,15 @@
  * page.tpl.php - Returns the HTML for a single Drupal page.
  */
 ?>
-<header id="header" class="header <?php print $container_class; ?>" role="banner">
-  <?php print render($page['header']); ?>
-</header><!-- /#page-header -->
+
+<!-- page header -->
+<div class="page">
+  <?php include 'includes/page-header--mobile.tpl.php'; ?>
+    <div class="mm-content">
+        <?php include 'includes/page-header.tpl.php'; ?>
+    </div>
+</div>
+<!-- /page header -->
 
 <nav id="navigation" class="<?php print $container_class; ?>">
   <?php print render($page['navigation']); ?>

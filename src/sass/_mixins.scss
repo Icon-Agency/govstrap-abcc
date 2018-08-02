@@ -1,0 +1,376 @@
+@mixin signpost-shadow($link: false){
+  box-shadow: 0px 2px 4px rgba(0,0,0,.15);
+  transition: box-shadow 0.2s ease;
+  @if($link == true) {
+    &:hover{
+      box-shadow: 0px 2px 10px rgba(0,0,0,.3);
+    }
+  }
+}
+
+@mixin make-container-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      width: $container-max-width;
+    }
+  }
+}
+
+@mixin font-smoothing (){
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin background-opacity($color, $opacity: 0.45) {
+    background: -moz-linear-gradient(-45deg, rgba($color,0) 1%, rgba($color,0) 0%, rgba($color,$opacity) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba($color,0) 1%,rgba($color,0) 0%,rgba($color,$opacity) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba($color,0) 1%,rgba($color,0) 0%,rgba($color,$opacity) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+// COLOUR MIXINS
+//
+@mixin card-theme($color, $safe-color){
+
+  .card-header,
+  .card-footer{
+    color: $safe-color;
+  }
+  a{
+    color: $color;
+    &:hover{
+      color: $color;
+    }
+  }
+}
+
+@mixin signpost-card-theme($color, $safe-color){
+  border-color: $color;
+  .card-header,
+  .card-footer{
+    color: darken($safe-color,10%);
+  }
+  .card-body{
+    ul.fixed-icon-list{
+      li{
+        a{
+          i{
+            color: $color !important;
+          }
+        }
+      }
+    }
+  }
+  i{
+    color: $color;
+  }
+  a{
+    color: $color;
+    &:hover{
+      color: $color !important;
+    }
+  }
+  .date,
+  .category{
+    color: $color;
+  }
+}
+
+@mixin quick-links-theme($color, $safe-color){
+  color: $color;
+  span{
+    strong{
+      color: $safe-color;
+    }
+  }
+}
+
+@mixin theme-colour($color, $safe-color){
+  .theme-color{
+    color: $color !important;
+    &.safe{
+      color: $safe-color !important;
+    }
+  }
+
+  .theme-backgroundcolor{
+    background-color: $color !important;
+  }
+
+  .theme-color-hover{
+    &:hover{
+      color: $safe-color !important;
+    }
+  }
+  .theme-color-gradient{
+    @include background-opacity($color);
+  }
+
+  .theme-color-gradient-after{
+    position: relative;
+    &:after{
+      height: 10px;
+      width: 290px;
+      position: absolute;
+      bottom: -40px;
+      right: -140px;
+      background-color: transparent;
+      content: '';
+      transform: rotate(-45deg);
+      -webkit-box-shadow: 0px 0px 120px 260px rgba($color,0.4);
+      -moz-box-shadow: 0px 0px 120px 260px rgba($color,0.4);
+      box-shadow: 0px 0px 120px 260px rgba($color,0.4);
+    }
+  }
+
+  .header{
+    .navbar-nav{
+      .nav-item{
+        .nav-link{
+          &:after{
+            background-color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  .header{
+    .navbar-nav{
+      .nav-item{
+        .dropdown-menu{
+          .dropdown-item{
+            &:before{
+              background: $color;
+            }
+            &:hover{
+              color: $color;
+            }
+            &.active{
+              color: $color !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .accent{
+    &:before{
+      border-color: $color;
+    }
+  }
+
+  .banner{
+    a{
+      i{
+        color: $color;
+      }
+    }
+    .breadcrumbs{
+      a{
+        &:hover{
+          color: $color;
+        }
+      }
+    }
+    .btn-wrap{
+      a{
+        &:hover{
+          color: $color !important;
+        }
+      }
+    }
+  }
+
+  // a{
+  //   &:not(.btn){
+  //     color: $color;
+  //   }
+  // }
+
+  .accordion{
+    .card{
+      .card-header{
+        a{
+          &:before{
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  .btn{
+    &.alt{
+      &:not(.btn-outline-primary){
+        border-color: $color;
+        &:hover{
+          color: #ffffff;
+          background-color: $color;
+          i{
+            color: #ffffff;
+          }
+        }
+        i{
+          color: $color;
+        }
+      }
+    }
+  }
+
+  .fixed-number-list,
+  .fixed-icon-list{
+    li{
+      a{
+        i{
+          color: $color;
+        }
+      }
+    }
+  }
+
+  .list-custom{
+    li{
+      &:before{
+        color: $color;
+      }
+    }
+    &.side-indictor{
+      li{
+        &.active{
+          &:after{
+            background-color: $color;
+          }
+          a{
+            color: $color !important;
+          }
+        }
+      }
+    }
+  }
+
+  blockquote{
+    color: $safe-color;
+    &:before{
+      background-color: $color;
+    }
+  }
+
+  .stackinline{
+    margin-bottom: $spacer /2;
+    .control{
+      display: inline-block;
+      width: auto;
+      margin-right: $spacer;
+      margin-bottom: $spacer /2;
+    }
+  }
+
+  .control {
+    &:hover input[type=checkbox] ~ .control__indicator,
+    &:hover input[type=radio] ~ .control__indicator {
+      border-color: $safe-color;
+    }
+    input[type=checkbox],
+    input[type=radio] {
+      &:checked ~ .control__indicator {
+        border-color: $color;
+      }
+    }
+    .control__indicator {
+      border: $border_width solid $color;
+    }
+    &.control--checkbox {
+      .control__indicator{
+        border-radius: $input-border-radius;
+        &:after {
+          border-color: $color;
+        }
+      }
+    }
+    &.control--radio {
+      .control__indicator{
+        &:after{
+          background: $color;
+        }
+      }
+    }
+  }
+
+  .select {
+    select {
+      &:hover ~ .select__arrow,
+      &:focus ~ .select__arrow {
+        border-top-color: $safe-color;
+      }
+      &:disabled ~ .select__arrow {
+        border-top-color: $safe-color;
+      }
+    }
+    .select__arrow {
+      border-top-color: $color;
+    }
+  }
+
+  .news-carousel{
+    .slick-arrow{
+      color: $color;
+    }
+    .slick-dots{
+      li{
+        &.slick-active{
+          button{
+            background-color: $color;
+          }
+        }
+        button{
+          border-color: $color;
+          color: $color;
+        }
+      }
+    }
+  }
+
+  .pagination-wrap{
+    .pagination{
+      .page-item{
+        &.current{
+          &:after{
+            background-color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  ul{
+    &.block-active-icon{
+      li{
+        &:after{
+          background-color: $color;
+        }
+      }
+    }
+    &.glossary-list{
+      li{
+        &:hover{
+          color: $color;
+        }
+        &:after{
+          background-color: $color;
+        }
+        &.active{
+          color: $color;
+        }
+      }
+    }
+  }
+
+  .footer{
+    ul li a{
+      &:hover{
+        color: $color !important;
+      }
+    }
+  }
+}

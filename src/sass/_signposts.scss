@@ -1,0 +1,74 @@
+body.home{
+  .signposts{
+    .card{
+      .card-body{
+        font-size: 20px;
+      }
+    }
+  }
+}
+.signposts{
+  .h-100{
+    height: calc(100% - 2rem) !important; // 100% - margin-bottom value ($spacer*2)
+  }
+  .h-50{
+    min-height: calc(50% - 2rem)!important;
+  }
+  .card{
+    min-height: 360px;
+    text-decoration: none;
+    border-top: 5px solid;
+    @include signpost-shadow(true);
+    &.half-card{
+      min-height: 200px;
+    }
+    &.center-card{
+      .card-body{
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.img-card{
+      border: 0 none;
+      img{
+        width: 100%;
+        min-height: 100%;
+      }
+    }
+    &.no-min-height{
+      min-height: 1px;
+    }
+    .card-header,
+    .card-footer{
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .card-header{
+      padding-top: $spacer*2;
+    }
+    .card-footer{
+      padding-bottom: $spacer*2;
+    }
+    .card-body{
+      padding: $spacer*2 $spacer;
+      font-size: $signpost-default;
+      background-color: transparent;
+      img{
+        max-width: 100%;
+      }
+    }
+    .card-footer{
+      font-size: $small-font-size;
+      i{
+        &.fa-arrow-circle-right{
+          font-size: 22px;
+        }
+      }
+    }
+    i{
+      &.fa-arrow-circle-right{
+        font-size: 28px;
+      }
+    }
+  }
+}

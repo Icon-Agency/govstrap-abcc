@@ -111,6 +111,18 @@ function govstrap_preprocess_page(&$variables) {
   else {
     $variables['content_column_class'] = 'col-sm-12';
   }
+
+  // Get the main navigation menu tree limit to $main_menu_max_depth
+  $main_menu_max_depth = 3;
+  $main_menu_tree = menu_build_tree('menu-site-main-menu', array('max_depth' => $main_menu_max_depth));
+  foreach($main_menu_tree as $link_item) {
+    if($link_item['link']['link_title']) {
+      $link_item_name = _human_to_machine($link_item['link']['link_title']);
+      $variables['main_menu_tree'][$link_item_name]['tree'] = menu_tree_output(array($link_item_name => $link_item));
+      $variables['main_menu_tree'][$link_item_name]['title'] = $link_item['link']['link_title'];
+    }
+  }
+  dpm($variables['main_menu_tree']);
 }
 
 /**
@@ -140,4 +152,23 @@ function govstrap_preprocess_block(&$variables, $hook) {
     // Add template suggestions for bean types.
     $variables['theme_hook_suggestions'][] = 'block__bean__' . $bean['#bundle'];
   }
+}
+
+
+/**
+ * Helper that generates a machine name using a provided human readable name.
+ *
+ * @param string $human_name
+ *   Human readable name.
+ *
+ * @return string
+ *   Machine name cleaned-up of any special chars.
+ */
+function _human_to_machine($human_readable) {
+  return strtolower(preg_replace(array(
+    '/[^a-zA-Z0-9]+/',
+    '/-+/',
+    '/^-+/',
+    '/-+$/',
+  ), array('_', '_', '', ''), $human_readable));
 }

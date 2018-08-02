@@ -1,0 +1,53 @@
+body{
+  &.style-guide{
+    .has-fixed-nav{
+      padding-top: 100px;
+    }
+
+    .heading{
+      border-bottom: 2px solid $purple;
+    }
+
+    .grid,
+    .colours{
+      .item{
+        margin-bottom: $spacer;
+        padding: $spacer;
+        border-radius: $border-radius;
+      }
+    }
+    .site-colours{
+      .item{
+        padding: $spacer*2 0;
+      }
+    }
+    .grid{
+      .item{
+        background-color: $gray-300;
+      }
+    }
+
+    .border-color{
+      background-color: $border-color;
+    }
+    .body-color{
+      background-color: $body-color;
+    }
+    .link-color{
+      background-color: $link-color;
+    }
+    .link-hover-color{
+      background-color: $link-hover-color;
+    }
+    .input-border-color{
+      background-color: $input-border-color;
+    }
+    .input-color{
+      background-color: $input-color;
+    }
+    .component-active-bg{
+      background-color: $component-active-bg;
+    }
+  }
+}
+

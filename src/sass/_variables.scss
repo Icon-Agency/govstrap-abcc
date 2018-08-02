@@ -1,0 +1,153 @@
+// Colours
+//
+$blue:                                        #25a1db;
+$green:                                       #17b791;
+$purple:                                      #9b3a95;
+$red:                                         #e15047;
+$gray:                                        #5b7586;
+$safe-blue:                                   #3d7da7;
+$safe-green:                                  #3c826a;
+$safe-purple:                                 darken($purple, 10%);
+$safe-red:                                    #cb4334;
+$primary:                                     $blue;
+$secondary:                                   $purple;
+$success:                                     $green;
+$pColor:                                      $primary;
+$sColor:                                      $green;
+$tColor:                                      $purple;
+$dark-blue:                                   #003956;
+$nav-bg:                                      #e9eaeb;
+$footer-bg:                                   #26313f;
+$footer-bg-alt:                               #313c49;
+$banner-gray:                                 #919eae;
+$inactive-tab:                                #5b7586;
+$default-color:                               #003956;
+$default-color-rgb:                           rgb(255,150,0);;
+$inactive-pagination:                         #677d8c;
+
+// Common variables
+//
+$body-bg:                                     #f7f7f7;
+$body-color:                                  #26313e;
+$font-family-base:                            'Open Sans', sans-serif;
+$headings-font-family:                        'Roboto Slab', serif;
+$font-family1:                                $font-family-base;
+$font-family2:                                $headings-font-family;
+$font-family3:                                'Barlow Semi Condensed', sans-serif;
+$link-color:                                  $default-color;
+$link-hover-color:                            $default-color;
+$component-active-bg:                         $primary;
+$border-width:                                2px;
+$border-color:                                #e7e7e7;
+$headings-color:                              $dark-blue;
+$headings-font-weight:                        700;
+$accent-size:                                 45px;
+$accent-size-mob:                             35px;
+$mobile-gutter:                               $accent-size-mob;
+
+
+// font-family: 'Barlow', sans-serif;
+// font-family: 'Roboto Slab', serif;
+// font-family: 'Open Sans', sans-serif;
+
+
+// Fonts
+//
+$font-size-base:                              1rem;
+$h1-font-size:                                $font-size-base * 2.5;
+$h2-font-size:                                $font-size-base * 2;
+$h3-font-size:                                $font-size-base * 1.75;
+$h4-font-size:                                $font-size-base * 1.5;
+$h5-font-size:                                $font-size-base * 1.25;
+$h6-font-size:                                $font-size-base;
+
+$h1-font-size-mob:                            35px;
+$h2-font-size-mob:                            30px;
+$h3-font-size-mob:                            26px;
+$h4-font-size-mob:                            22px;
+
+$small-font-size:                             14px;
+$large-font-size:                             18px;
+$xllarge-font-size:                           40px;
+$signpost-default:                            18px;
+
+$display1-size:                               6rem;
+$display2-size:                               5.5rem;
+$display3-size:                               4.5rem;
+$display4-size:                               3.5rem;
+
+
+// Forms
+//
+$input-color:                                 $body-color;
+$input-border-color:                          #d7d8da;
+$input-border-width:                          $border-width;
+$input-box-shadow:                            0;
+$input-height:                                60px;
+
+$input-btn-padding-y:                         1rem;
+$input-btn-focus-width:                       .15rem;
+$input-btn-focus-color:                       rgba($component-active-bg, .25);
+$input-focus-border-color:                    lighten($component-active-bg, 25%);
+$input-focus-box-shadow:                      0 0 0 $input-btn-focus-width $input-btn-focus-color;
+
+
+// Cards
+//
+$card-columns-gap:                            30px;
+$card-spacer-y:                               0;
+$card-border-width:                           0;
+$card-border-radius:                          0;
+$card-inner-border-radius:                    0;
+$card-img-overlay-padding:                    0;
+
+
+// Mmenu
+//
+$mm_backgroundColor:                          $dark-blue;
+$mm_textColor:                                #ffffff;
+$mm_borderColor:                              darken($dark-blue, 3%);
+$mm_dimmedTextColor:                          rgba( #000, 0.3 );
+$mm_emphasizedBackgroundColor:                rgba( #fff, 0.4 );
+$mm_highlightedBackgroundColor:               rgba( #000, 0.05 );
+$mm_navbarColor:                              rgba( #000, 0.3 );
+$mm_title_height:                             80px;
+
+$mm_padding:                                  15px;
+$mm_btnSize:                                  50px;
+$mm_listitemIndent:                           $mm_padding*2;
+
+
+// Breadcrumbs
+//
+$breadcrumb-padding-y:                        15px;
+$breadcrumb-margin-bottom:                    0px;
+$breadcrumb-bg:                               transparent;
+$breadcrumb-divider-color:                    $banner-gray;
+$breadcrumb-active-color:                     $banner-gray;
+$breadcrumb-border-radius:                    0px;
+
+
+// Radio / Checkboxs / Selects
+//
+$radio-checkbox-height:                       20px;
+$radioCheckboxBg:                             $default-color;
+$radioCheckboxActive:                         $default-color;
+$radioCheckboxFocus:                          $default-color;
+$radioCheckboxHover:                          darken($default-color,10%);
+
+
+// Tabs
+//
+$nav-tabs-border-color:             $border-color;
+$nav-tabs-border-width:             1px;
+$nav-tabs-border-radius:            0;
+$nav-tabs-link-hover-border-color:  $nav-tabs-border-color;
+$nav-tabs-link-active-color:        $nav-tabs-border-color;
+$nav-tabs-link-active-bg:           #ffffff;
+// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
+
+// Help
+//
+// Calculate 2 variables = calc(#{$input-height-inner-sm} + #{$input-height-border})
+// Call theme colour variable = theme-color("danger");

@@ -1,0 +1,982 @@
+// Breakpoint options
+// @include media-breakpoint-up/down/down
+
+
+@include media-breakpoint-down(lg) { //1200px
+  body.responsive{
+    background-color: blue !important;
+  }
+
+  .hide-lg-down{
+    display: none;
+  }
+
+  .header{
+    .top{
+
+      form,
+      .translate,
+      .logo{
+        margin-left: $spacer;
+      }
+
+      form{
+        max-width: 345px;
+      }
+    }
+
+    .navbar-nav{
+      .nav-item{
+        font-size: 17px !important;
+      }
+    }
+  }
+
+  .banner{
+    &.animate{
+      &.single-image-left,
+      &.single-image-right{
+        .bg-img{
+          opacity: 1;
+          animation: none;
+        }
+      }
+      &.single-image-left{
+        .bg-img{
+          background-position: -160px 0;
+        }
+      }
+      &.single-image-right{
+        .bg-img{
+          background-position: 125% 0;
+        }
+      }
+    }
+
+  }
+
+  .signposts{
+    .card{
+      min-height: 300px;
+      .card-header{
+        +.card-body{
+          padding-top: $spacer;
+          padding-bottom: $spacer;
+        }
+      }
+      .card-body{
+        .icon{
+          padding: 0 !important;
+          position: absolute;
+          right: $spacer;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(md) { //992px
+  body.responsive{
+    background-color: purple !important;
+  }
+
+  .hide-md-down{
+    display: none;
+  }
+
+  .header{
+    display: none;
+  }
+
+  $menu-buttons: calc(80px + 2rem); // logo padding top and bottom
+  $menu-buttons-logo-pad: calc((80px + 2rem) *2; // logo padding top and bottom
+
+  .mm-header{
+    height: $menu-buttons;
+    display: block;
+    padding-right: $menu-buttons-logo-pad;
+    position: relative;
+
+    .abcc-logo{
+      max-width: 100%;
+      max-height: 100%;
+      padding: $spacer;
+    }
+
+    .mob-menu,
+    .search-btn{
+      border: 0 none;
+      height: $menu-buttons;
+      width: $menu-buttons;
+      line-height: $menu-buttons;
+      color: $white !important;
+      font-size: 30px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      i{
+        color: inherit;
+      }
+    }
+
+    .search-btn{
+      background-color: $green;
+      right: $menu-buttons;
+    }
+
+    .mob-menu{
+      display: block;
+      background-color: $dark-blue;
+      right: 0;
+    }
+
+    .search{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: $dark-blue;
+      text-align: center;
+      color: $white;
+      z-index: 999999;
+      #close-btn{
+        position: absolute;
+        top: $spacer;
+        right: $spacer;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+        line-height: 30px;
+        text-align: center;
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        align-items: center;
+        justify-content: center;
+      }
+      h3{
+        color: inherit;
+      }
+      .form-group{
+        min-width: 70%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .border-left{
+    border: 0 none !important;
+  }
+
+  .header{
+    .top{
+      .abcc-logo{
+        max-width: 100%;
+      }
+      form{
+        max-width: 310px;
+      }
+      .translate{
+        display: none;
+      }
+      .logo{
+        margin-top: 21px;
+        width: 78px;
+        height: 60px;
+      }
+    }
+  }
+
+  .quick-links{
+    &.py-5{
+      padding-top: $spacer !important;
+      padding-bottom: $spacer !important;
+    }
+
+    h2{
+      padding-top: $spacer*2;
+    }
+
+    .item{
+      margin-bottom: $spacer*2;
+    }
+  }
+
+  .signposts{
+    padding-bottom: 0 !important;
+    .card{
+      min-height: 1px;
+
+      &.half-card{
+        min-height: 1px;
+      }
+      .card-body{
+        padding-bottom: 0;
+        .icon{
+          position: relative;
+          width: 100%;
+          right: 0;
+          bottom: 0;
+          padding: $spacer 1.25rem !important;
+          i{
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+
+  .banner{
+    &.single-image-left{
+      .bg-img{
+        background-image: none !important;
+      }
+    }
+    &.animate{
+      &.single-image-right{
+        .bg-img{
+          background-position: calc(100% + 190px) 0;
+        }
+      }
+    }
+  }
+
+  .filter{
+    &:after{
+      display: none;
+    }
+    ul{
+      display: block;
+      margin-bottom: 0 !important;
+      position: relative;
+      &:after{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-family: inherit;
+        content: '';
+        height: 5px;
+        width: 100%;
+        background-color: $border-color;
+        z-index: -1;
+      }
+    }
+    .search-options{
+      float: none;
+    }
+    select{
+      border-left: 0 none !important;
+    }
+  }
+
+  .filter-options{
+    display: none;
+  }
+
+  .footer{
+    .container{
+      &.py-5{
+        padding-top: $spacer !important;
+        padding-bottom: $spacer !important;
+      }
+    }
+
+    h3{
+      padding-top: $spacer*2;
+    }
+
+    .item{
+      margin-bottom: $spacer*2;
+    }
+
+    .bg-footer-alt{
+      .btn{
+        display: none;
+      }
+    }
+  }
+}
+@include media-breakpoint-down(sm) { //768px
+  body.responsive{
+    background-color: pink !important;
+  }
+
+  .hide-sm-down{
+    display: none;
+  }
+
+  .margin-sm-down{
+    margin-bottom: $spacer;
+  }
+
+  //Theme colours
+  body{
+    &.theme-government{
+      .banner{
+        &#main-banner{
+          .bg-img{
+            background-color: $blue;
+          }
+        }
+      }
+    }
+
+    &.theme-abcc{
+      .banner{
+        &#main-banner{
+          .bg-img{
+            background-color: $green;
+          }
+        }
+      }
+    }
+
+    &.theme-rights{
+      .banner{
+        &#main-banner{
+          .bg-img{
+            background-color: $purple;
+          }
+        }
+      }
+    }
+
+    &.theme-worker{
+      .banner{
+        &#main-banner{
+          .bg-img{
+            background-color: $red;
+          }
+        }
+      }
+    }
+
+    &.home{
+      .signposts{
+        &.pt-5{
+          padding-top: 0 !important;
+        }
+      }
+    }
+  }
+
+  //Font sizes
+  h1,
+  .h1{
+    font-size: $h1-font-size-mob !important;
+  }
+  h2,
+  .h2{
+    font-size: $h2-font-size-mob !important;
+  }
+  h3,
+  .h3{
+    font-size: $h3-font-size-mob !important;
+  }
+  h4,
+  .h4{
+    font-size: $h4-font-size-mob !important;
+  }
+
+  .fade-in-up{
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .bg-white{
+    background-color: transparent !important;
+  }
+
+  .banner{
+    .breadcrumbs{
+      display: none;
+    }
+    &#main-banner{
+      .mob-bg-img{
+        display: block;
+      }
+      .bg-img{
+        background-image: none !important;
+        animation: none !important;
+        div{
+          min-height: 1px;
+          .text{
+            opacity: 1 !important;
+            animation: none !important;
+            display: block;
+            position: relative;
+            color: $white;
+            .accent{
+              margin-top: 0;
+              padding-bottom: $spacer*4;
+              &:before{
+                border-color: $white;
+              }
+              p{
+                font-size: $h1-font-size-mob;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.single-image-left,
+    &.single-image-right{
+      div{
+        .text{
+          .accent{
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    &.single-image-right{
+      .bg-img{
+        background-image: none !important;
+      }
+    }
+  }
+
+  $arrow-font-size: 36px;
+  .quick-links{
+    &.py-5{
+      padding-bottom: 0 !important;
+    }
+    .item{
+      min-height: calc(86px + 2rem); //min height + padding top and bottom
+      position: relative;
+      background-color: $white;
+      text-align: left;
+      padding: $spacer 82px $spacer 145px;
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      margin-bottom: $spacer;
+      @include signpost-shadow();
+      &:after{
+        position: absolute;
+        top: 50%;
+        right: 17px;
+        margin-top: - $arrow-font-size/2;
+        height: $arrow-font-size;
+        width: $arrow-font-size;
+        font-size: $arrow-font-size;
+        line-height: $arrow-font-size;
+        text-align: center;
+        font-family: 'Font Awesome 5 pro';
+        font-weight: 300;
+        content: '\f0a9';
+        color: inherit;
+      }
+      img{
+        position: absolute;
+        top: $spacer;
+        left: $spacer*2;
+        margin: 0;
+        max-height: 86px;
+      }
+      span{
+        line-height: 1.2;
+      }
+    }
+    h2{
+      padding: $spacer 0;
+    }
+  }
+
+  .signposts{
+    .card{
+      height: auto !important;
+      display: block;
+      margin-bottom: $spacer;
+      &.img-card{
+        margin: $spacer 0 $spacer*2;
+      }
+      .card-header{
+        padding-top: $spacer;
+      }
+      .card-body{
+        padding-top: $spacer;
+        padding-bottom: $spacer;
+        .icon{
+          padding-bottom: 0 !important;
+        }
+      }
+      .card-footer{
+        padding-bottom: $spacer;
+        font-size: $font-size-base;
+        align-items: center;
+        i{
+          font-size: $arrow-font-size;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(xs) { //576px
+  body.responsive{
+    background-color: green !important;
+  }
+
+  .hide-xs-down{
+    display: none;
+  }
+
+  .accent-top{
+    padding-top: $spacer;
+  }
+
+  .banner{
+    .accent-top{
+      padding-top: 0;
+    }
+    .accent{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .accent{
+    padding-top: $accent-size-mob;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:before{
+      height: 0;
+      width: $accent-size-mob;
+      border-width: 8px 0 0 0;
+    }
+  }
+
+  .signposts{
+    .card{
+      &.img-card{
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+      .card-body{
+        .image{
+          display: none;
+        }
+      }
+    }
+  }
+
+  .filter{
+    display: none;
+  }
+
+  .news{
+    .item{
+      a{
+        float: right;
+      }
+      .date{
+        text-align: left;
+        font-size: $font-size-base;
+        margin-top: $spacer;
+        margin-bottom: $spacer/2;
+        color: $body-color;
+        font-family: $font-family1;
+        text-transform: none;
+        font-size: 12px;
+        position: relative;
+        &:before{
+          display: inline-block;
+          font-family: 'Font Awesome 5 Pro';
+          content: '\f073';
+          font-weight: 200;
+          margin-right: 5px;
+        }
+        span{
+          font-size: inherit;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .banner-tabs{
+    .nav-tabs{
+      .nav-item{
+        width: 50%;
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .archives{
+    .item {
+      min-height: 1px;
+      .inner{
+        .accent{
+          padding-top: 50px;
+        }
+      }
+    }
+  }
+
+  .footer{
+    padding-left: $mobile-gutter;
+    padding-right: $mobile-gutter;
+    .item{
+      font-size: 20px;
+      padding-right: 60px;
+      line-height: 1.1;
+      span{
+        line-height: inherit;
+        i{
+          height: 36px;
+          width: 36px;
+          font-size: 36px;
+          line-height: 36px;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: -15px;
+        }
+      }
+      &.phone{
+        border: $border-width solid $white;
+        border-radius: $border-radius;
+        text-align: center;
+        padding: $spacer*1.5 50px $spacer*1.5 68px;
+        a{
+          pointer-events: auto;
+          font-size: 30px;
+        }
+        img{
+          top: 50%;
+          margin-top: -25px;
+          max-width: 53px;
+          max-height: 50px;
+          left: $spacer;
+        }
+      }
+    }
+    .bg-footer-alt{
+      text-align: center;
+      position: relative;
+      &:before,
+      &:after{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: $mobile-gutter;
+        left: - $mobile-gutter;
+        background-color: inherit;
+        content: '';
+      }
+      &:after{
+        left: auto;
+        right: - $mobile-gutter;
+      }
+      ul{
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        text-align: left;
+        font-size: 18px;
+        li{
+          display: block;
+          margin-bottom: $spacer/2;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:"480px"){
+  body.responsive{
+    background-color: orange !important;
+  }
+
+  //Font sizes
+  h1,
+  .h1{
+    font-size: $h3-font-size-mob !important;
+  }
+  h2,
+  .h2{
+    font-size: $h3-font-size-mob !important;
+  }
+  h3,
+  .h3{
+    font-size: $h3-font-size-mob !important;
+  }
+  h4,
+  .h4{
+    font-size: $h3-font-size-mob !important;
+  }
+  .large{
+    font-size: 16px;
+  }
+
+  $menu-buttons: calc(50px + 2rem); // logo padding top and bottom
+  $menu-buttons-logo-pad: calc((50px + 2rem) *2; // logo padding top and bottom
+
+  .mm-header{
+    height: $menu-buttons;
+    padding-right: $menu-buttons-logo-pad;
+
+    .abcc-logo{
+      padding: 10px 8px;
+    }
+
+    .mob-menu,
+    .search-btn{
+      height: $menu-buttons;
+      width: $menu-buttons;
+      line-height: $menu-buttons;
+    }
+
+    .search-btn{
+      right: $menu-buttons;
+    }
+
+    .search{
+      .form-group{
+        min-width: 90%;
+        input[type]{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .banner{
+    .mob-bg-img{
+      margin-bottom: $spacer*2;
+    }
+    .bg-img{
+      min-height: 1px;
+    }
+    .accent{
+      padding-bottom: 0;
+    }
+    &#main-banner{
+      .bg-img{
+        min-height: 1px;
+        div{
+          .text{
+            .accent{
+              // padding-bottom: $spacer*2;
+              p{
+                font-size: $h3-font-size-mob;
+              }
+            }
+          }
+        }
+      }
+    }
+    &#industry-update{
+      .h1,
+      h1{
+        font-size: $h1-font-size-mob !important;
+      }
+      .large{
+        font-size: 17px !important;
+      }
+    }
+    &.single-image-left,
+    &.single-image-right{
+      .bg-img{
+        div{
+          min-height: 1px;
+        }
+      }
+    }
+  }
+
+  .quick-links{
+    .item{
+      min-height: 74px; //min height + padding top and bottom
+      padding: $spacer*1.5 50px $spacer*1.5 82px;
+      font-size: 18px;
+      &:after{
+        position: absolute;
+        right: 13px;
+        margin-top: - 15px;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+        line-height: 30px;
+      }
+      img{
+        top: $spacer*1.5;
+        left: 13px;
+        max-height: 46px;
+      }
+      span{
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .signposts{
+    .card{
+      .card-body{
+        font-size: 18px;
+      }
+    }
+  }
+
+  .banner-tabs{
+    .nav-tabs{
+      height: auto;
+      .nav-item{
+        width: 100%;
+      }
+    }
+  }
+
+  .footer{
+    padding-left: $spacer;
+    padding-right: $spacer;
+    h3{
+      text-align: center;
+    }
+    .item{
+      font-size: 19px;
+      span{
+        i{
+          height: 30px;
+          width: 30px;
+          font-size: 30px;
+          line-height: 30px;
+        }
+      }
+      &.phone{
+        padding-right: $spacer;
+        a{
+          font-size: 30px;
+        }
+      }
+    }
+    .bg-footer-alt{
+      &:before{
+        width: $spacer;
+        left: - $spacer;
+      }
+      &:after{
+        width: $spacer;
+        right: - $spacer;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:"370px"){
+  body.responsive{
+    background-color: yellow !important;
+  }
+
+  body{
+    font-size: 15px !important;
+  }
+
+  //Font sizes
+  h1,
+  .h1{
+    font-size: 22px !important;
+  }
+  h2,
+  .h2{
+    font-size: 22px !important;
+  }
+  h3,
+  .h3{
+    font-size: 22px !important;
+  }
+  h4,
+  .h4{
+    font-size: 22px !important;
+  }
+
+  $menu-buttons: calc(40px + 2rem); // logo padding top and bottom
+  $menu-buttons-logo-pad: calc((40px + 2rem) *2; // logo padding top and bottom
+
+  .mm-header{
+    height: $menu-buttons;
+    padding-right: $menu-buttons-logo-pad;
+
+    .abcc-logo{
+      padding: 10px 8px;
+    }
+
+    .mob-menu,
+    .search-btn{
+      height: $menu-buttons;
+      width: $menu-buttons;
+      line-height: $menu-buttons;
+    }
+
+    .search-btn{
+      right: $menu-buttons;
+    }
+  }
+
+  .accent{
+    padding-top: 1rem;
+    &:before{
+      width: 30px;
+      border-width: 5px 0 0 0;
+    }
+  }
+
+  .banner{
+    .bg-img{
+      div{
+        .text{
+          .accent{
+            p{
+              font-size: $font-size-base;
+            }
+          }
+        }
+      }
+    }
+    &#main-banner{
+      .bg-img{
+        div{
+          .text{
+            .accent{
+              padding-bottom: $spacer*3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer{
+    .item{
+      font-size: 16px;
+      padding-right: 38px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      img{
+        top: 8px;
+      }
+      &.phone{
+        padding: $spacer 25px $spacer 68px;
+        img{
+          margin-top: -21px;
+          max-width: 44px;
+          max-height: 42px;
+        }
+        a{
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

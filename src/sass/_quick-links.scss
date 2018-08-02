@@ -1,0 +1,32 @@
+.quick-links{
+  .item{
+    display: block;
+    text-decoration: none;
+    color: $body-color;
+    font-family: $font-family3;
+    font-size: $large-font-size;
+    text-align: center;
+    &:hover{
+      img{
+        transform: scale(1.08);
+        transform-origin: 40% 50%;
+      }
+    }
+    img{
+      transition: all 0.2s ease;
+
+      max-width: 80px;
+      max-height: 72px;
+      display: block;
+      margin: 0 auto $spacer;
+    }
+    span{
+      line-height: 0.8;
+      font-weight: 700;
+      color: $body-color;
+      strong{
+        display: block;
+      }
+    }
+  }
+}

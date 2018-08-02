@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="80.88" height="76.83" viewBox="0 0 80.88 76.83">
+  <title>icon-scales</title>
+  <line x1="17.39" y1="1.5" x2="63.09" y2="19.08" fill="none" stroke="#26313f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <polyline points="1.5 33.18 17.39 1.5 33.18 33.18" fill="none" stroke="#9b3a95" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M441.41,529.7c0,7.71-7.09,14-15.84,14s-15.84-6.26-15.84-14Z" transform="translate(-408.23 -496.52)" fill="none" stroke="#26313f" stroke-linecap="round" stroke-width="3"/>
+  <polyline points="47.2 50.3 63.09 19.08 78.88 50.3" fill="none" stroke="#26313f" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
+  <g>
+    <path d="M471.27,562.25c-9.13,0-16.84-7.07-16.84-15.43v-1h33.68v1C488.11,555.18,480.4,562.25,471.27,562.25Z" transform="translate(-408.23 -496.52)" fill="#e7cee4"/>
+    <path d="M487.11,546.82c0,7.72-7.09,14.43-15.84,14.43s-15.84-6.71-15.84-14.43h31.68m2-2H453.43v2c0,8.9,8.17,16.43,17.84,16.43s17.84-7.53,17.84-16.43v-2Z" transform="translate(-408.23 -496.52)" fill="#9b3a95"/>
+  </g>
+  <line x1="40.23" y1="75.33" x2="40.23" y2="2.37" fill="none" stroke="#26313f" stroke-linecap="square" stroke-linejoin="round" stroke-width="3"/>
+  <line x1="55.88" y1="75.33" x2="24.25" y2="75.33" fill="none" stroke="#26313f" stroke-linecap="square" stroke-linejoin="round" stroke-width="3"/>
+</svg>

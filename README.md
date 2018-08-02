@@ -25,9 +25,5 @@ Compile the assets
 Watch for changes and compile the assets
 
     $ cd MYPROJECT
-    $ npm (or yarn) run watch
+    $ gulp
 
-Watch for changes and compile the assets with browserSync
-
-    $ cd MYPROJECT
-    $ npm (or yarn) run browser-sync

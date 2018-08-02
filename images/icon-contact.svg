@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="83.11" height="79.37" viewBox="0 0 83.11 79.37">
+  <title>icon-contact</title>
+  <path d="M594.84,569.59c7.27-1.31,11.21-7.65,11.21-15.38,0-8.68-5.78-15.63-13.31-15.63H581.89a16.16,16.16,0,0,1-7.15,8.23,31.66,31.66,0,0,1-9,3.76,33.2,33.2,0,0,0-.4,3.8c0,8.67,6.11,15.75,13.64,15.75h4.35l11.56,10.71Z" transform="translate(-525.3 -505.17)" fill="#ceede3" stroke="#ceede3" stroke-miterlimit="10" stroke-width="3"/>
+  <path d="M563.92,554c0,9.26,6.52,16.81,14.56,16.81h4.64l12.33,11.43v-12c7.76-1.39,12-8.16,12-16.41,0-9.26-6.17-16.68-14.21-16.68H588" transform="translate(-525.3 -505.17)" fill="none" stroke="#17b791" stroke-linecap="square" stroke-width="2"/>
+  <path d="M542.61,549c-10.25-1.79-15.81-10.46-15.81-21,0-11.85,8.15-21.35,18.77-21.35H565c10.62,0,19.23,9.73,19.23,21.58s-8.61,21.51-19.23,21.51H558.9L542.61,564.4Z" transform="translate(-525.3 -505.17)" fill="none" stroke="#26313f" stroke-linecap="round" stroke-width="3"/>
+  <path d="M564.1,551.15" transform="translate(-525.3 -505.17)" fill="none" stroke="#003956" stroke-linecap="square" stroke-width="2"/>
+  <line x1="17.28" y1="15.02" x2="44.11" y2="15.02" fill="none" stroke="#17b791" stroke-linecap="square" stroke-width="2"/>
+  <line x1="17.28" y1="23.08" x2="44.11" y2="23.08" fill="none" stroke="#17b791" stroke-linecap="square" stroke-width="2"/>
+  <line x1="17.28" y1="31.13" x2="30.73" y2="31.13" fill="none" stroke="#17b791" stroke-linecap="square" stroke-width="2"/>
+</svg>

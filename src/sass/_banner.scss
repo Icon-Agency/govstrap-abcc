@@ -1,0 +1,174 @@
+.banner{
+  color: $white;
+  font-family: $headings-font-family;
+  font-weight: 600;
+  position: relative;
+  margin-top: 5px; // Allow for nav underline
+  overflow: hidden;
+
+  .accent{
+    padding-bottom: $accent-size;
+  }
+
+  .breadcrumbs{
+    @include make-container-widths();
+    @include make-container-max-widths();
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: $accent-size + 15px;
+    .breadcrumb{
+      font-family: $font-family3;
+      font-size: 13px;
+      text-transform: uppercase;
+      padding-left: 0;
+      .breadcrumb-text{
+        color: $banner-gray;
+        margin-right: 8px;
+      }
+      .breadcrumb-item{
+        color: $banner-gray;
+        a{
+          color: $banner-gray;
+          text-decoration: none;
+          i{
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+  .btn-wrap{
+    // @include make-container-widths();
+    // @include make-container-max-widths();
+    position: absolute;
+    bottom: $spacer;
+    left: 0;
+    padding-left: $accent-size + 15px;
+    min-height: 1px !important;
+    a{
+      font-family: $font-family3;
+      color: $banner-gray !important;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-decoration: none;
+      i{
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .mob-bg-img{
+    display: none;
+    width: 100%;
+    height: auto;
+    margin-bottom: $spacer*2;
+  }
+  .bg-img{
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    div{
+      min-height: 400px;
+      .text{
+        display: flex;
+        align-items: center;
+        @include font-smoothing();
+        .accent{
+          min-height: 1px;
+          h1,
+          h2,
+          h3{
+            color: $white;
+          }
+          p{
+            font-size: $h4-font-size;
+            line-height: 1.3;
+            margin-bottom: 0;
+            font-family: $font-family-base;
+            color: $banner-gray;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  &.single-image-left,
+  &.single-image-right{
+    .bg-img{
+      background-size: contain;
+    }
+  }
+
+  &.single-image-left{
+    .bg-img{
+      background-position: left bottom;
+    }
+  }
+
+  &.single-image-right{
+    .bg-img{
+      background-position: right bottom;
+    }
+  }
+
+  &.industry-update{
+    .bg-img{
+      min-height: 520px;
+      div{
+        min-height: 520px;
+      }
+    }
+  }
+
+  &.slim-line{
+    .bg-img{
+      min-height: 300px;
+      div{
+        min-height: 300px;
+      }
+    }
+  }
+
+  &.banner-animate{
+    .bg-img{
+      opacity: 0;
+    }
+  }
+
+  &.animate{
+    .bg-img{
+      opacity: 1;
+    }
+    &.main-banner{
+      .bg-img{
+        animation: 1.5s ease 0s 1 zoomBackground;
+        div{
+          .text{
+            opacity: 0;
+            animation: 1.2s ease 0s 1 slideInFromLeft;
+            animation-delay: 0.3s, 0s;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+    }
+    &.single-image-left{
+      .bg-img{
+        opacity: 0;
+        animation: 1.2s ease 0s 1 bgSlideInFromLeft;
+        animation-fill-mode: forwards;
+      }
+    }
+    &.single-image-right{
+      .bg-img{
+        opacity: 0;
+        animation: 1.2s ease 0s 1 bgSlideInFromRight;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
