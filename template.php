@@ -33,6 +33,11 @@ function govstrap_theme(&$existing, $type, $theme, $path) {
 drupal_static_reset('element_info');
 
 /**
+ * Include helper functions.
+ */
+include_once './' . drupal_get_path('theme', 'govstrap') . '/includes/function.inc';
+
+/**
  * Include hook_preprocess_*() hooks.
  */
 include_once './' . drupal_get_path('theme', 'govstrap') . '/includes/preprocess.inc';

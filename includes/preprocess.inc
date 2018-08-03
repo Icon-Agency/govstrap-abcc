@@ -76,6 +76,9 @@ function govstrap_preprocess_html(&$variables, $hook) {
     }
     $variables['rdf_namespaces'] = ' prefix="' . implode(' ', $prefixes) . '"';
   }
+
+  $variables['classes_array'][] = _abcc_get_active_page_theme();
+
 }
 
 /**
@@ -122,7 +125,6 @@ function govstrap_preprocess_page(&$variables) {
       $variables['main_menu_tree'][$link_item_name]['title'] = $link_item['link']['link_title'];
     }
   }
-  dpm($variables['main_menu_tree']);
 }
 
 /**
