@@ -122,7 +122,38 @@ function govstrap_preprocess_page(&$variables) {
       $variables['main_menu_tree'][$link_item_name]['title'] = $link_item['link']['link_title'];
     }
   }
-  dpm($variables['main_menu_tree']);
+ dpm($variables['main_menu_tree']);
+}
+
+function govstrap_menu_link__menu_site_main_menu($variables) {
+  $element     = $variables['element'];
+  $description = !empty($element['#localized_options']['attributes']['title']) ? $element['#localized_options']['attributes']['title'] : '';
+
+  $sub_menu = '';
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+
+  if ($description !== '') {
+    // Extract extra classes
+    _govstrap_menu_extract_extra_classes($element, $description);
+
+    // Extract special title
+    if (!($output = _govstrap_menu_extract_special_title($description))) {
+      $output = l($element['#title'], $element['#href'], $element['#localized_options']) . $description;
+    }
+  }
+  else {
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  }
+
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
+
+function govstrap_menu_tree__menu_site_main_menu($variables) {
+  //dpm($variables);
+
+  return '<ul class="menu">' . $variables['tree'] . '</ul>';
 }
 
 /**
@@ -154,6 +185,62 @@ function govstrap_preprocess_block(&$variables, $hook) {
   }
 }
 
+/*************************Helper Functions****************************/
+
+function _govstrap_menu_extract_extra_classes(&$element, &$description) {
+  if ($description === '') {
+    return;
+  }
+
+  $matching_pattern = _govstrap_menu_get_short_code_pattern('extra-classes');
+
+  if ($matches = _govstrap_menu_search_n_replace($matching_pattern, $description)) {
+    $classes = explode(' ', $matches[1]);
+    if (!empty($classes)) {
+      if (!isset($element['#attributes'])) {
+        $element['#attributes']['class'] = $classes;
+      }
+      else {
+        if (empty($element['#attributes']['class'])) {
+          $element['#attributes']['class'] = $classes;
+        }
+        elseif (!is_array($element['#attributes']['class'])) {
+          $classes[]                       = $element['#attributes']['class'];
+          $element['#attributes']['class'] = $classes;
+        }
+        else {
+          $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $classes);
+        }
+      }
+    }
+  }
+}
+
+function _govstrap_menu_extract_special_title(&$description) {
+  $output           = FALSE;
+  $matching_pattern = _govstrap_menu_get_short_code_pattern('special-title');
+
+  if ($matches = _govstrap_menu_search_n_replace($matching_pattern, $description)) {
+    $output = $matches[1] . $description;
+  }
+  return $output;
+}
+
+function _govstrap_menu_get_short_code_pattern($matching_phrase) {
+  $matching_phrase = preg_quote($matching_phrase);
+  return "/\[$matching_phrase\]((.|\n)+?)\[\/$matching_phrase\]/";
+}
+
+function _govstrap_menu_search_n_replace($matching_pattern, &$content) {
+  $matches = [];
+  if (preg_match($matching_pattern, $content, $matches)) {
+    $content = preg_replace($matching_pattern, '', $content);
+  }
+  else {
+    $matches = FALSE;
+  }
+  return $matches;
+}
 
 /**
  * Helper that generates a machine name using a provided human readable name.
