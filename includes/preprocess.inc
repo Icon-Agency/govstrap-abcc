@@ -76,6 +76,9 @@ function govstrap_preprocess_html(&$variables, $hook) {
     }
     $variables['rdf_namespaces'] = ' prefix="' . implode(' ', $prefixes) . '"';
   }
+
+  // Add active page theme class to <body> if available.
+  $variables['classes_array'][] = _abcc_get_active_page_theme();
 }
 
 /**
