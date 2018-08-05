@@ -70,3 +70,21 @@ function govstrap_js_alter(&$js) {
 function govstrap_js_callback_filter_xss_alter(array &$allowed_tags = array()) {
   $allowed_tags[] = 'button';
 }
+
+/**
+ * Search block form alter.
+ */
+function govstrap_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
+    // Update search keys filed attributes.
+    $form['search_block_form']['#attributes']['title'] = 'Search';
+    $form['search_block_form']['#attributes']['class'][] = 'form-control';
+    $form['search_block_form']['#attributes']['placeholder'] = t('Find what you\'re looking for...');
+    $form['search_block_form']['#attributes']['autocomplete'] = 'off';
+    // Update submit button style.
+    $form['actions']['submit']['#type'] = 'button';
+    $form['actions']['submit']['#value'] = decode_entities('');
+    $form['actions']['submit']['#attributes']['aria-label'] = 'Search';
+
+  }
+}

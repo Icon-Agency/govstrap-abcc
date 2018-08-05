@@ -16,7 +16,7 @@
 
         <!-- page banner -->
         <div class="banner slim-line bg-dark-blue text-white theme-color-gradient-after">
-            <div class="bg-img" style="">
+            <div class="bg-img" style="background-size: contain; background-position-x: 100%; background-image: url(/<?php print path_to_theme(); ?>/images/banners/banner-<?php print rand(1, 5);?>.png)">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 py-5">
@@ -34,10 +34,9 @@
                             </div>
 
                             <div class="btn-wrap">
-                                <a href="#">
-                                    <i class="fal fa-arrow-left"></i>
-                                    Back to news and media
-                                </a>
+                                <?php if ($active_page_parent): ?>
+                                    <?php print $active_page_parent; ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -67,7 +66,6 @@
       <?php endif; ?>
       <section id="main-content-section" class="<?php print $content_column_class; ?>" role="main">
         <a id="main-content"></a>
-        <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
         <?php if (!empty($tabs)): ?>
           <?php print render($tabs); ?>
         <?php endif; ?>

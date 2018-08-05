@@ -18,14 +18,6 @@
 
     <div class="search" id="mob-search-popup">
         <i class="fal fa-times" id="close-btn"></i>
-        <form>
-            <h3 class="h1 mb-3">Search</h3>
-            <div class="form-group input-icon">
-                <input class="form-control" type="search" placeholder="Find what you're looking for...">
-                <button type="submit">
-                    <i class="far fa-search"></i>
-                </button>
-            </div>
-        </form>
+        <?php print $search_box_mobile; ?>
     </div>
 </div>

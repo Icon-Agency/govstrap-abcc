@@ -40,3 +40,21 @@ function govstrap_process_block(&$variables, $hook) {
   // Drupal 7 should use a $title variable instead of $block->subject.
   $variables['title'] = isset($variables['block']->subject) ? $variables['block']->subject : '';
 }
+
+/**
+ * Implements hook_process_page().
+ */
+function govstrap_process_page(&$variables) {
+  // Make search form available to page.tpl.php
+  $search_box = drupal_get_form('search_block_form');
+  $variables['search_box'] = drupal_render($search_box);
+
+  $search_box_mobile =  drupal_get_form('search_block_form');
+  //$search_box_mobile["search_block_form"]["#id"] = $search_box_mobile["search_block_form"]["#id"].'--mobile';
+
+  $variables['search_box_mobile'] = drupal_render($search_box_mobile);
+  // Accessibility settings.
+  $variables['skip_link_anchor'] = check_plain(theme_get_setting('govstrap_skip_link_anchor'));
+  $variables['skip_link_text'] = check_plain(theme_get_setting('govstrap_skip_link_text'));
+  $variables['active_page_parent'] = _get_active_page_parent();
+}

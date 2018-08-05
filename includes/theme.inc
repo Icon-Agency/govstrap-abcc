@@ -33,11 +33,13 @@ function govstrap_breadcrumb($variables) {
     }
 
     $breadcrumbs = '<ol class="breadcrumb">';
+    $breadcrumbs .= '<li class="breadcrumb-text">You are here:</li>';
+    $breadcrumbs .= '<li class="breadcrumb-item"><a href="/"><i class="fal fa-home"></i></a></li>';
+
     foreach ($breadcrumb as $key => $value) {
-      $breadcrumbs .= '<li>' . $value . '</li>';
+      $breadcrumbs .= '<li class="breadcrumb-item">' . $value . '</li>';
     }
     $breadcrumbs .= '</ol>';
-
     return $breadcrumbs;
   }
 }

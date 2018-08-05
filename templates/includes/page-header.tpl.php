@@ -12,17 +12,12 @@
                 <div class="top">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="/<?php print path_to_theme(); ?>/images/abcc-logo.svg" class="abcc-logo" alt="Australian Government Australian Building and Construction Commission"/>
+                            <a href="/" aria-label="homepage">
+                                <img src="/<?php print path_to_theme(); ?>/images/abcc-logo.svg" class="abcc-logo" alt="Australian Government Australian Building and Construction Commission"/>
+                            </a>
                         </div>
-                        <div class="col-md-8 text-right">
-                            <form>
-                                <div class="form-group input-icon">
-                                    <input class="form-control" type="search" placeholder="Find what you're looking for...">
-                                    <button type="submit">
-                                        <i class="far fa-search"></i>
-                                    </button>
-                                </div>
-                            </form>
+                        <div class="col-md-8 text-right search-cluster">
+                          <?php print $search_box; ?>
                             <div class="translate">
                                 <img src="/<?php print path_to_theme(); ?>/images/google-translate-logo.png" />
                                 Translate
