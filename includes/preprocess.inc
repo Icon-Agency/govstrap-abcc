@@ -192,7 +192,7 @@ function _govstrap_menu_extract_extra_classes(&$element, &$description) {
     return;
   }
 
-  $matching_pattern = _govstrap_menu_get_short_code_pattern('extra-classes');
+  $matching_pattern = _govstrap_menu_get_token_pattern('extra-classes');
 
   if ($matches = _govstrap_menu_search_n_replace($matching_pattern, $description)) {
     $classes = explode(' ', $matches[1]);
@@ -218,7 +218,7 @@ function _govstrap_menu_extract_extra_classes(&$element, &$description) {
 
 function _govstrap_menu_extract_special_title(&$description) {
   $output           = FALSE;
-  $matching_pattern = _govstrap_menu_get_short_code_pattern('special-title');
+  $matching_pattern = _govstrap_menu_get_token_pattern('special-title');
 
   if ($matches = _govstrap_menu_search_n_replace($matching_pattern, $description)) {
     $output = $matches[1] . $description;
@@ -226,7 +226,7 @@ function _govstrap_menu_extract_special_title(&$description) {
   return $output;
 }
 
-function _govstrap_menu_get_short_code_pattern($matching_phrase) {
+function _govstrap_menu_get_token_pattern($matching_phrase) {
   $matching_phrase = preg_quote($matching_phrase);
   return "/\[$matching_phrase\]((.|\n)+?)\[\/$matching_phrase\]/";
 }
