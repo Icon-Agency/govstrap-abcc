@@ -129,6 +129,9 @@ function govstrap_preprocess_page(&$variables) {
   $variables['active_page_parent'] = _get_active_page_parent();
 }
 
+/**
+ * Implements more specific callback to theme_menu_link().
+ */
 function govstrap_menu_link__menu_site_main_menu($variables) {
   $element     = $variables['element'];
   $description = !empty($element['#localized_options']['attributes']['title']) ? $element['#localized_options']['attributes']['title'] : '';
@@ -143,17 +146,23 @@ function govstrap_menu_link__menu_site_main_menu($variables) {
     _govstrap_menu_extract_extra_classes($element, $description);
 
     // Extract special title
-    if (!($output = _govstrap_menu_extract_special_title($description))) {
-      $output = l($element['#title'], $element['#href'], $element['#localized_options']) . $description;
+    if ($special_title = _govstrap_menu_extract_special_title($description)) {
+      $output = $special_title;
     }
+
+    $element['#localized_options']['attributes']['title'] = $description;
   }
-  else {
+
+  if (!isset($output)){
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   }
 
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
+/**
+ * Implements more specific callback to theme_menu_tree().
+ */
 function govstrap_menu_tree__menu_site_main_menu($variables) {
   //@todo This might need to be customized, but not now.
 
