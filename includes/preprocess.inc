@@ -151,7 +151,7 @@ function govstrap_menu_link__menu_site_main_menu($variables) {
 }
 
 function govstrap_menu_tree__menu_site_main_menu($variables) {
-  //dpm($variables);
+  //@todo This might need to be customized, but not now.
 
   return '<ul class="menu">' . $variables['tree'] . '</ul>';
 }
@@ -186,6 +186,91 @@ function govstrap_preprocess_block(&$variables, $hook) {
 }
 
 /*************************Helper Functions****************************/
+
+/**
+ * Helper function to truncate the menu render tree to specific level
+ *
+ * @param array &$tree
+ *   Menu tree render array from menu tree build.
+ *
+ * @param int $max_level
+ *   Maximum level to keep. 0 - only keep current level, 1 - keep 1 level down, 2 - ....
+ *
+ */
+function govstrap_menu_get_max_level_sub_tree(&$tree, $max_level){
+
+  if (empty($tree)){
+    return;
+  }
+
+  $max_level = (int)$max_level;
+
+  if ($max_level < 0 ){
+    return;
+  }
+
+  $children = _govstrap_menu_tree_get_tree_children($tree);
+
+  if (empty($children)){
+    return;
+  }
+
+  if ($max_level === 0){
+    foreach ($children as $child_key){
+      unset($tree[$child_key]['#below']);
+    }
+    return;
+  }else{
+    foreach ($children as $child_key){
+      govstrap_menu_get_max_level_sub_tree($tree[$child_key]['#below'], ($max_level-1));
+    }
+  }
+}
+
+/**
+ * Helper function to only keep the current level of menu render tree
+ *
+ * @param array $tree
+ *   Menu tree render array from menu tree build.
+ *
+ * @return array new tree. If any errors happen, the original tree will be returned
+ */
+function govstrap_menu_tree_get_rid_of_root($tree){
+  $root_keys = _govstrap_menu_tree_get_tree_children($tree);
+
+  if (empty($root_keys)){
+    return $tree;
+  }
+
+  $result = [];
+
+  foreach ($root_keys as $child_key) {
+    $result = array_merge($result, $tree[$child_key]['#below']);
+  }
+
+  return $result;
+}
+
+/**
+ * Helper internal function to extract array keys of tree's direct actual children from menu tree render array
+ *
+ * @param array $tree
+ *   Menu tree render array from menu tree build.
+ *
+ * @return array current tree's direct children's array keys
+ */
+function _govstrap_menu_tree_get_tree_children($tree){
+  $result = [];
+  $children = element_children($tree);
+  if (!empty($children)){
+    foreach ($children as $key) {
+      if (isset($tree[$key]['#below'])){
+        $result[] = $key;
+      }
+    }
+  }
+  return $result;
+}
 
 function _govstrap_menu_extract_extra_classes(&$element, &$description) {
   if ($description === '') {

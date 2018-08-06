@@ -111,7 +111,7 @@
                                                     <div class="col-md-4">
 
                                                       <?php
-                                                      print drupal_render($main_menu_tree['building_code']['tree']);
+                                                      print drupal_render(govstrap_menu_tree_get_rid_of_root($main_menu_tree['building_code']['tree']));
                                                       ?>
 
                                                         <h3 class="mb-3 text-blue">For Government...</h3>
@@ -180,7 +180,11 @@
                                         <?php print $main_menu_tree['resources']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="resources">
-                                        <?php print drupal_render($main_menu_tree['resources']['tree']); ?>
+                                        <?php
+                                        $new_sub_menu_tree =  govstrap_menu_tree_get_rid_of_root($main_menu_tree['resources']['tree']);
+                                        govstrap_menu_get_max_level_sub_tree($new_sub_menu_tree, 0);
+                                        print drupal_render($new_sub_menu_tree);
+                                        ?>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -197,7 +201,11 @@
                                       <?php print $main_menu_tree['about']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="<?php print $main_menu_tree['about']['title']; ?>">
-                                      <?php print drupal_render($main_menu_tree['about']['tree']); ?>
+                                      <?php
+                                      $new_sub_menu_tree =  govstrap_menu_tree_get_rid_of_root($main_menu_tree['about']['tree']);
+                                      govstrap_menu_get_max_level_sub_tree($new_sub_menu_tree, 0);
+                                      print drupal_render($new_sub_menu_tree);
+                                      ?>
                                     </div>
                                 </li>
                                 <li class="nav-item">
