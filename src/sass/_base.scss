@@ -82,23 +82,28 @@ blockquote {
   }
 }
 
-.form-group {
-  &.input-icon {
+.search-cluster form > div,
+.search form > div{
+  .container-inline {
     position: relative;
     input[type] {
       padding-right: $input-height;
     }
-    button {
+    .form-actions {
       position: absolute;
       top: 0;
       right: 0;
       height: $input-height - 2px; //minus border width
-      width: $input-height - 2px;
-      border: 0 none;
-      background: transparent;
-      color: $gray-500;
-      i {
-        font-size: 24px;
+      width: $input-height - 12px;
+      input {
+        font-family: 'Font Awesome 5 Pro';
+        font-size: 24px !important;
+        font-weight: 300;
+        border: 0 none;
+        background: transparent;
+        color: $gray-500;
+        height: 100%;
+        cursor: pointer;
       }
     }
   }

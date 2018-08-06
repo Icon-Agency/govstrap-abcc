@@ -2,39 +2,39 @@
   text-align: center;
 }
 
-.header{
+.header {
   position: relative;
   z-index: 2;
-  .nav-bg{
+  .nav-bg {
     background-color: $nav-bg;
   }
-  .top{
+  .top {
     padding: $spacer 0;
-    .abcc-logo{
+    .abcc-logo {
       width: 309px;
       height: 86px;
     }
     form,
     .translate,
-    .logo{
+    .logo {
       display: inline-block;
       vertical-align: top;
       margin-left: $spacer*2;
       white-space: nowrap;
     }
-    form{
+    #search-block-form {
       width: 100%;
       max-width: 445px;
       padding-top: 22px;
-      .form-group{
+      & > div {
         margin-bottom: 0;
-      }
-      .form-control{
-        background-color: $body-bg;
-        margin-bottom: 0;
+        .form-control {
+          background-color: $body-bg;
+          margin-bottom: 0;
+        }
       }
     }
-    .translate{
+    .translate {
       padding-top: 23px;
       max-width: 72px;
       font-family: $font-family3;
@@ -43,64 +43,64 @@
       text-align: center;
       color: $blue;
       cursor: pointer;
-      &:hover{
+      &:hover {
         color: darken($blue, 10%);
       }
-      img{
+      img {
         display: block;
         margin: 0 auto 3px;
       }
     }
-    .logo{
+    .logo {
       width: 100px;
       height: 77px;
       margin-top: 4px;
     }
   }
-  .justify-content{
+  .justify-content {
     justify-content: space-between;
   }
 
-  .navbar{
+  .navbar {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .navbar-nav{
+  .navbar-nav {
     font-family: $font-family3;
     color: $dark-blue;
     font-weight: 600;
     @include font-smoothing();
-    &.large-font{
-      .nav-item{
+    &.large-font {
+      .nav-item {
         font-size: 21px;
-        &:after{
+        &:after {
           bottom: -13px;
         }
-        .nav-link{
+        .nav-link {
           top: 0;
           text-transform: uppercase;
-          &:after{
+          &:after {
             bottom: -13px;
           }
         }
       }
     }
-    .nav-item{
+    .nav-item {
       font-size: 18px;
 
-      &.active{
-        .nav-link{
-          &:after{
+      &.active {
+        .nav-link {
+          &:after {
             display: block;
           }
         }
       }
 
-      .nav-link{
+      .nav-link {
         color: inherit;
         position: relative;
-        &:after{
+        &:after {
           display: none;
           position: absolute;
           bottom: -15px;
@@ -110,11 +110,11 @@
           content: '';
           border: 0 none;
         }
-        &:hover{
+        &:hover {
           opacity: 0.8;
         }
-        &.dropdown-toggle{
-          &:before{
+        &.dropdown-toggle {
+          &:before {
             display: inline-block;
             margin-right: .255em;
             vertical-align: 3px;
@@ -123,45 +123,45 @@
             font-weight: 300;
             font-size: 11px;
           }
-          &:after{
+          &:after {
             // display: none;
           }
         }
-        .fa-home{
+        .fa-home {
           font-size: 22px;
         }
       }
     }
   }
-  .dropdown-menu{
-    a{
+  .dropdown-menu {
+    a {
       color: $white;
       background-color: transparent;
-      &:hover{
+      &:hover {
         opacity: 0.8;
       }
     }
   }
 
-  .navbar-nav{
-    .nav-item{
-      &.dropdown{
-         &:hover{
-          .dropdown-menu{
+  .navbar-nav {
+    .nav-item {
+      &.dropdown {
+        &:hover {
+          .dropdown-menu {
             display: block !important;
-            &:hover{
+            &:hover {
               display: block !important;
             }
           }
         }
       }
 
-      &.mega{
-        position:static !important;
-        .dropdown-menu{
-          width:100%;
-          left:0;
-          right:0;
+      &.mega {
+        position: static !important;
+        .dropdown-menu {
+          width: 100%;
+          left: 0;
+          right: 0;
           font-family: $font-family1;
           font-size: $font-size-base;
           color: $body-color;
@@ -170,12 +170,12 @@
           top: 45px;
           background-color: transparent;
           padding: 23px 0 0;
-          .inner{
+          .inner {
             background-color: $nav-bg;
             position: relative;
             z-index: 0;
             padding: 0;
-            &:before{
+            &:before {
               position: absolute;
               top: 0;
               left: 50%;
@@ -187,16 +187,16 @@
               width: 100vw;
             }
 
-            a{
+            a {
               color: inherit;
               background-color: transparent;
-              &:hover{
+              &:hover {
                 opacity: 0.8;
               }
             }
-            i{
-              &.fa-arrow-circle-right{
-                &.fa-2x{
+            i {
+              &.fa-arrow-circle-right {
+                &.fa-2x {
                   position: relative;
                   top: 7px;
                   margin-right: 4px;
@@ -207,7 +207,7 @@
         }
       }
 
-      .dropdown-menu{
+      .dropdown-menu {
         background-color: transparent;
         color: $body-color;
         border: 0 none;
@@ -218,7 +218,7 @@
         font-weight: 700;
         margin: 0;
         padding: 15px 0 0;
-        .inner{
+        .inner {
           background-color: $nav-bg;
           padding: $spacer;
           @include signpost-shadow();
@@ -229,7 +229,7 @@
           color: $body-color;
           font-weight: inherit;
           position: relative;
-          &:before{
+          &:before {
             display: none;
             position: absolute;
             top: 0;
@@ -239,8 +239,8 @@
             background-color: blue;
             content: '';
           }
-          &.active{
-            &:before{
+          &.active {
+            &:before {
               display: block;
             }
           }

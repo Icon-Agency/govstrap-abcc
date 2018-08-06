@@ -76,6 +76,9 @@ function govstrap_preprocess_html(&$variables, $hook) {
     }
     $variables['rdf_namespaces'] = ' prefix="' . implode(' ', $prefixes) . '"';
   }
+
+  // Add active page theme class to <body> if available.
+  $variables['classes_array'][] = _abcc_get_active_page_theme();
 }
 
 /**
@@ -122,7 +125,8 @@ function govstrap_preprocess_page(&$variables) {
       $variables['main_menu_tree'][$link_item_name]['title'] = $link_item['link']['link_title'];
     }
   }
- dpm($variables['main_menu_tree']);
+
+  $variables['active_page_parent'] = _get_active_page_parent();
 }
 
 function govstrap_menu_link__menu_site_main_menu($variables) {
@@ -343,4 +347,19 @@ function _human_to_machine($human_readable) {
     '/^-+/',
     '/-+$/',
   ), array('_', '_', '', ''), $human_readable));
+}
+
+/**
+ * Helper that finds current page's active parent in the menu
+ */
+function _get_active_page_parent() {
+  $active_trail = menu_get_active_trail();
+  if ($active_trail) {
+    end($active_trail);
+    $parent = prev($active_trail);
+    if ($parent['link_path']) {
+      return '<a href=".$parent[\'link_path\']."><i class="fal fa-arrow-left"></i>Back to '.$parent['link_title'].'</a>';
+    }
+  }
+  return NULL;
 }

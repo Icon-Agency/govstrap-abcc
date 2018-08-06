@@ -74,6 +74,40 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     '#default_value' => theme_get_setting('jquery_replace_enabled'),
   );
 
+  // Page theme settings.
+  $form['page_theme'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Page theme'),
+    '#description' => t("Enter Drupal paths for which a desired page theme should be applied."),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#group' => 'group_tabs',
+  );
+  $form['page_theme']['page_theme_government'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Theme Government'),
+    '#description' => t('<span style="font-size: 1.1em; font-weight: 700; color: #25a1db;">	&#9824; Blue accent colour</span>'),
+    '#default_value' => theme_get_setting('page_theme_government'),
+  );
+  $form['page_theme']['page_theme_rights'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Theme Rights'),
+    '#description' => t('<span style="font-size: 1.1em; font-weight: 700; color: #9b3a95;">	&#9827; Purple accent colour</span>'),
+    '#default_value' => theme_get_setting('page_theme_rights'),
+  );
+  $form['page_theme']['page_theme_worker'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Theme Worker'),
+    '#description' => t('<span style="font-size: 1.1em; font-weight: 700; color: #e15047;">	&#9829; Red accent colour</span>'),
+    '#default_value' => theme_get_setting('page_theme_worker'),
+  );
+  $form['page_theme']['page_theme_abcc'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Theme ABCC'),
+    '#description' => t('<span style="font-size: 1.1em; font-weight: 700; color: #17b791;">	&#9830; Green accent colour. This is also the default theme.</span>'),
+    '#default_value' => theme_get_setting('page_theme_abcc'),
+  );
+
   // Fontawesome settings.
   $form['fontawesome'] = array(
     '#type' => 'fieldset',
