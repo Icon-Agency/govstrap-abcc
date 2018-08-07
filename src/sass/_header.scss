@@ -176,6 +176,43 @@
         }
       }
     }
+
+    > .menu {
+      @extend .inner;
+
+      li {
+        list-style: none;
+        &.dropdown-item {
+          @extend .dropdown-item;
+          margin-left: 0;
+
+          &:hover {
+            color: #17b791;
+            text-decoration: none;
+            background-color: transparent;
+          }
+
+          a {
+            color: inherit;
+            &.active {
+              @extend .dropdown-item;
+              @extend .active;
+              background-color: transparent;
+
+              &:hover {
+                background-color: transparent;
+              }
+            }
+
+            &:hover {
+              opacity: .8;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+
   }
 
   .navbar-nav {
