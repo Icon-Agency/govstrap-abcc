@@ -89,80 +89,8 @@
                                     <div class="dropdown-menu theme-rights" aria-labelledby="code">
                                         <div class="inner">
                                             <div class="container py-5">
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <h2 class="mb-3">Building Code</h2>
-                                                        <p class="h5 font-family1 regular mb-4">For anyone involved in Commonwealth funded building work.</p>
-                                                        <a href="#" class="text-body bold block mb-2">
-                                                            <i class="fal fa-arrow-circle-right fa-2x"></i>
-                                                            The Building Code
-                                                        </a>
-                                                        <a href="#" class="text-body bold block">
-                                                            <i class="fal fa-arrow-circle-right fa-2x"></i>
-                                                            What is the Building Code?
-                                                        </a>
-                                                    </div>
-                                                    <!-- /.col-md-4  -->
-                                                    <div class="col-md-4">
-
-                                                      <?php
-                                                      print drupal_render(govstrap_menu_tree_get_rid_of_root($main_menu_tree['building_code']['tree']));
-                                                      ?>
-
-                                                        <h3 class="mb-3 text-blue">For Government...</h3>
-                                                        <ul class="list-unstyled li-spacing fixed-icon-list mb-3">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fal fa-arrow-right text-blue"></i>
-                                                                    <strong class="block">Funding Entities</strong>
-                                                                    <span class="font-family1 regular block">Government agencies funding Commonwealth building work</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fal fa-arrow-right text-blue"></i>
-                                                                    <strong class="block">Funding Recipients</strong>
-                                                                    <span class="font-family1 regular">Government agencies receiving funding for Commonwealth building work</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <span class="theme-colour text-uppercase font-family3 bold block text-blue">Popular</span>
-                                                                <a href="#" class="block text-body">Engaging contractors</a>
-                                                                <a href="#" class="block text-body">Security of payments</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.col-md-4  -->
-                                                    <div class="col-md-4">
-                                                        <h3 class="mb-3 text-red">For Contractors...</h3>
-                                                        <ul class="list-unstyled li-spacing fixed-icon-list">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fal fa-arrow-right text-red"></i>
-                                                                    <strong>Building Code for contractors</strong>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fal fa-arrow-right text-red"></i>
-                                                                    Info for Head Contractors
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fal fa-arrow-right text-red"></i>
-                                                                    Info for Subcontractors
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <span class="theme-colour text-uppercase font-family3 bold block mt-3 text-red">Popular</span>
-                                                                <a href="#" class="block text-body">Letter of Compliance</a>
-                                                                <a href="#" class="block text-body">Agreement clauses</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.col-md-4  -->
+                                                <div class="menu-row">
+                                                  <?php print drupal_render(govstrap_menu_tree_get_rid_of_root($main_menu_tree['building_code']['tree'])); ?>
                                                 </div>
                                             </div>
                                         </div>
