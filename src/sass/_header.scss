@@ -141,6 +141,41 @@
         opacity: 0.8;
       }
     }
+
+    .menu-row {
+      > .menu {
+        @extend .row;
+        padding-left: 0;
+
+        > li.col-md-4 {
+          @extend .col-md-4;
+          margin-left: 0;
+
+        }
+
+        li {
+          list-style: none;
+
+          &.abcc-main-menu-sub-menu {
+
+            > ul.menu {
+              @extend .list-unstyled;
+              @extend .li-spacing;
+              @extend .fixed-icon-list;
+              @extend .mb-3;
+
+              > li {
+                padding-top: 0;
+                padding-right: 0;
+                margin-left: 0;
+              }
+            }
+
+          }
+
+        }
+      }
+    }
   }
 
   .navbar-nav {
