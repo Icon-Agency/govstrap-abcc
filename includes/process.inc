@@ -56,5 +56,6 @@ function govstrap_process_page(&$variables) {
   // Accessibility settings.
   $variables['skip_link_anchor'] = check_plain(theme_get_setting('govstrap_skip_link_anchor'));
   $variables['skip_link_text'] = check_plain(theme_get_setting('govstrap_skip_link_text'));
+  $variables['home_page_h1'] = check_plain(theme_get_setting('home_page_h1'));
   $variables['active_page_parent'] = _get_active_page_parent();
 }
