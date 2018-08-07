@@ -23,7 +23,7 @@
                         <div class="col-lg-8">
                             <div class="text">
                                 <div class="accent">
-                                    <h1>ABCC ensure that building work is fair, efficient and productive for the benefit of the industry and the economy as a whole.</h1>
+                                    <h1><?php print $home_page_h1; ?></h1>
                                 </div>
                             </div>
                         </div>

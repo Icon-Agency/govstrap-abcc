@@ -58,6 +58,13 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     }
   }
 
+  $form['group_tab_default']['home_page_h1'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Homepage heading 1'),
+    '#description' => t('The heading text appearing on the homepage over the banner image. Please only enter <strong>plain text</strong>.'),
+    '#default_value' => theme_get_setting('home_page_h1'),
+  );
+
   // jQuery replace settings.
   $form['jquery'] = array(
     '#type' => 'fieldset',
