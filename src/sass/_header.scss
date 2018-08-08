@@ -318,6 +318,10 @@
             }
           }
         }
+
+        .menu .leaf {
+          @extend .dropdown-item;
+        }
       }
     }
   }

@@ -1,0 +1,12 @@
+.tabs.primary {
+  @extend .nav;
+  @extend .nav-pills;
+
+  li {
+    @extend .nav-item;
+
+    a {
+      @extend .nav-link;
+    }
+  }
+}

@@ -16,7 +16,7 @@
 
         <!-- page banner -->
         <div class="banner slim-line bg-dark-blue text-white theme-color-gradient-after">
-            <div class="bg-img" style="background-size: contain; background-position-x: 100%; background-image: url(/<?php print path_to_theme(); ?>/images/banners/banner-<?php print rand(1, 5);?>.png)">
+            <div class="bg-img" style="background-size: contain; background-position-x: 100%; background-image: url(/<?php print path_to_theme(); ?>/images/banners/banner-<?php print rand(1, 3);?>.png)">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 py-5">
@@ -66,16 +66,16 @@
                               <?php print render($page['content']); ?>
                             </div>
                         </section>
-                        
+
                     </div>
                     <!-- /main page content -->
                 </div>
             </div>
         </div>
 
-
         <!-- page footer -->
         <?php include 'includes/page-footer.tpl.php'; ?>
+
     </div>
 </div>
 

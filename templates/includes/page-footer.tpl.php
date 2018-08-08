@@ -50,26 +50,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <ul class="font-family3">
-                        <li>
-                            <a href="#">Copyright</a>
-                        </li>
-                        <li>
-                            <a href="#">Help</a>
-                        </li>
-                        <li>
-                            <a href="#">Site map</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of use</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact ABCC</a>
-                        </li>
-                        <li>
-                            <a href="#">Site by Icon</a>
-                        </li>
-                    </ul>
+                  <?php if (!empty($page['footer'])): ?>
+                    <?php print render($page['footer']); ?>
+                  <?php endif; ?>
                 </div>
                 <div class="col-lg-4">
                     <a href="#" class="btn alt btn-outline-primary">
