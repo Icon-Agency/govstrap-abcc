@@ -46,6 +46,9 @@
         <!-- /page banner -->
 
         <div class="bg-white">
+            <?php if ($messages): ?>
+              <?php print $messages; ?>
+            <?php endif; ?>
             <div class="container py-5">
                 <div class="row">
                     <!-- main page content -->
