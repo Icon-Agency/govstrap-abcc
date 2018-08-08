@@ -1,12 +1,34 @@
 .tabs.primary {
+  border: none;
   @extend .nav;
   @extend .nav-pills;
 
   li {
     @extend .nav-item;
+    margin-right: 0;
 
     a {
       @extend .nav-link;
+      padding: .5rem .75rem;
+      border: none;
+      background-color: transparent;
     }
   }
+}
+
+.block.block-workbench.contextual-links-region{
+  margin-top: .5rem;
+
+  .content{
+    .workbench-info-block{
+      padding: 1rem 1rem;
+      line-height: 2;
+    }
+  }
+}
+
+
+
+.block.block-system{
+  padding: 1rem 1rem;
 }
