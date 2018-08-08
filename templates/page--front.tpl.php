@@ -35,7 +35,9 @@
 
         <div class="bg-white">
           <?php if ($messages): ?>
-            <?php print $messages; ?>
+              <div class="system-alert">
+                <?php print $messages; ?>
+              </div>
           <?php endif; ?>
             <div class="container py-5">
                 <div class="row">
@@ -80,7 +82,6 @@
     <?php if (!empty($page['highlighted'])): ?>
       <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
     <?php endif; ?>
-    <?php print $messages; ?>
     <div id="content" class="row">
       <?php if (!empty($page['sidebar_first'])): ?>
         <aside class="col-sm-3" role="complementary">

@@ -17,21 +17,34 @@
 <html <?php print $html_attributes . $rdf_namespaces; ?>><!--<![endif]-->
 <head profile="<?php print $grddl_profile ?>">
     <meta charset="utf-8">
+
+
+  <?php if (drupal_is_front_page()) {
+    $head_title = 'Australian Building and Construction Commission';
+  } ?>
     <title><?php print $head_title ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="cleartype" content="on">
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link rel="apple-touch-icon" sizes="180x180" href="/<?php print path_to_theme(); ?>/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/<?php print path_to_theme(); ?>/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/<?php print path_to_theme(); ?>/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/<?php print path_to_theme(); ?>/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/<?php print path_to_theme(); ?>/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="/<?php print path_to_theme(); ?>/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="/<?php print path_to_theme(); ?>/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="/<?php print path_to_theme(); ?>/favicons/favicon-16x16.png">
+    <link rel="manifest"
+          href="/<?php print path_to_theme(); ?>/favicons/site.webmanifest">
+    <link rel="mask-icon"
+          href="/<?php print path_to_theme(); ?>/favicons/safari-pinned-tab.svg"
+          color="#5bbad5">
     <meta property="og:title" content="<?php print $head_title; ?>"/>
-    <link href="/<?php print path_to_theme(); ?>/fonts/fontawesome/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/<?php print path_to_theme(); ?>/fonts/fontawesome/css/fontawesome-all.css"
+          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600|Open+Sans|Roboto+Slab:400,700"
           rel="stylesheet">
   <?php print $head ?>
@@ -39,10 +52,12 @@
   <?php print $scripts ?>
     <script src="/<?php print path_to_theme(); ?>/js/webpack.common.js"></script>
     <!--[if IE 9]>
-    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css"
+          rel="stylesheet">
     <![endif]-->
     <!--[if lte IE 8]>
-    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css"
+          rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
     <![endif]-->
 </head>
