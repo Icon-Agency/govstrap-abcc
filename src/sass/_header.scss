@@ -139,12 +139,17 @@
     a {
       color: $white;
       background-color: transparent;
+
       &:hover {
         opacity: 0.8;
       }
     }
 
-
+    li.first.last.expanded {
+      a {
+        padding-left: 1rem;
+      }
+    }
 
     .menu-row {
 
@@ -207,12 +212,13 @@
 
               &:hover {
                 background-color: transparent;
+                text-decoration: underline;
               }
             }
 
             &:hover {
               opacity: .8;
-              text-decoration: none;
+              text-decoration: underline;
               background-color: transparent;
             }
           }
