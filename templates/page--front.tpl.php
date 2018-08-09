@@ -39,31 +39,25 @@
                 <?php print $messages; ?>
               </div>
           <?php endif; ?>
-            <div class="container py-5">
-                <div class="row">
-                    <!-- main page content -->
-                    <div class="col-lg-8 pb-5">
 
-                        <section id="main-content-section" class="<?php print $content_column_class; ?>" role="main">
-                            <a id="main-content"></a>
-                          <?php if (!empty($tabs)): ?>
-                            <?php print render($tabs); ?>
-                          <?php endif; ?>
-                          <?php if (!empty($page['help'])): ?>
-                            <?php print render($page['help']); ?>
-                          <?php endif; ?>
-                          <?php if (!empty($action_links)): ?>
-                              <ul class="action-links"><?php print render($action_links); ?></ul>
-                          <?php endif; ?>
-                            <div id="page-content">
-                              <?php print render($page['content']); ?>
-                            </div>
-                        </section>
-
-                    </div>
-                    <!-- /main page content -->
+            <!-- main page content -->
+            <section id="main-content-section" role="main">
+                <a id="main-content"></a>
+              <?php if (!empty($tabs)): ?>
+                <?php print render($tabs); ?>
+              <?php endif; ?>
+              <?php if (!empty($page['help'])): ?>
+                <?php print render($page['help']); ?>
+              <?php endif; ?>
+              <?php if (!empty($action_links)): ?>
+                  <ul class="action-links"><?php print render($action_links); ?></ul>
+              <?php endif; ?>
+                <div id="page-content">
+                  <?php print render($page['content']); ?>
                 </div>
-            </div>
+            </section>
+            <!-- /main page content -->
+
         </div>
 
         <!-- page footer -->

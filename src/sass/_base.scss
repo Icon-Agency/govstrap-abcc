@@ -824,3 +824,8 @@ ul {
     }
   }
 }
+
+// Generic Drupal class overrides
+.block.block-system {
+  padding: 0 !important;
+}
