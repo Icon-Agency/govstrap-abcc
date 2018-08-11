@@ -19,6 +19,9 @@
                         <div class="col-md-8 text-right search-cluster">
                           <?php print $search_box; ?>
                             <div class="translate">
+                                <div class="translate-indicator bounce" aria-hidden="true">
+                                    <i class="fas fa-chevron-up"></i>
+                                </div>
                                 <img src="/<?php print path_to_theme(); ?>/images/google-translate-logo.png" />
                                 Translate
                             </div>
@@ -36,10 +39,10 @@
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="collapse navbar-collapse justify-content" id="navbarNavDropdown">
                             <ul class="navbar-nav large-font">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                <li class="nav-item <?php if (drupal_is_front_page()) { print 'active'; } ?>">
+                                    <a class="nav-link" href="/">
                                         <i class="fal fa-home"></i>
-                                        <span class="sr-only">(current)</span>
+                                        <span class="sr-only">Home</span>
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown mega">

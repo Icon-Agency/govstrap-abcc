@@ -67,10 +67,6 @@
 </div>
 
 
-<nav id="navigation" class="<?php print $container_class; ?>">
-  <?php print render($page['navigation']); ?>
-</nav><!-- /#navigation -->
-
 <main>
   <div id="main" class="main-container <?php print $container_class; ?>">
     <?php if (!empty($page['highlighted'])): ?>
@@ -91,4 +87,6 @@
   </div>
 </main>
 
+<!-- page mobile menu -->
+<?php include 'includes/page-menu--mobile.tpl.php'; ?>
 

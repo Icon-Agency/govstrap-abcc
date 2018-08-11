@@ -50,7 +50,7 @@
   <?php print $head ?>
   <?php print $styles ?>
   <?php print $scripts ?>
-    <script src="/<?php print path_to_theme(); ?>/js/webpack.common.js"></script>
+    <script src="/<?php print path_to_theme(); ?>/build/js/webpack.common.js"></script>
     <!--[if IE 9]>
     <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css"
           rel="stylesheet">
@@ -68,12 +68,21 @@
            class="element-invisible element-focusable sr-only sr-only-focusable"><?php print $skip_link_text; ?></a>
     </div>
 <?php endif; ?>
+<div class="translate-container">
+    <div class="container text-right pt-1 pb-1">
+        <div id="google_translate_element"></div><script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, autoDisplay: false}, 'google_translate_element');
+        }
+        </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+</div>
 <?php print $page_top ?>
 
 <?php print $page ?>
 
 <?php print $page_bottom ?>
-<script src="/<?php print path_to_theme(); ?>/js/vendors.js"></script>
-<script src="/<?php print path_to_theme(); ?>/js/app.js"></script>
+<script src="/<?php print path_to_theme(); ?>/build/js/vendors.js"></script>
+<script src="/<?php print path_to_theme(); ?>/build/js/app.js"></script>
 </body>
 </html>

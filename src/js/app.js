@@ -26,6 +26,10 @@ $(document).ready(function() {
     }, 100);
   });
 
+  $(".translate").click(function(e){
+    $(".translate-container").toggle();
+    $(".translate-indicator").toggle();
+  });
 
   // breakpoint and up
   $(window).resize(function(){

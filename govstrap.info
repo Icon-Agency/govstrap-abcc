@@ -9,6 +9,7 @@ core        = 7.x
 regions[header_menu]    = Header Menu
 regions[header]         = Header
 regions[navigation]     = Navigation bar
+regions[mobile_nav]     = Mobile navigation
 regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[content]        = Content
@@ -40,13 +41,11 @@ settings[govstrap_rebuild_registry] = 0
 ;; Javascript.
 ;;;;;;;;;;;;;;;;;;;;;
 
-scripts[] = js/webpack.common.js
-
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheet.
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = css/site.css
+stylesheets[all][] = build/css/site.css
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Excludes

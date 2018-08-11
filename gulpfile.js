@@ -35,13 +35,13 @@ gulp.task('styles', function () {
     "Safari >= 10"
   ];
 
-  gulp.src('./css/*', {read: false}).pipe(clean());
+  gulp.src('./build/css/*', {read: false}).pipe(clean());
 
   return gulp.src('src/sass/*.scss') // the source .scss file
     .pipe(sass().on('error', sass.logError))
     .pipe(prefix({ browsers: prefixOptions, cascade: true })) // pass the file through autoprefixer
     .pipe(cleanCSS())
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./build/css'))
     // .pipe(browserSync.stream()); // output .css file to css folder
 });
 

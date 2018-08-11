@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.translate-container {
+  display: none;
+}
+.mm-menu_offcanvas {
+  display: none;
+}
+
 .header {
   position: relative;
   z-index: 2;
@@ -35,6 +42,7 @@
       }
     }
     .translate {
+      position: relative;
       padding-top: 23px;
       max-width: 72px;
       font-family: $font-family3;
@@ -43,9 +51,18 @@
       text-align: center;
       color: $blue;
       cursor: pointer;
+
       &:hover {
         color: darken($blue, 10%);
       }
+
+      .translate-indicator {
+        position: absolute;
+        top: -5px;
+        left: 25px;
+        display: none;
+      }
+
       img {
         display: block;
         margin: 0 auto 3px;
@@ -350,4 +367,59 @@
 
 .header .navbar-nav .nav-item .dropdown-menu .menu .leaf{
   white-space: inherit;
+}
+
+// arrow bouncing stuff
+.bounce {
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -moz-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -moz-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
 }
