@@ -63,4 +63,7 @@
             </div>
         </div>
     </div>
+    <div class="sr-only">Designed and built by <a
+                href="https://iconagency.com.au" target="_blank">Icon Agency</a>.
+    </div>
 </footer>

@@ -829,3 +829,13 @@ ul {
 .block.block-system {
   padding: 0 !important;
 }
+
+#site-map {
+  .site-map-front-page {
+    @extend .hidden;
+  }
+
+  .site-map-menu {
+    @include site-map-list;
+  }
+}

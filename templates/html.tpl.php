@@ -77,6 +77,7 @@
         </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </div>
 </div>
+<div id="to-top" style="display: block;" aria-label="back to top"><i class="fas fa-chevron-up"></i></div>
 <?php print $page_top ?>
 
 <?php print $page ?>
