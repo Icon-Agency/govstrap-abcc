@@ -1,72 +1,73 @@
-body.front{
-  .signposts{
-    .card{
-      .card-body{
+body.front {
+  .signposts {
+    .card {
+      .card-body {
         font-size: 20px;
       }
     }
   }
 }
-.signposts{
-  .h-100{
+
+.signposts {
+  .h-100 {
     height: calc(100% - 2rem) !important; // 100% - margin-bottom value ($spacer*2)
   }
-  .h-50{
-    min-height: calc(50% - 2rem)!important;
+  .h-50 {
+    min-height: calc(50% - 2rem) !important;
   }
-  .card{
+  .card {
     min-height: 360px;
     text-decoration: none;
     border-top: 5px solid;
     @include signpost-shadow(true);
-    &.half-card{
+    &.half-card {
       min-height: 200px;
     }
-    &.center-card{
-      .card-body{
+    &.center-card {
+      .card-body {
         display: flex;
         align-items: center;
       }
     }
-    &.img-card{
+    &.img-card {
       border: 0 none;
-      img{
+      img {
         width: 100%;
         min-height: 100%;
       }
     }
-    &.no-min-height{
+    &.no-min-height {
       min-height: 1px;
     }
     .card-header,
-    .card-footer{
+    .card-footer {
       text-transform: uppercase;
       font-weight: 600;
     }
-    .card-header{
+    .card-header {
       padding-top: $spacer*2;
     }
-    .card-footer{
+    .card-footer {
       padding-bottom: $spacer*2;
     }
-    .card-body{
+    .card-body {
       padding: $spacer*2 $spacer;
       font-size: $signpost-default;
       background-color: transparent;
-      img{
+      img {
         max-width: 100%;
       }
     }
-    .card-footer{
+    .card-footer {
       font-size: $small-font-size;
-      i{
-        &.fa-arrow-circle-right{
+      i {
+        &.fa-arrow-circle-right {
           font-size: 22px;
         }
       }
     }
-    i{
-      &.fa-arrow-circle-right{
+    i {
+      &.fa-arrow-circle-right {
         font-size: 28px;
       }
     }

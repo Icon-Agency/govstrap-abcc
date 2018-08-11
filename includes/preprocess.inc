@@ -13,6 +13,7 @@
  * @param $hook
  */
 function govstrap_preprocess_html(&$variables, $hook) {
+
   // Set common variables.
   $variables['base_path'] = base_path();
   $variables['path_to_govstrap'] = drupal_get_path('theme', 'govstrap');
@@ -89,6 +90,7 @@ function govstrap_preprocess_html(&$variables, $hook) {
  * @see page.tpl.php
  */
 function govstrap_preprocess_page(&$variables) {
+
   // Add pathToTheme to Drupal.settings in JS.
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
 

@@ -9,7 +9,7 @@
     <!-- page mobile header -->
     <?php include 'includes/page-header--mobile.tpl.php'; ?>
     <!-- /page mobile header -->
-    <div class="mm-content">
+    <main class="mm-content">
         <!-- page header -->
         <?php include 'includes/page-header.tpl.php'; ?>
         <!-- /page header -->
@@ -33,7 +33,7 @@
         </div>
         <!-- /page banner -->
 
-        <div class="bg-white">
+        <div>
           <?php if ($messages): ?>
               <div class="system-alert">
                 <?php print $messages; ?>
