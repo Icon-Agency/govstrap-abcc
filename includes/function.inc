@@ -127,3 +127,119 @@ function _taxonomy_autolink_link_create ($tid, $text) {
     ),
   ));
 }
+
+
+/**
+ * Theme function to render social buttons.
+ */
+function _social_share_buttons() {
+  global $base_url;
+
+  $path = drupal_get_path('module', 'socbutt');
+
+  $current_url = $base_url . '/' . request_path();
+
+  // Preparing default sharing data.
+  $share_data = array(
+    'title' => drupal_get_title(),
+    'url' => $current_url,
+  );
+
+  // URL encode so the strings can be used inside URLs;
+  foreach ($share_data as $key => $data) {
+    $share_data[$key] = rawurlencode($data);
+  }
+
+  $title   = $share_data['title'];
+  $url     = $share_data['url'];
+  $link_classes = array('body-color', 'theme-color-hover', 'no-decoration', 'large mr-3');
+
+  // Prepare render array.
+  $render_array = array(
+    '#prefix' => '<div class="social-share-links">',
+    '#suffix' => '</div>',
+  );
+
+  // Link for email.
+  $link = "mailto:?subject=$title&body=Read on the ABCC website: $url";
+  $text = '<span class="fas fa-envelope"></span><span class="sr-only">'. t('Email').'</span>';
+  $render_array['email'] = array(
+    '#markup' => l($text, $link, array(
+      'html' => TRUE,
+      'attributes' => array(
+        'class' => $link_classes,
+      )
+    )),
+  );
+
+  // Social share group
+  $link = "#";
+  $text = '<span class="fas fa-share"></span><span class="sr-only">' . t('Social media').'</span>';
+  $render_array['socials'] = array(
+    '#markup' => l($text, $link, array(
+      'html' => TRUE,
+      'attributes' => array(
+        'target' => '_blank',
+        'class' => $link_classes,
+      )
+    )),
+  );
+
+  // Facebook share.
+  $link = "https://www.facebook.com/sharer/sharer.php?u=$url";
+  $text = '<span class="fas fa-facebook"></span><span class="sr-only">' . t('Facebook').'</span>';
+  $render_array['facebook'] = array(
+    '#prefix' => '<span class="share-links-social">',
+    '#markup' => l($text, $link, array(
+      'html' => TRUE,
+      'attributes' => array(
+        'target' => '_blank',
+        'class' => $link_classes,
+      )
+    )),
+  );
+
+  // Twitter share.
+  $twitter_msg = $title . ' -'; // Twitter adds the $url after this automatically.
+  $link = "https://twitter.com/intent/tweet?text=$twitter_msg&url=$url";
+  $text = '<span class="fa fa-fw fa-twitter"></span><span class="sr-only">' . t('Twitter').'</span>';
+  $render_array['twitter'] = array(
+    '#markup' => l($text, $link, array(
+      'html' => TRUE,
+      'attributes' => array(
+        'target' => '_blank',
+        'class' => $link_classes,
+      )
+    )),
+  );
+
+  // Google Plus share:
+  $link = "https://plus.google.com/share?url=$url";
+  $text = '<span class="fa fa-fw fa-google-plus"></span><span class="sr-only">'. t('Google Plus').'</span>';
+  $render_array['gplus'] = array(
+    '#markup' => l($text, $link, array(
+      'html' => TRUE,
+      'attributes' => array(
+        'target' => '_blank',
+        'class' => $link_classes,
+      )
+    )),
+  );
+
+  // LinkedIn share.
+  $link = "https://www.linkedin.com/shareArticle?mini=true&url=$url&title=$title&summary=$body&source=$url";
+  $text = '<span class="fa fa-fw fa-linkedin"></span><span class="sr-only">' . t('LinkedIn').'</span>';
+  $render_array['linkedin'] = array(
+    '#suffix' => "</span>",
+    '#markup' => l($text, $link, array(
+      'html' => TRUE,
+      'attributes' => array(
+        'target' => '_blank',
+        'class' => $link_classes,
+      )
+    )),
+  );
+
+  // Render.
+  return $render_array;
+}

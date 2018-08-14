@@ -17,6 +17,8 @@
 
   <<?php print $right_wrapper ?> class="col-lg-3 offset-lg-1">
     <?php print $right; ?>
+    <h5 class="font-family3 standard text-uppercase theme-color">Share</h5>
+    <?php print drupal_render(_social_share_buttons()); ?>
   </<?php print $right_wrapper ?>>
 
 </<?php print $layout_wrapper ?>>
