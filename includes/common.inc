@@ -95,3 +95,15 @@ function _govstrap_get_base_themes($theme_key = NULL, $include_theme_key = FALSE
   }
   return $themes[$theme_key];
 }
+
+/**
+ * Return all available vocabs.
+ * @return array
+ */
+function taxonomy_allvocabs() {
+  $vocabs = array();
+  foreach (taxonomy_get_vocabularies() as $vocab) {
+    $vocabs[$vocab->vid] = $vocab->name;
+  }
+  return $vocabs;
+}

@@ -81,6 +81,41 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     '#default_value' => theme_get_setting('jquery_replace_enabled'),
   );
 
+  // Taxonomy autolink settings
+  // Page theme settings.
+  $form['taxonomy_autolink'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Taxonomy autolink'),
+    '#description' => t("Automatically link taxonomy terms appearing in content to their taxonomy pages."),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#group' => 'group_tabs',
+  );
+  $form['taxonomy_autolink']['taxonomy_autolink_vocabs'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Vocabularies that can be auto-linked'),
+    '#options' => taxonomy_allvocabs(),
+    '#default_value' => theme_get_setting('taxonomy_autolink_vocabs'),
+  );
+  $form['taxonomy_autolink']['taxonomy_autolink_limit'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum links per term'),
+    '#description' => t('Default is only the first occurrence.'),
+    '#size' => 5,
+    '#maxlength' => 4,
+    '#default_value' => theme_get_setting('taxonomy_autolink_limit'),
+    '#element_validate' => array('element_validate_integer_positive'),
+  );
+  $form['taxonomy_autolink']['taxonomy_autolink_mode'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Simple plural/singular variation support'),
+    '#default_value' => theme_get_setting('taxonomy_autolink_mode'),
+  );
+  $form['taxonomy_autolink']['taxonomy_autolink_case_sensitivity'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Case sensitive'),
+    '#default_value' => theme_get_setting('taxonomy_autolink_case_sensitivity'),
+  );
   // Page theme settings.
   $form['page_theme'] = array(
     '#type' => 'fieldset',
