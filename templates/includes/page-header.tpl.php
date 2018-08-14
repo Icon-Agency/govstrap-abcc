@@ -7,6 +7,11 @@
 
 <header class="header bg-white">
     <div class="container">
+        <?php if (!empty($page['header'])): ?>
+          <div class="row">
+            <?php print render($page['header']); ?>
+          </div>
+        <?php endif; ?>
         <div class="row">
             <div class="col-lg-12">
                 <div class="top">
@@ -145,7 +150,3 @@
         </div>
     </div>
 </header>
-
-<header id="header" class="header <?php print $container_class; ?>" role="banner">
-  <?php print render($page['header']); ?>
-</header><!-- /#page-header -->

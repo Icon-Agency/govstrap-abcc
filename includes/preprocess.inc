@@ -107,14 +107,10 @@ function govstrap_preprocess_page(&$variables) {
   $variables['container_class'] = 'container';
 
   // Calculate container columns with sidebar.
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-    $variables['content_column_class'] = 'col-sm-6';
-  }
-  elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
-    $variables['content_column_class'] = 'col-sm-9';
-  }
-  else {
-    $variables['content_column_class'] = 'col-sm-12';
+  if (!empty($variables['page']['sidebar_right'])) {
+    $variables['content_column_class'] = 'col-lg-8';
+  } else {
+    $variables['content_column_class'] = 'col-lg-12 pl-0 pr-0';
   }
 
   // Get the main navigation menu tree limit to $main_menu_max_depth
@@ -177,6 +173,8 @@ function govstrap_menu_tree__menu_site_main_menu($variables) {
 function govstrap_preprocess_node(&$variables, $hook) {
   // Add a theme hook suggestion for type and view mode.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
+  // Link taxonomy terms appearing in the body section
+  $variables['content']['body'][0]['#markup'] = _taxonomy_autolink_add_links($variables['content']['body'][0]['#markup']);
 }
 
 /**

@@ -44,8 +44,10 @@
             </div>
         </div>
         <!-- /page banner -->
-
         <div class="bg-white">
+          <?php if (!empty($page['highlighted'])): ?>
+              <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+          <?php endif; ?>
             <?php if ($messages): ?>
               <div class="system-alert">
                 <?php print $messages; ?>
@@ -54,7 +56,7 @@
             <div class="container py-5">
                 <div class="row">
                     <!-- main page content -->
-                    <div class="col-lg-8 pb-5">
+                    <div class="<?php print $content_column_class; ?> pb-5">
 
                         <section id="main-content-section" class="<?php print $content_column_class; ?>" role="main">
                             <a id="main-content"></a>
@@ -71,9 +73,16 @@
                               <?php print render($page['content']); ?>
                             </div>
                         </section>
-
                     </div>
                     <!-- /main page content -->
+                    <!-- sidebar right -->
+                    <?php if (!empty($page['sidebar_right'])): ?>
+                        <div class="col-lg-3 offset-lg-1">
+                            <?php print render($page['sidebar_right']); ?>
+                        </div>
+                    <?php endif; ?>
+                    <!-- /sidebar right -->
+
                 </div>
             </div>
         </div>
@@ -91,9 +100,7 @@
 
 <main>
   <div id="main" class="main-container <?php print $container_class; ?>">
-    <?php if (!empty($page['highlighted'])): ?>
-      <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-    <?php endif; ?>
+
     <div id="content" class="row">
       <?php if (!empty($page['sidebar_first'])): ?>
         <aside class="col-sm-3" role="complementary">

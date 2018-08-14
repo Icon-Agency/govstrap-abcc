@@ -18,8 +18,6 @@ function govstrap_process_html(&$variables, $hook) {
   $replace = array($path_to_public_files, $path_to_public_files, $path_to_theme, $path_to_theme);
   $variables['page'] = str_replace($search, $replace, $variables['page']);
 
-  $variables['page'] = _taxonomy_autolink_add_links ($variables['page']);
-
 }
 
 /**

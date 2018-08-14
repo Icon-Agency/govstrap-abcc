@@ -100,7 +100,7 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
   $form['taxonomy_autolink']['taxonomy_autolink_limit'] = array(
     '#type' => 'textfield',
     '#title' => t('Maximum links per term'),
-    '#description' => t('Default is only the first occurrence.'),
+    '#description' => t('If not specified, only the first occurrence will be linked.'),
     '#size' => 5,
     '#maxlength' => 4,
     '#default_value' => theme_get_setting('taxonomy_autolink_limit'),
