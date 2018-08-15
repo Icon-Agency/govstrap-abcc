@@ -1,15 +1,15 @@
-.pagination-wrap{
+.item-pager .item-list {
   background-color: $body-bg;
   font-family: $font-family3;
   font-size: $small-font-size;
   font-weight: 600;
   text-align: center;
-  .pagination{
+  .pagination {
     padding: $spacer 0;
     margin-bottom: 0;
     justify-content: center;
     position: relative;
-    &:after{
+    &:after {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -18,9 +18,10 @@
       background-color: $border-color;
       content: '';
     }
-    .page-item{
+    .page-item {
       position: relative;
-      &:after{
+      margin: 0;
+      &:after {
         position: absolute;
         bottom: -16px;
         left: 0;
@@ -30,36 +31,48 @@
         content: '';
         z-index: 1;
       }
-      &.current{
-        &:after{
+      &:hover::after {
+        background-color: $inactive-pagination;
+      }
+      &.current {
+        &:after {
           background-color: $default-color;
         }
-        .page-link{
+        .page-link {
           color: $black;
         }
       }
-      &.disabled{
+      &.disabled {
         opacity: 0.5;
       }
-      .page-link{
+      .page-link {
         background-color: transparent;
         color: $inactive-pagination;
         border: 0 none;
-        i{
-          &.fa-arrow-left{
+        i {
+          &.fa-arrow-left {
             margin-left: $spacer;
           }
-          &.fa-arrow-right{
+          &.fa-arrow-right {
             margin-right: $spacer;
           }
         }
       }
     }
+    .page-item.page-ellipsis {
+      &:hover::after {
+        background-color: $border-color;
+      }
+
+      .page-link {
+        cursor: default;
+      }
+    }
   }
-  .select{
+  .select {
     padding: $spacer 0;
     width: auto;
-    select{
+    select {
       border: 0 none;
       background-color: transparent;
       width: auto;
@@ -68,7 +81,7 @@
       padding: 0 12px 0 40px;
       font-weight: 600;
     }
-    .select__arrow{
+    .select__arrow {
       right: auto;
       left: 15px;
     }
