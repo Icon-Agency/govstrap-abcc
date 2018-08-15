@@ -87,7 +87,7 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
-  <div class="content"<?php print $content_attributes; ?>>
+  <div class="content node-page-content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
       print render($content);

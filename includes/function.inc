@@ -156,7 +156,7 @@ function _social_share_buttons() {
 
   // Prepare render array.
   $render_array = array(
-    '#prefix' => '<div class="social-share-links">',
+    '#prefix' => '<div class="share-links">',
     '#suffix' => '</div>',
   );
 
@@ -173,6 +173,7 @@ function _social_share_buttons() {
   );
 
   // Social share group
+  /*
   $link = "#";
   $text = '<span class="fas fa-share"></span><span class="sr-only">' . t('Social media').'</span>';
   $render_array['socials'] = array(
@@ -184,10 +185,11 @@ function _social_share_buttons() {
       )
     )),
   );
+  */
 
   // Facebook share.
   $link = "https://www.facebook.com/sharer/sharer.php?u=$url";
-  $text = '<span class="fas fa-facebook"></span><span class="sr-only">' . t('Facebook').'</span>';
+  $text = '<span class="fab fa-facebook"></span><span class="sr-only">' . t('Facebook').'</span>';
   $render_array['facebook'] = array(
     '#prefix' => '<span class="share-links-social">',
     '#markup' => l($text, $link, array(
@@ -202,7 +204,7 @@ function _social_share_buttons() {
   // Twitter share.
   $twitter_msg = $title . ' -'; // Twitter adds the $url after this automatically.
   $link = "https://twitter.com/intent/tweet?text=$twitter_msg&url=$url";
-  $text = '<span class="fa fa-fw fa-twitter"></span><span class="sr-only">' . t('Twitter').'</span>';
+  $text = '<span class="fab fa-twitter"></span><span class="sr-only">' . t('Twitter').'</span>';
   $render_array['twitter'] = array(
     '#markup' => l($text, $link, array(
       'html' => TRUE,
@@ -214,8 +216,9 @@ function _social_share_buttons() {
   );
 
   // Google Plus share:
+  /* Who cares about Google Plus???
   $link = "https://plus.google.com/share?url=$url";
-  $text = '<span class="fa fa-fw fa-google-plus"></span><span class="sr-only">'. t('Google Plus').'</span>';
+  $text = '<span class="fab fa-google-plus-square"></span><span class="sr-only">'. t('Google Plus').'</span>';
   $render_array['gplus'] = array(
     '#markup' => l($text, $link, array(
       'html' => TRUE,
@@ -225,10 +228,11 @@ function _social_share_buttons() {
       )
     )),
   );
+  */
 
   // LinkedIn share.
   $link = "https://www.linkedin.com/shareArticle?mini=true&url=$url&title=$title&summary=$body&source=$url";
-  $text = '<span class="fa fa-fw fa-linkedin"></span><span class="sr-only">' . t('LinkedIn').'</span>';
+  $text = '<span class="fab fa-linkedin"></span><span class="sr-only">' . t('LinkedIn').'</span>';
   $render_array['linkedin'] = array(
     '#suffix' => "</span>",
     '#markup' => l($text, $link, array(

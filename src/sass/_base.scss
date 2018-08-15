@@ -395,6 +395,13 @@ ul {
   }
 }
 
+.node-page-content,
+.ds-2col-content {
+  ul {
+    @extend .list-custom;
+  }
+}
+
 // Card
 //
 .card {
@@ -849,8 +856,4 @@ ul {
   .site-map-menu {
     @include site-map-list;
   }
-}
-
-.share-links-social {
-  display: none;
 }

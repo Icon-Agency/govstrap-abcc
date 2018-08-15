@@ -13,7 +13,7 @@
 <div class="row">
     <div class="col-lg-8">
         <a href="#" class="card img-card h-100 fade-in-up animated">
-            <img src="/<?php print path_to_theme(); ?>/images/sp-need-to-know.jpg"
+            <img src="/<?php print path_to_theme(); ?>/images/sp-need-to-know.png"
                  alt=" Get the ABCC app promo image">
             <span class="sr-only">Need to know your rights on site. Get the app</span>
         </a>
@@ -23,7 +23,7 @@
   <?php endforeach; ?>
     <div class="col-lg-8">
         <a href="#" class="card img-card h-100 fade-in-up animated">
-            <img src="/<?php print path_to_theme(); ?>/images/sp-subscribe.jpg"
+            <img src="/<?php print path_to_theme(); ?>/images/sp-subscribe.png"
                  alt="Subscribe for e-alerts promo image">
             <span class="sr-only">Subscribe for e-alerts &amp; industry updates - Subscribe now</span>
         </a>

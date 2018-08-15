@@ -30,36 +30,44 @@
 
 <?php
 
-
-
 $link_to_content = NULL;
 if ($fields['view_node']) {
   $link_to_content = new SimpleXMLElement($fields['view_node']->content);
   $link_to_content = $link_to_content['href'];
   $link_title = strip_tags($fields['title']->content);
 }
-$card_theme = 'card-abcc';
-$card_type = strip_tags($fields['type']->content);
+
+
+$card_type = strip_tags($fields['field_category']->content);
 if (strpos(strtolower($card_type), 'alert') > 0) {
   $card_theme = 'card-rights';
 }
+elseif (strpos(strtolower($card_type), 'release') > 0) {
+  $card_theme = 'card-abcc';
+}
+else {
+  $card_theme = 'card-worker';
+}
+
 ?>
 
 <?php if (!empty($link_to_content)): ?>
-<div class="col-lg-4">
-  <a href="<?php print $link_to_content; ?>" title="<?php print $link_title; ?>" class="card h-100 fade-in-up animated <?php print $card_theme; ?>">
-    <?php foreach ($fields as $id => $field): ?>
-      <?php if ($id != 'view_node'): ?>
-        <?php if (!empty($field->separator)): ?>
-          <?php print $field->separator; ?>
-        <?php endif; ?>
+    <div class="col-lg-4">
+        <a href="<?php print $link_to_content; ?>"
+           title="<?php print $link_title; ?>"
+           class="card h-100 fade-in-up animated <?php print $card_theme; ?>">
+          <?php foreach ($fields as $id => $field): ?>
+            <?php if ($id != 'view_node'): ?>
+              <?php if (!empty($field->separator)): ?>
+                <?php print $field->separator; ?>
+              <?php endif; ?>
 
-        <?php print $field->wrapper_prefix; ?>
-        <?php print $field->label_html; ?>
-        <?php print $field->content; ?>
-        <?php print $field->wrapper_suffix; ?>
-      <?php endif; ?>
-    <?php endforeach; ?>
-  </a>
-</div>
+              <?php print $field->wrapper_prefix; ?>
+              <?php print $field->label_html; ?>
+              <?php print $field->content; ?>
+              <?php print $field->wrapper_suffix; ?>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        </a>
+    </div>
 <?php endif; ?>

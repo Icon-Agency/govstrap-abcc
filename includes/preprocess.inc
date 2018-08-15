@@ -25,32 +25,32 @@ function govstrap_preprocess_html(&$variables, $hook) {
   }
 
   // IE8 support of HTML5 elements and media queries .
-  $ie_script_s = array(
-    '#browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE),
+  $ie_script_s = [
+    '#browsers' => ['IE' => 'lt IE 9', '!IE' => FALSE],
     '#tag' => 'script',
-    '#attributes' => array(
+    '#attributes' => [
       'type' => "text/javascript",
       'src' => './' . $variables['path_to_govstrap'] . '/js/modernizr.js',
 
-    ),
-  );
+    ],
+  ];
   drupal_add_html_head($ie_script_s, "govstrapmodernizr");
 
   // IE8 support of HTML5 elements and media queries.
-  $ie_script_r = array(
-    '#browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE),
+  $ie_script_r = [
+    '#browsers' => ['IE' => 'lt IE 9', '!IE' => FALSE],
     '#tag' => 'script',
-    '#attributes' => array(
+    '#attributes' => [
       'type' => "text/javascript",
       'src' => './' . $variables['path_to_govstrap'] . '/js/respond.js',
-    ),
-  );
+    ],
+  ];
   drupal_add_html_head($ie_script_r, "govstraprespond");
 
   if (theme_get_setting('fontawesome_enabled') && theme_get_setting('fontawesome_css_cdn')) {
     // Add fontawesome CDN file.
     $fontawesome = 'https://use.fontawesome.com/releases/' . theme_get_setting('fontawesome_css_cdn') . '/js/all.js';
-    drupal_add_js($fontawesome, array('type' => 'external', 'defer' => TRUE));
+    drupal_add_js($fontawesome, ['type' => 'external', 'defer' => TRUE]);
   }
 
   // Accessibility settings.
@@ -58,10 +58,10 @@ function govstrap_preprocess_html(&$variables, $hook) {
   $variables['skip_link_text'] = check_plain(theme_get_setting('govstrap_skip_link_text'));
 
   // Attributes for html element.
-  $variables['html_attributes_array'] = array(
+  $variables['html_attributes_array'] = [
     'lang' => $variables['language']->language,
     'dir' => $variables['language']->dir,
-  );
+  ];
 
   // Return early, so the maintenance page does not call any of the code below.
   if ($hook != 'html') {
@@ -70,7 +70,7 @@ function govstrap_preprocess_html(&$variables, $hook) {
 
   // Serialize RDF Namespaces into an RDFa 1.1 prefix attribute.
   if ($variables['rdf_namespaces']) {
-    $prefixes = array();
+    $prefixes = [];
     foreach (explode("\n  ", ltrim($variables['rdf_namespaces'])) as $namespace) {
       // Remove xlmns: and ending quote and fix prefix formatting.
       $prefixes[] = str_replace('="', ': ', substr($namespace, 6, -1));
@@ -109,17 +109,18 @@ function govstrap_preprocess_page(&$variables) {
   // Calculate container columns with sidebar.
   if (!empty($variables['page']['sidebar_right'])) {
     $variables['content_column_class'] = 'col-lg-8';
-  } else {
-    $variables['content_column_class'] = 'col-lg-12 pl-0 pr-0';
+  }
+  else {
+    $variables['content_column_class'] = 'col-lg-12 pl-2 pr-2';
   }
 
   // Get the main navigation menu tree limit to $main_menu_max_depth
   $main_menu_max_depth = 3;
-  $main_menu_tree = menu_build_tree('menu-site-main-menu', array('max_depth' => $main_menu_max_depth));
-  foreach($main_menu_tree as $link_item) {
-    if($link_item['link']['link_title']) {
+  $main_menu_tree = menu_build_tree('menu-site-main-menu', ['max_depth' => $main_menu_max_depth]);
+  foreach ($main_menu_tree as $link_item) {
+    if ($link_item['link']['link_title']) {
       $link_item_name = _human_to_machine($link_item['link']['link_title']);
-      $variables['main_menu_tree'][$link_item_name]['tree'] = menu_tree_output(array($link_item_name => $link_item));
+      $variables['main_menu_tree'][$link_item_name]['tree'] = menu_tree_output([$link_item_name => $link_item]);
       $variables['main_menu_tree'][$link_item_name]['title'] = $link_item['link']['link_title'];
     }
   }
@@ -131,7 +132,7 @@ function govstrap_preprocess_page(&$variables) {
  * Implements more specific callback to theme_menu_link().
  */
 function govstrap_menu_link__menu_site_main_menu($variables) {
-  $element     = $variables['element'];
+  $element = $variables['element'];
   $description = !empty($element['#localized_options']['attributes']['title']) ? $element['#localized_options']['attributes']['title'] : '';
 
   $sub_menu = '';
@@ -151,7 +152,7 @@ function govstrap_menu_link__menu_site_main_menu($variables) {
     $element['#localized_options']['attributes']['title'] = $description;
   }
 
-  if (!isset($output)){
+  if (!isset($output)) {
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   }
 
@@ -207,35 +208,37 @@ function govstrap_preprocess_block(&$variables, $hook) {
  *   Menu tree render array from menu tree build.
  *
  * @param int $max_level
- *   Maximum level to keep. 0 - only keep current level, 1 - keep 1 level down, 2 - ....
+ *   Maximum level to keep. 0 - only keep current level, 1 - keep 1 level down,
+ *   2 - ....
  *
  */
-function govstrap_menu_get_max_level_sub_tree(&$tree, $max_level){
+function govstrap_menu_get_max_level_sub_tree(&$tree, $max_level) {
 
-  if (empty($tree)){
+  if (empty($tree)) {
     return;
   }
 
-  $max_level = (int)$max_level;
+  $max_level = (int) $max_level;
 
-  if ($max_level < 0 ){
+  if ($max_level < 0) {
     return;
   }
 
   $children = _govstrap_menu_tree_get_tree_children($tree);
 
-  if (empty($children)){
+  if (empty($children)) {
     return;
   }
 
-  if ($max_level === 0){
-    foreach ($children as $child_key){
+  if ($max_level === 0) {
+    foreach ($children as $child_key) {
       unset($tree[$child_key]['#below']);
     }
     return;
-  }else{
-    foreach ($children as $child_key){
-      govstrap_menu_get_max_level_sub_tree($tree[$child_key]['#below'], ($max_level-1));
+  }
+  else {
+    foreach ($children as $child_key) {
+      govstrap_menu_get_max_level_sub_tree($tree[$child_key]['#below'], ($max_level - 1));
     }
   }
 }
@@ -246,12 +249,13 @@ function govstrap_menu_get_max_level_sub_tree(&$tree, $max_level){
  * @param array $tree
  *   Menu tree render array from menu tree build.
  *
- * @return array new tree. If any errors happen, the original tree will be returned
+ * @return array new tree. If any errors happen, the original tree will be
+ *   returned
  */
-function govstrap_menu_tree_get_rid_of_root($tree){
+function govstrap_menu_tree_no_root($tree) {
   $root_keys = _govstrap_menu_tree_get_tree_children($tree);
 
-  if (empty($root_keys)){
+  if (empty($root_keys)) {
     return $tree;
   }
 
@@ -265,19 +269,20 @@ function govstrap_menu_tree_get_rid_of_root($tree){
 }
 
 /**
- * Helper internal function to extract array keys of tree's direct actual children from menu tree render array
+ * Helper internal function to extract array keys of tree's direct actual
+ * children from menu tree render array
  *
  * @param array $tree
  *   Menu tree render array from menu tree build.
  *
  * @return array current tree's direct children's array keys
  */
-function _govstrap_menu_tree_get_tree_children($tree){
+function _govstrap_menu_tree_get_tree_children($tree) {
   $result = [];
   $children = element_children($tree);
-  if (!empty($children)){
+  if (!empty($children)) {
     foreach ($children as $key) {
-      if (isset($tree[$key]['#below'])){
+      if (isset($tree[$key]['#below'])) {
         $result[] = $key;
       }
     }
@@ -303,7 +308,7 @@ function _govstrap_menu_extract_extra_classes(&$element, &$description) {
           $element['#attributes']['class'] = $classes;
         }
         elseif (!is_array($element['#attributes']['class'])) {
-          $classes[]                       = $element['#attributes']['class'];
+          $classes[] = $element['#attributes']['class'];
           $element['#attributes']['class'] = $classes;
         }
         else {
@@ -315,7 +320,7 @@ function _govstrap_menu_extract_extra_classes(&$element, &$description) {
 }
 
 function _govstrap_menu_extract_special_title(&$description) {
-  $output           = FALSE;
+  $output = FALSE;
   $matching_pattern = _govstrap_menu_get_token_pattern('special-title');
 
   if ($matches = _govstrap_menu_search_n_replace($matching_pattern, $description)) {
@@ -350,12 +355,12 @@ function _govstrap_menu_search_n_replace($matching_pattern, &$content) {
  *   Machine name cleaned-up of any special chars.
  */
 function _human_to_machine($human_readable) {
-  return strtolower(preg_replace(array(
+  return strtolower(preg_replace([
     '/[^a-zA-Z0-9]+/',
     '/-+/',
     '/^-+/',
     '/-+$/',
-  ), array('_', '_', '', ''), $human_readable));
+  ], ['_', '_', '', ''], $human_readable));
 }
 
 /**
@@ -367,7 +372,7 @@ function _get_active_page_parent() {
     end($active_trail);
     $parent = prev($active_trail);
     if ($parent['link_path']) {
-      return '<a href=".$parent[\'link_path\']."><i class="fal fa-arrow-left"></i>Back to '.$parent['link_title'].'</a>';
+      return '<a href=".$parent[\'link_path\']."><i class="fal fa-arrow-left"></i>Back to ' . $parent['link_title'] . '</a>';
     }
   }
   return NULL;
