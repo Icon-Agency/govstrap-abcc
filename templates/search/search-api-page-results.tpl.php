@@ -33,11 +33,11 @@
  *
  * @see template_preprocess_search_api_page_results()
  */
-
 ?>
 <div class="<?php print $classes;?>">
   <?php if ($result_count): ?>
-    <?php print render($search_performance); ?>
+      <div class="font-family3 text-uppercase large"><strong><?php print $result_count;?></strong> results found</div>
+  <hr>
   <?php endif; ?>
   <?php print render($spellcheck); ?>
   <?php if ($result_count): ?>
@@ -47,7 +47,7 @@
   <?php else : ?>
     <h2><?php print t('Your search did not match any documents.');?></h2>
     <p>Suggestions:</p>
-    <ul>
+    <ul class="abcc-themed">
         <li>Make sure that all words are spelled correctly.</li>
         <li>Try different keywords.</li>
         <li>Try more general keywords.</li>

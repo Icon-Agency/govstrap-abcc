@@ -395,12 +395,14 @@ ul {
   }
 }
 
-.search-api-page-results,
 .node-page-content,
 .ds-2col-content {
   ul {
     @extend .list-custom;
   }
+}
+ul.abcc-themed {
+  @extend .list-custom;
 }
 
 // Card
