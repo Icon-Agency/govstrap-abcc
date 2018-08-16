@@ -42,7 +42,7 @@
  */
 ?>
 <div class="item card card-government pt-3 fade-in-up animated">
-  <h3 class="title">
+  <h3 class="h4">
     <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
   </h3>
   <div class="search-snippet-info">
