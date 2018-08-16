@@ -106,7 +106,7 @@ function govstrap_pager($variables) {
   $tags = $variables['tags'];
   $element = $variables['element'];
   $parameters = $variables['parameters'];
-  $quantity = $variables['quantity'];
+  $quantity = 7;
   global $pager_page_array, $pager_total;
 
   // Calculate various markers within this pager piece:
@@ -143,7 +143,7 @@ function govstrap_pager($variables) {
 
   // End of generation loop preparation.
   $li_first = theme('pager_first', array(
-    'text' => isset($tags[0]) ? $tags[0] : t('First page'),
+    'text' => isset($tags[0]) ? $tags[0] : t('First'),
     'element' => $element,
     'parameters' => $parameters,
   ));
@@ -160,7 +160,7 @@ function govstrap_pager($variables) {
     'parameters' => $parameters,
   ));
   $li_last = theme('pager_last', array(
-    'text' => isset($tags[4]) ? $tags[4] : t('Last page'),
+    'text' => isset($tags[4]) ? $tags[4] : t('Last'),
     'element' => $element,
     'parameters' => $parameters,
   ));
@@ -187,9 +187,10 @@ function govstrap_pager($variables) {
       if ($i > 1) {
         $items[] = array(
           'class' => array(
-            'pager-ellipsis',
+            'page-item',
+            'page-ellipsis',
           ),
-          'data' => '…',
+          'data' => '<span class="page-link">…</span>',
         );
       }
 

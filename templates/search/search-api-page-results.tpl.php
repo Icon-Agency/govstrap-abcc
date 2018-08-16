@@ -45,7 +45,12 @@
       <?php print render($search_results); ?>
     <?php print render($pager); ?>
   <?php else : ?>
-    <h2><?php print t('Your search yielded no results.');?></h2>
-    <?php print $no_results_help; ?>
+    <h2><?php print t('Your search did not match any documents.');?></h2>
+    <p>Suggestions:</p>
+    <ul>
+        <li>Make sure that all words are spelled correctly.</li>
+        <li>Try different keywords.</li>
+        <li>Try more general keywords.</li>
+    </ul>
   <?php endif; ?>
 </div>

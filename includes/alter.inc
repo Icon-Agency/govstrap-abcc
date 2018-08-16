@@ -86,6 +86,13 @@ function govstrap_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['submit']['#attributes']['aria-label'] = 'Search';
     $form['#submit'][0] = 'govstrap_search_block_form_submit';
   }
+
+  if ($form_id == 'search_api_page_search_form') {
+    $form['form']['keys_7']['#title_display'] = 'none';
+    $form['form']['keys_7']['#attributes']['class'][] = 'form-control';
+    $form['form']['keys_7']['#attributes']['placeholder'] = t('Find what you\'re looking for...');
+    $form['form']['submit_7']['#value'] = decode_entities('') . ' Search';
+  }
 }
 
 function govstrap_search_block_form_submit ($form, &$form_state) {

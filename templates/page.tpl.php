@@ -58,7 +58,7 @@
                     <!-- main page content -->
                     <div class="<?php print $content_column_class; ?> pb-5">
 
-                        <section id="main-content-section" class="<?php print $content_column_class; ?>" role="main">
+                        <section id="main-content-section" role="main">
                             <a id="main-content"></a>
                           <?php if (!empty($tabs)): ?>
                             <?php print render($tabs); ?>
