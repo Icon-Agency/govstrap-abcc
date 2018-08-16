@@ -6,8 +6,9 @@
 ?>
 
 <div class="mm-header">
-    <img src="/<?php print path_to_theme(); ?>/images/abcc-logo.svg" class="abcc-logo" alt="Australian Government Australian Building and Construction Commission"/>
-
+    <a href="/" aria-label="homepage">
+        <img src="/<?php print path_to_theme(); ?>/images/abcc-logo.svg" class="abcc-logo" alt="Australian Government Australian Building and Construction Commission"/>
+    </a>
     <a href="#" class="search-btn" id="search-btn">
         <i class="far fa-search"></i>
     </a>
