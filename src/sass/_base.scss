@@ -879,6 +879,24 @@ ul.abcc-themed {
   display: block;
 }
 
+/*
+ Search and views related stuff
+ */
+
+.card-glossary {
+  .category {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: $font-family3;
+    color: $default-color;
+    font-size: $font-size-base;
+  }
+
+  .date {
+    color: $default-color;
+  }
+}
+
 // Search API search form appearance
 .page-search {
   #search-api-page-search-form {

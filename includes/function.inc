@@ -115,10 +115,14 @@ function _taxonomy_autolink_links_rule($needle, $configs = array()) {
  */
 function _taxonomy_autolink_link_create ($tid, $text) {
   // Return a friendly url path if available.
+  /*
   $url = drupal_lookup_path('alias', 'taxonomy/term/' . $tid, $lang_code = LANGUAGE_NONE);
   if (empty($url)) {
     $url = 'taxonomy/term/' . $tid;
   }
+  */
+  // We want to point the link to the glossary auto-search page
+  $url = 'glossary/content/'.$text.'/'.$tid;
   return l(check_plain($text), $url, array(
     'html' => TRUE,
     'attributes' => array(
@@ -267,4 +271,8 @@ function _get_card_theme ($category) {
       break;
   }
   return $card_class;
+}
+
+function array_cmp($a, $b) {
+  return $a['tid'] - $b['tid'];
 }

@@ -28,35 +28,37 @@
  */
 ?>
 
-
 <?php
 $params = drupal_get_query_parameters();
 $vocabulary = taxonomy_vocabulary_machine_name_load('category');
-$terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
-$news_type_options = array();
-$news_type_options[] = array ('tid' => 'All', 'name' => 'All');
+$terms = entity_load('taxonomy_term', FALSE, ['vid' => $vocabulary->vid]);
+$news_type_options = [];
+$news_type_options[] = ['tid' => 'All', 'name' => 'All'];
 foreach ($terms as $term) {
   $option_class = '';
   if ($params['field_category']) {
     if ($term->tid == $params['field_category']) {
       $option_class = 'active';
     }
-    $news_type_options[] = array ('tid' => $term->tid, 'name' => $term->name, 'class' => $option_class);
-  } else {
+    $news_type_options[] = [
+      'tid' => $term->tid,
+      'name' => $term->name,
+      'class' => $option_class,
+    ];
+  }
+  else {
     $news_type_options[0]['class'] = 'active';
-    $news_type_options[] = array ('tid' => $term->tid, 'name' => $term->name, 'class' => $option_class);
+    $news_type_options[] = [
+      'tid' => $term->tid,
+      'name' => $term->name,
+      'class' => $option_class,
+    ];
   }
 }
 if ('All' == $params['field_category']) {
   $news_type_options[0]['class'] = 'active';
 }
-
-usort($news_type_options,"arrcmp");
-
-function arrcmp($a, $b) {
-  return $a['tid'] - $b['tid'];
-}
-
+usort($news_type_options, "array_cmp");
 ?>
 
 <div class="<?php print $classes; ?>">
@@ -77,16 +79,23 @@ function arrcmp($a, $b) {
           <div class="col-lg-12 pb-5">
               <div class="filter mb-5">
                   <ul class="inline block-active-icon font-family3 bold text-uppercase small mb-5">
-                      <?php foreach ($news_type_options as $news_type_option): ?>
-                          <li class="<?php print $news_type_option['class'];?>">
-                              <a href="?field_category=<?php print $news_type_option['tid']?>"><?php print $news_type_option['name'];?></a>
-                          </li>
-                      <?php endforeach; ?>
+                    <?php foreach ($news_type_options as $news_type_option): ?>
+                        <li class="<?php print $news_type_option['class']; ?>">
+                            <a href="?field_category=<?php print $news_type_option['tid'] ?>"><?php print $news_type_option['name']; ?></a>
+                        </li>
+                    <?php endforeach; ?>
                   </ul>
 
                   <div class="text-right search-options">
-                      <form class="search-wrap" action="/news-and-media" method="get" id="views-exposed-form-abcc-news-page" accept-charset="UTF-8">
-                          <input type="text" placeholder="Search News &amp; Media" id="edit-search-api-views-fulltext" name="search_api_views_fulltext" value="" size="30" maxlength="128" class="form-text ctools-auto-submit-processed">
+                      <form class="search-wrap" action="/news-and-media"
+                            method="get" id="views-exposed-form-abcc-news-page"
+                            accept-charset="UTF-8">
+                          <input type="text"
+                                 placeholder="Search News &amp; Media"
+                                 id="edit-search-api-views-fulltext"
+                                 name="search_api_views_fulltext" value=""
+                                 size="30" maxlength="128"
+                                 class="form-text ctools-auto-submit-processed">
                           <button>
                               <i class="far fa-search"></i>
                               <span class="sr-only">Search</span>
@@ -130,7 +139,8 @@ function arrcmp($a, $b) {
             <div class="row">
                 <div class="col-lg-12 col-sm-6">
                     <a href="#" class="block mb-5">
-                        <img src="/<?php print path_to_theme(); ?>/images/sp-subscribe-mini.jpg" class="img-fluid">
+                        <img src="/<?php print path_to_theme(); ?>/images/sp-subscribe-mini.jpg"
+                             class="img-fluid">
                     </a>
                 </div>
                 <div class="col-lg-12 col-sm-6">
