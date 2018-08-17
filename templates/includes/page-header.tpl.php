@@ -132,7 +132,7 @@
                                     <a class="nav-link" href="#">Legal cases</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#"><?php print $main_menu_tree['news_and_media']['title']; ?></a>
+                                    <a class="nav-link" href="/news-and-media"><?php print $main_menu_tree['news_and_media']['title']; ?></a>
                                     <div class="dropdown-menu" aria-labelledby="resources">
                                       <?php print drupal_render($main_menu_tree['news_and_media']['tree']); ?>
                                     </div>

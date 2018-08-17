@@ -247,3 +247,24 @@ function _social_share_buttons() {
   // Render.
   return $render_array;
 }
+
+function _get_card_theme ($category) {
+  $category = trim(strtolower($category));
+  switch($category) {
+    default:
+    case 'media release':
+      $card_class = 'card-abcc';
+      break;
+    case 'e-alert':
+      $card_class = 'card-rights';
+      break;
+    case 'statement':
+    case 'transcript':
+      $card_class = 'card-government';
+      break;
+    case 'media backgrounder':
+      $card_class = 'card-worker';
+      break;
+  }
+  return $card_class;
+}
