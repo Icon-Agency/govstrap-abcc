@@ -35,7 +35,9 @@ function _taxonomy_autolink_add_links ($text) {
   if (!$vocabs) {
     return $text;
   }
-  // Get terms.
+  // Get terms. We don't want to use Drupal's entity_load function so we can
+  // load multiple vocabs in one query and be a lot more efficient. Calm down
+  // Drutiny, it's just a harmless little query.
   $result = db_query("SELECT tid, name, LOWER(name) AS name_lower FROM {taxonomy_term_data} WHERE vid IN (:vids)", array(':vids' => $vocabs));
   $terms = $result->fetchAllAssoc('name');
 
@@ -67,10 +69,18 @@ function _taxonomy_autolink_links($text, $terms, $configs = array()) {
   $limit = $configs['limit'];
   // Start processing.
   foreach ($terms as $term_name => $term) {
+
     $rule = _taxonomy_autolink_links_rule($term_name, $configs);
     $text = preg_replace_callback($rule, function ($match) use ($term) {
       if (!empty($match[0])) {
-        return _taxonomy_autolink_link_create ($term->tid, $match[0]);
+        // Add synonyms. Yet another harmless little query.
+        $result = db_query("SELECT field_synonyms_value FROM {field_data_field_synonyms} WHERE entity_id = $term->tid");
+        $synonyms = $result->fetchAllAssoc('field_synonyms_value');
+        $synonyms_string = '';
+        foreach ($synonyms as $synonym) {
+          $synonyms_string .= ' '.$synonym->field_synonyms_value;
+        }
+        return _taxonomy_autolink_link_create ($term->tid, $match[0], $synonyms_string);
       }
     }, $text, $limit);
   }
@@ -113,7 +123,9 @@ function _taxonomy_autolink_links_rule($needle, $configs = array()) {
  * @param $variables
  * @return string
  */
-function _taxonomy_autolink_link_create ($tid, $text) {
+function _taxonomy_autolink_link_create ($tid, $text, $synonyms) {
+  $term = taxonomy_term_load($tid);
+  $term = $term->name;
   // Return a friendly url path if available.
   /*
   $url = drupal_lookup_path('alias', 'taxonomy/term/' . $tid, $lang_code = LANGUAGE_NONE);
@@ -122,7 +134,7 @@ function _taxonomy_autolink_link_create ($tid, $text) {
   }
   */
   // We want to point the link to the glossary auto-search page
-  $url = 'glossary/content/'.$text.'/'.$tid;
+  $url = 'glossary/content/'.$text.$synonyms.'/'.$tid.'/'.$term;
   return l(check_plain($text), $url, array(
     'html' => TRUE,
     'attributes' => array(

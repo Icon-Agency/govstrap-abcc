@@ -126,6 +126,15 @@ function govstrap_preprocess_page(&$variables) {
   }
 
   $variables['active_page_parent'] = _get_active_page_parent();
+
+  // Set title and breadcrumbs on dynamically generated glossary pages
+  if (in_array('page__glossary__content', $variables['theme_hook_suggestions'])) {
+    $arguments = arg();
+    if ($arguments[4]) {
+      drupal_set_title($arguments[4]);
+    }
+  }
+
 }
 
 /**
@@ -372,7 +381,7 @@ function _get_active_page_parent() {
     end($active_trail);
     $parent = prev($active_trail);
     if ($parent['link_path']) {
-      return '<a href=".$parent[\'link_path\']."><i class="fal fa-arrow-left"></i>Back to ' . $parent['link_title'] . '</a>';
+      return '<a href="'.$parent['link_path'].'"><i class="fal fa-arrow-left"></i>Back to ' . $parent['link_title'] . '</a>';
     }
   }
   return NULL;
