@@ -64,17 +64,6 @@
   line-height: inherit !important;
 }
 
-.content p a {
-  color: $link-color;
-  &.term-link {
-    border-bottom: 1px dotted $link-color;
-    &:hover {
-      text-decoration: none;
-      border-bottom: 1px solid $link-color;
-    }
-  }
-}
-
 // Components
 //
 blockquote {

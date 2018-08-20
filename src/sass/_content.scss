@@ -1,0 +1,41 @@
+.content.node-page-content {
+  h2 {
+    margin-top: 0.5rem;
+    @extend .h3;
+  }
+
+  h3 {
+    margin-top: 0.5rem;
+    @extend .h4;
+  }
+
+  h4 {
+    margin-top: 0.5rem;
+    @extend .h5;
+  }
+
+  table {
+    @extend .table;
+  }
+
+  a {
+    color: $link-color;
+    border-bottom: 1px solid $link-color;
+    text-decoration: none;
+
+    &:hover {
+      background: $link-color;
+      color: $white;
+    }
+
+    &.term-link {
+      color: $default-color;
+      border-bottom: 1px dotted $default-color;
+      &:hover {
+        background: none;
+        text-decoration: none;
+        border-bottom: 1px solid $default-color;
+      }
+    }
+  }
+}

@@ -45,7 +45,7 @@
                         <div class="collapse navbar-collapse justify-content" id="navbarNavDropdown">
                           <?php
                               $rights_and_responsibilities_active_class = '';
-                              $menu_tree_markup = drupal_render($main_menu_tree['rights_and_responsibilities']['tree']);
+                              $menu_tree_markup = drupal_render($main_menu_tree['your_rights_and_responsibilities']['tree']);
                               if (strpos($menu_tree_markup, 'active') > 0 ) {
                                 $rights_and_responsibilities_active_class = 'active';
                               }
@@ -58,7 +58,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown mega <?php print $rights_and_responsibilities_active_class; ?>">
-                                    <a class="nav-link dropdown-toggle" href="#" id="rights" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['your_rights_and_responsibilities']['path']; ?>" id="rights" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Your rights & responsibilities
                                     </a>
                                     <div class="dropdown-menu theme-rights" aria-labelledby="rights">
@@ -66,16 +66,16 @@
                                             <div class="container py-5">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <h2 class="mb-3"><?php print $main_menu_tree['rights_and_responsibilities']['title']; ?></h2>
+                                                        <h2 class="mb-3"><?php print $main_menu_tree['your_rights_and_responsibilities']['title']; ?></h2>
                                                         <p class="h5 font-family1 regular mb-4">For all building industry participants.</p>
-                                                        <a href="#" class="text-body bold">
+                                                        <a href="/<?php print $main_menu_tree['your_rights_and_responsibilities']['path']; ?>" class="text-body bold">
                                                             <i class="fal fa-arrow-circle-right fa-2x"></i>
-                                                            <?php print $main_menu_tree['rights_and_responsibilities']['title']; ?>
+                                                            <?php print $main_menu_tree['your_rights_and_responsibilities']['title']; ?>
                                                         </a>
                                                     </div>
                                                     <!-- /.col-md-4  -->
                                                     <div class="col-md-4">
-                                                        <div class="main-menu-fragment">
+                                                        <div class="main-menu-fragment" id="menu-rights-and-responsibilities">
                                                             <?php print $menu_tree_markup; ?>
                                                         </div>
                                                     </div>

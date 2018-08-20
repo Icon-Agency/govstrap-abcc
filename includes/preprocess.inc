@@ -115,13 +115,16 @@ function govstrap_preprocess_page(&$variables) {
   }
 
   // Get the main navigation menu tree limit to $main_menu_max_depth
+
   $main_menu_max_depth = 3;
   $main_menu_tree = menu_build_tree('menu-site-main-menu', ['max_depth' => $main_menu_max_depth]);
   foreach ($main_menu_tree as $link_item) {
     if ($link_item['link']['link_title']) {
       $link_item_name = _human_to_machine($link_item['link']['link_title']);
+      $link_item_path = drupal_get_path_alias($link_item['link']['link_path']);
       $variables['main_menu_tree'][$link_item_name]['tree'] = menu_tree_output([$link_item_name => $link_item]);
       $variables['main_menu_tree'][$link_item_name]['title'] = $link_item['link']['link_title'];
+      $variables['main_menu_tree'][$link_item_name]['path'] = $link_item_path;
     }
   }
 
@@ -172,8 +175,6 @@ function govstrap_menu_link__menu_site_main_menu($variables) {
  * Implements more specific callback to theme_menu_tree().
  */
 function govstrap_menu_tree__menu_site_main_menu($variables) {
-  //@todo This might need to be customized, but not now.
-
   return '<ul class="menu">' . $variables['tree'] . '</ul>';
 }
 
