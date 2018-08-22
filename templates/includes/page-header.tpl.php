@@ -95,20 +95,11 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown mega">
-                                    <a class="nav-link dropdown-toggle" href="#" id="Code" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Building Code
-                                    </a>
-                                    <div class="dropdown-menu theme-rights" aria-labelledby="code">
-                                        <div class="inner">
-                                            <div class="container py-5">
-                                                <div class="menu-row">
-                                                  <?php print drupal_render(govstrap_menu_tree_no_root($main_menu_tree['building_code']['tree'])); ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                              <?php if (!empty($page['mega_menu_item_building_code'])): ?>
+                                    <li class="nav-item dropdown mega">
+                                      <?php print render($page['mega_menu_item_building_code']); ?>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                             <ul class="navbar-nav">
                                 <?php
@@ -125,7 +116,7 @@
                                         <?php print $main_menu_tree['resources']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="resources">
-                                        <?php print $sub_menu_tree_markup; ?>
+                                        <?php print str_replace('collapsed', 'collapsed dropdown-item', $sub_menu_tree_markup); ?>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -151,11 +142,7 @@
                                       <?php print $main_menu_tree['about']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="<?php print $main_menu_tree['about']['title']; ?>">
-                                      <?php
-                                      $new_sub_menu_tree =  govstrap_menu_tree_no_root($main_menu_tree['about']['tree']);
-                                      govstrap_menu_get_max_level_sub_tree($new_sub_menu_tree, 0);
-                                      print drupal_render($new_sub_menu_tree);
-                                      ?>
+                                      <?php print str_replace('collapsed', 'collapsed dropdown-item', $sub_menu_tree_markup); ?>
                                     </div>
                                 </li>
                                 <li class="nav-item">

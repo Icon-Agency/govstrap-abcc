@@ -329,10 +329,10 @@
         font-weight: 700;
         margin: 0;
         padding: 15px 0 0;
+
         .inner {
           background-color: $nav-bg;
           padding: $spacer;
-          @include signpost-shadow();
         }
         .dropdown-item {
           padding-left: $spacer;
@@ -357,18 +357,13 @@
           }
         }
 
+        .menu .collapsed,
         .menu .leaf,
         .menu .expanded {
           @extend .dropdown-item;
         }
       }
     }
-  }
-}
-
-.main-menu-fragment#menu-rights-and-responsibilities {
-  ul > li > ul >li > ul.menu {
-    display: none;
   }
 }
 

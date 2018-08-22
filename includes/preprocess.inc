@@ -116,7 +116,7 @@ function govstrap_preprocess_page(&$variables) {
 
   // Get the main navigation menu tree limit to $main_menu_max_depth
 
-  $main_menu_max_depth = 3;
+  $main_menu_max_depth = 2;
   $main_menu_tree = menu_build_tree('menu-site-main-menu', ['max_depth' => $main_menu_max_depth]);
   foreach ($main_menu_tree as $link_item) {
     if ($link_item['link']['link_title']) {
@@ -150,18 +150,6 @@ function govstrap_menu_link__menu_site_main_menu($variables) {
   $sub_menu = '';
   if ($element['#below']) {
     $sub_menu = drupal_render($element['#below']);
-  }
-
-  if ($description !== '') {
-    // Extract extra classes
-    _govstrap_menu_extract_extra_classes($element, $description);
-
-    // Extract special title
-    if ($special_title = _govstrap_menu_extract_special_title($description)) {
-      $output = $special_title;
-    }
-
-    $element['#localized_options']['attributes']['title'] = $description;
   }
 
   if (!isset($output)) {
@@ -298,61 +286,6 @@ function _govstrap_menu_tree_get_tree_children($tree) {
     }
   }
   return $result;
-}
-
-function _govstrap_menu_extract_extra_classes(&$element, &$description) {
-  if ($description === '') {
-    return;
-  }
-
-  $matching_pattern = _govstrap_menu_get_token_pattern('extra-classes');
-
-  if ($matches = _govstrap_menu_search_n_replace($matching_pattern, $description)) {
-    $classes = explode(' ', $matches[1]);
-    if (!empty($classes)) {
-      if (!isset($element['#attributes'])) {
-        $element['#attributes']['class'] = $classes;
-      }
-      else {
-        if (empty($element['#attributes']['class'])) {
-          $element['#attributes']['class'] = $classes;
-        }
-        elseif (!is_array($element['#attributes']['class'])) {
-          $classes[] = $element['#attributes']['class'];
-          $element['#attributes']['class'] = $classes;
-        }
-        else {
-          $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $classes);
-        }
-      }
-    }
-  }
-}
-
-function _govstrap_menu_extract_special_title(&$description) {
-  $output = FALSE;
-  $matching_pattern = _govstrap_menu_get_token_pattern('special-title');
-
-  if ($matches = _govstrap_menu_search_n_replace($matching_pattern, $description)) {
-    $output = $matches[1] . $description;
-  }
-  return $output;
-}
-
-function _govstrap_menu_get_token_pattern($matching_phrase) {
-  $matching_phrase = preg_quote($matching_phrase);
-  return "/\[$matching_phrase\]((.|\n)+?)\[\/$matching_phrase\]/";
-}
-
-function _govstrap_menu_search_n_replace($matching_pattern, &$content) {
-  $matches = [];
-  if (preg_match($matching_pattern, $content, $matches)) {
-    $content = preg_replace($matching_pattern, '', $content);
-  }
-  else {
-    $matches = FALSE;
-  }
-  return $matches;
 }
 
 /**
