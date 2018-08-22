@@ -241,7 +241,7 @@
           &:after{
             background-color: $color;
           }
-          a{
+          & > a{
             color: $color !important;
           }
         }

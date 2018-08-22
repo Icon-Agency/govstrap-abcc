@@ -79,10 +79,10 @@
                     <?php if (!empty($page['sidebar_right'])): ?>
                         <div class="col-lg-3 offset-lg-1">
                             <?php if ($active_page_parent): ?>
-                                <h3 class="font-family2 mb-4">
-                                    <a href="/<?php print $active_page_parent['link_path'];?>" class="theme-color theme-color-hover">
+                                <h3 class="font-family2 mb-4 h4">
+                                    <a href="/<?php print $active_page_parent['link_path'];?>" class="theme-color theme-color-hover">&nbsp;
+                                      <i class="fal fa-arrow-left float-left line-height-inherit"></i>
                                       <?php print $active_page_parent['link_title'];?>
-                                      <i class="fal fa-arrow-circle-right float-right line-height-inherit"></i>
                                     </a>
                                 </h3>
                             <?php endif; ?>

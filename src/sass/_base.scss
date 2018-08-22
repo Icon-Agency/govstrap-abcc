@@ -836,6 +836,19 @@ ul.abcc-themed {
 }
 
 // Generic Drupal class overrides
+ul.list-custom.sidebar-menu {
+  .first,
+  .leaf,
+  .last,
+  .collapsed,
+  .expanded {
+    list-style: none;
+    padding: 0;
+    padding-left: 30px;
+    @extend .py-2;
+  }
+}
+
 .block.block-system {
   padding: 0 !important;
 }

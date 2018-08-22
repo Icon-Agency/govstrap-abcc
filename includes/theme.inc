@@ -9,28 +9,7 @@
  * Implements theme_menu_tree().
  */
 function govstrap_menu_tree__menu_block__2($variables) {
-  return '<ul class="list-custom side-indictor mb-5">' . $variables['tree'] . '</ul>';
-}
-
-/**
- * Implements theme_menu_link().
- */
-function govstrap_menu_link__menu_block__2($variables) {
-  $element = $variables['element'];
-  $sub_menu = '';
-
-  if (in_array('active', $element['#attributes']['class'])) {
-    unset($element['#attributes']['class']);
-    $element['#attributes']['class'][] = 'active';
-  } else {
-    unset($element['#attributes']['class']);
-  }
-
-  if ($element['#below']) {
-    $sub_menu = drupal_render($element['#below']);
-  }
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+  return '<ul class="sidebar-menu list-custom side-indictor mb-2">' . $variables['tree'] . '</ul>';
 }
 
 /**
