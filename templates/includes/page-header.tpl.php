@@ -46,7 +46,7 @@
                           <?php
                               $rights_and_responsibilities_active_class = '';
                               $menu_tree_markup = drupal_render($main_menu_tree['your_rights_and_responsibilities']['tree']);
-                              if (strpos($menu_tree_markup, 'active') > 0 ) {
+                              if ($active_page_root['link_title'] == $main_menu_tree['your_rights_and_responsibilities']['title']) {
                                 $rights_and_responsibilities_active_class = 'active';
                               }
                           ?>
@@ -95,8 +95,14 @@
                                         </div>
                                     </div>
                                 </li>
+                              <?php
+                                $building_code_active_class = '';
+                                if ($active_page_root['link_title'] == 'Building Code') {
+                                  $building_code_active_class = 'active';
+                                }
+                              ?>
                               <?php if (!empty($page['mega_menu_item_building_code'])): ?>
-                                    <li class="nav-item dropdown mega">
+                                    <li class="nav-item dropdown mega <?php print $building_code_active_class;?>">
                                       <?php print render($page['mega_menu_item_building_code']); ?>
                                     </li>
                                 <?php endif; ?>
@@ -107,7 +113,7 @@
                                   govstrap_menu_get_max_level_sub_tree($new_sub_menu_tree, 0);
                                   $sub_menu_tree_markup = drupal_render($new_sub_menu_tree);
                                   $resources_active_class = '';
-                                  if (strpos($sub_menu_tree_markup, 'active') > 0 ) {
+                                  if ($active_page_root['link_title'] == $main_menu_tree['resources']['title'] ) {
                                     $resources_active_class = 'active';
                                   }
                                 ?>
@@ -133,7 +139,7 @@
                                   govstrap_menu_get_max_level_sub_tree($new_sub_menu_tree, 0);
                                   $sub_menu_tree_markup = drupal_render($new_sub_menu_tree);
                                   $about_active_class = '';
-                                  if (strpos($sub_menu_tree_markup, 'active') > 0 ) {
+                                  if ($active_page_root['link_title'] == $main_menu_tree['about']['title']) {
                                     $about_active_class = 'active';
                                   }
                                 ?>

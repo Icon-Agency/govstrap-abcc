@@ -130,6 +130,8 @@ function govstrap_preprocess_page(&$variables) {
 
   $variables['active_page_parent'] = _get_active_page_parent();
 
+  $variables['active_page_root'] = _get_active_page_root();
+
   // Set title and breadcrumbs on dynamically generated glossary pages
   if (in_array('page__glossary__content', $variables['theme_hook_suggestions'])) {
     $arguments = arg();
@@ -317,6 +319,17 @@ function _get_active_page_parent() {
     if ($parent['link_path']) {
       return $parent;
     }
+  }
+  return NULL;
+}
+
+/**
+ * Helper that finds current page's active parent in the menu
+ */
+function _get_active_page_root() {
+  $active_trail = menu_get_active_trail();
+  if ($active_trail[1]) {
+    return $active_trail[1];
   }
   return NULL;
 }
