@@ -35,7 +35,7 @@
 
                             <div class="btn-wrap">
                                 <?php if ($active_page_parent): ?>
-                                    <?php print $active_page_parent; ?>
+                                    <a href="/<?php print $active_page_parent['link_path'];?>"><i class="fal fa-arrow-left"></i>Back to <?php print $active_page_parent['link_title'];?></a>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -78,6 +78,14 @@
                     <!-- sidebar right -->
                     <?php if (!empty($page['sidebar_right'])): ?>
                         <div class="col-lg-3 offset-lg-1">
+                            <?php if ($active_page_parent): ?>
+                                <h3 class="font-family2 mb-4">
+                                    <a href="/<?php print $active_page_parent['link_path'];?>" class="theme-color theme-color-hover">
+                                      <?php print $active_page_parent['link_title'];?>
+                                      <i class="fal fa-arrow-circle-right float-right line-height-inherit"></i>
+                                    </a>
+                                </h3>
+                            <?php endif; ?>
                             <?php print render($page['sidebar_right']); ?>
                         </div>
                     <?php endif; ?>

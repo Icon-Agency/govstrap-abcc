@@ -315,7 +315,7 @@ function _get_active_page_parent() {
     end($active_trail);
     $parent = prev($active_trail);
     if ($parent['link_path']) {
-      return '<a href="'.$parent['link_path'].'"><i class="fal fa-arrow-left"></i>Back to ' . $parent['link_title'] . '</a>';
+      return $parent;
     }
   }
   return NULL;
