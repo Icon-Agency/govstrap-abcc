@@ -64,6 +64,10 @@
   line-height: inherit !important;
 }
 
+#page-content .hidden-content {
+  display: none;
+}
+
 // Components
 //
 blockquote {
@@ -953,5 +957,22 @@ ul.list-custom.sidebar-menu {
         color: $default-color-rgb;
       }
     }
+  }
+}
+
+li.with-arrow a {
+  &::before {
+    content: "\f061";
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    position: absolute;
+    left: 0;
+    top: 4px;
   }
 }

@@ -45,7 +45,7 @@
             </div>
         </div>
         <!-- /page banner -->
-        <div class="bg-white">
+
           <?php if (!empty($page['highlighted'])): ?>
               <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
           <?php endif; ?>
@@ -54,32 +54,23 @@
                 <?php print $messages; ?>
               </div>
             <?php endif; ?>
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- main page content -->
-                        <div class="signposts pt-5 pb-3">
-                            <section id="main-content-section" role="main">
-                                <a id="main-content"></a>
-                              <?php if (!empty($tabs)): ?>
-                                <?php print render($tabs); ?>
-                              <?php endif; ?>
-                              <?php if (!empty($page['help'])): ?>
-                                <?php print render($page['help']); ?>
-                              <?php endif; ?>
-                              <?php if (!empty($action_links)): ?>
-                                  <ul class="action-links"><?php print render($action_links); ?></ul>
-                              <?php endif; ?>
-                                <div id="page-content">
-                                  <?php print render($page['content']); ?>
-                                </div>
-                            </section>
-                        </div>
-                        <!-- /main page content -->
+                <!-- main page content -->
+                <section id="main-content-section" role="main">
+                    <a id="main-content"></a>
+                  <?php if (!empty($tabs)): ?>
+                    <?php print render($tabs); ?>
+                  <?php endif; ?>
+                  <?php if (!empty($page['help'])): ?>
+                    <?php print render($page['help']); ?>
+                  <?php endif; ?>
+                  <?php if (!empty($action_links)): ?>
+                      <ul class="action-links"><?php print render($action_links); ?></ul>
+                  <?php endif; ?>
+                    <div id="page-content">
+                      <?php print render($page['content']); ?>
                     </div>
-                </div>
-            </div>
-        </div>
+                </section>
+                <!-- /main page content -->
 
         <!-- page footer -->
         <?php include 'includes/page-footer.tpl.php'; ?>

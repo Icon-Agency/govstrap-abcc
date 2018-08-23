@@ -143,3 +143,20 @@ body{
     border-style: solid;
   }
 }
+
+
+.signposts .card.card-rights .card-body ul.fixed-icon-list li a::before {
+  color: $purple !important;
+}
+
+.signposts .card.card-abcc .card-body ul.fixed-icon-list li a::before {
+  color: $green !important;
+}
+
+.signposts .card.card-worker .card-body ul.fixed-icon-list li a::before {
+  color: $red !important;
+}
+
+.signposts .card.card-government .card-body ul.fixed-icon-list li a::before {
+  color: $green !important;
+}
