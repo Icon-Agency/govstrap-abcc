@@ -56,42 +56,27 @@
             <?php endif; ?>
             <div class="container py-5">
                 <div class="row">
-                    <!-- main page content -->
-                    <div class="<?php print $content_column_class; ?> pb-5">
-
-                        <section id="main-content-section" role="main">
-                            <a id="main-content"></a>
-                          <?php if (!empty($tabs)): ?>
-                            <?php print render($tabs); ?>
-                          <?php endif; ?>
-                          <?php if (!empty($page['help'])): ?>
-                            <?php print render($page['help']); ?>
-                          <?php endif; ?>
-                          <?php if (!empty($action_links)): ?>
-                              <ul class="action-links"><?php print render($action_links); ?></ul>
-                          <?php endif; ?>
-                            <div id="page-content">
-                              <?php print render($page['content']); ?>
-                            </div>
-                        </section>
-                    </div>
-                    <!-- /main page content -->
-                    <!-- sidebar right -->
-                    <?php if (!empty($page['sidebar_right'])): ?>
-                        <div class="col-lg-3 offset-lg-1">
-                            <?php if ($active_page_parent): ?>
-                                <h3 class="font-family2 mb-4 h4">
-                                    <a href="/<?php print $active_page_parent['link_path'];?>" class="theme-color theme-color-hover">&nbsp;
-                                      <i class="fal fa-arrow-left float-left line-height-inherit"></i>
-                                      <?php print $active_page_parent['link_title'];?>
-                                    </a>
-                                </h3>
-                            <?php endif; ?>
-                            <?php print render($page['sidebar_right']); ?>
+                    <div class="col-lg-12">
+                        <!-- main page content -->
+                        <div class="signposts pt-5 pb-3">
+                            <section id="main-content-section" role="main">
+                                <a id="main-content"></a>
+                              <?php if (!empty($tabs)): ?>
+                                <?php print render($tabs); ?>
+                              <?php endif; ?>
+                              <?php if (!empty($page['help'])): ?>
+                                <?php print render($page['help']); ?>
+                              <?php endif; ?>
+                              <?php if (!empty($action_links)): ?>
+                                  <ul class="action-links"><?php print render($action_links); ?></ul>
+                              <?php endif; ?>
+                                <div id="page-content">
+                                  <?php print render($page['content']); ?>
+                                </div>
+                            </section>
                         </div>
-                    <?php endif; ?>
-                    <!-- /sidebar right -->
-
+                        <!-- /main page content -->
+                    </div>
                 </div>
             </div>
         </div>

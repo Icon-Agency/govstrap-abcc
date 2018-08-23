@@ -91,6 +91,10 @@ function govstrap_preprocess_html(&$variables, $hook) {
  */
 function govstrap_preprocess_page(&$variables) {
 
+  if (arg(0) == 'node') {
+    $variables['node_content'] =& $variables['page']['content']['system_main']['nodes'][arg(1)];
+  }
+
   // Add pathToTheme to Drupal.settings in JS.
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
 
@@ -101,6 +105,9 @@ function govstrap_preprocess_page(&$variables) {
   }
   if ($header === "403 Forbidden") {
     $variables['theme_hook_suggestions'][] = 'page__403';
+  }
+  if (isset($variables['node']->type)) {
+    $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
   }
 
   // Set page container columns.
