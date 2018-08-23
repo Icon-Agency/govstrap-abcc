@@ -15,8 +15,8 @@ function _abcc_get_active_page_theme() {
   if (drupal_match_path($current_path_alias, theme_get_setting('page_theme_rights'))) {
     return 'theme-rights';
   }
-  if (drupal_match_path($current_path_alias, theme_get_setting('page_theme_government'))) {
-    return 'theme-government';
+  if (drupal_match_path($current_path_alias, theme_get_setting('page_theme_worker'))) {
+    return 'theme-worker';
   }
   if (drupal_match_path($current_path_alias, theme_get_setting('page_theme_abcc'))) {
     return 'theme-abcc';
