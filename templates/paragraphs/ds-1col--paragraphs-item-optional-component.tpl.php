@@ -26,7 +26,13 @@
  * @see template_process()
  */
 ?>
-<div class="card no-min-height card-rights h-100 fade-in-up animated">
+<?php
+if ($content['field_title']['#object']->field_additional_classes) {
+  $additional_classes = $content['field_title']['#object']->field_additional_classes;
+  $additional_classes = $additional_classes['und'][0]['safe_value'];
+}
+?>
+<div class="card fade-in-up animated <?php print $additional_classes; ?>">
     <div class="card-body px-5">
     <?php print render($content); ?>
   </div>
