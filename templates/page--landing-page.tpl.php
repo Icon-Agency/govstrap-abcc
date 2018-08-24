@@ -19,7 +19,7 @@
             <div class="bg-img" style="background-size: contain; background-position-x: 100%; background-image: url(/<?php print path_to_theme(); ?>/images/banners/banner-<?php print rand(1, 3);?>.png)">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12 py-5">
+                        <div class="col-lg-7 col-md-9 py-5">
                             <?php if (!empty($breadcrumb)): ?>
                                 <nav aria-label="breadcrumb" class="breadcrumbs">
                                   <?php print $breadcrumb; ?>
@@ -57,6 +57,9 @@
                 <!-- main page content -->
                 <section id="main-content-section" role="main">
                     <a id="main-content"></a>
+                    <div class="container pt-5">
+                        <div class="row">
+                            <div class="col-lg-12">
                   <?php if (!empty($tabs)): ?>
                     <?php print render($tabs); ?>
                   <?php endif; ?>
@@ -66,6 +69,9 @@
                   <?php if (!empty($action_links)): ?>
                       <ul class="action-links"><?php print render($action_links); ?></ul>
                   <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
                     <div id="page-content">
                       <?php print render($page['content']); ?>
                     </div>

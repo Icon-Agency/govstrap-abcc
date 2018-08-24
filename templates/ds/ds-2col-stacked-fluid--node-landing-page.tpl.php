@@ -17,10 +17,10 @@ if (($left && !$right) || ($right && !$left)) {
             <div class="signposts pt-5 pb-3">
 
                 <div class="row">
-                  <?php if (isset($title_suffix['contextual_links'])): ?>
-                    <?php print render($title_suffix['contextual_links']); ?>
-                  <?php endif; ?>
                     <div class="col-lg-12">
+                      <?php if (isset($title_suffix['contextual_links'])): ?>
+                        <?php print render($title_suffix['contextual_links']); ?>
+                      <?php endif; ?>
                         <<?php print $header_wrapper ?>
                         class="group-header<?php print $header_classes; ?>">
                       <?php print $header; ?>
