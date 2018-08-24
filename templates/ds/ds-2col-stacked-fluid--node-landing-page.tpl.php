@@ -14,7 +14,7 @@ if (($left && !$right) || ($right && !$left)) {
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <div class="signposts pt-5 pb-3">
+            <div class="signposts pb-3">
 
                 <div class="row">
                     <div class="col-lg-12">
