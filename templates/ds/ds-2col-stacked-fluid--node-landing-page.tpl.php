@@ -11,7 +11,7 @@ if (($left && !$right) || ($right && !$left)) {
 }
 ?>
 
-<div class="container py-5">
+<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="signposts pt-5 pb-3">
