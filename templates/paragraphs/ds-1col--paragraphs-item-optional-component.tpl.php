@@ -28,11 +28,11 @@
 ?>
 <?php
 if ($content['field_additional_classes']) {
-  $additional_classes = render($content['field_additional_classes']);
+  $additional_classes = 'card '.render($content['field_additional_classes']);
   unset($content['field_additional_classes']);
 }
 ?>
-<div class="card fade-in-up animated <?php print $additional_classes; ?>">
+<div class="fade-in-up animated <?php print $additional_classes; ?>">
     <div class="card-body px-5">
     <?php print render($content); ?>
   </div>
