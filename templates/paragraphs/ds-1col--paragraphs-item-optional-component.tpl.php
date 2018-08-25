@@ -32,8 +32,32 @@ if ($content['field_additional_classes']) {
   unset($content['field_additional_classes']);
 }
 ?>
+
+<?php if ($content['field_accent_text']): ?>
+<div class="bg-white">
+<div class="container">
+<div class="row">
+    <div class="col-lg-3">
+      <?php print render($content['field_accent_text']); ?>
+    </div>
+    <div class="col-lg-8 offset-lg-1 fade-in-up animated <?php print $additional_classes; ?>">
+        <?php if(trim(render($content['field_accent_text']))): ?>
+            <div class="accent-top">
+              <?php print render($content); ?>
+            </div>
+        <?php else: ?>
+            <?php print render($content); ?>
+        <?php endif; ?>
+    </div>
+</div>
+</div>
+</div>
+<?php else:?>
+
 <div class="fade-in-up animated <?php print $additional_classes; ?>">
     <div class="card-body px-5">
     <?php print render($content); ?>
   </div>
 </div>
+
+<?php endif;?>

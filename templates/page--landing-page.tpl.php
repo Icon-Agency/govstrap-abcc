@@ -62,25 +62,27 @@
         <section id="main-content-section" role="main">
             <a id="main-content"></a>
 
-            <div class="container pt-5">
-                <div class="row">
-                    <div class="col-lg-12">
+            <?php if(user_is_logged_in()): ?>
+            <div class="bg-white">
+                <div class="container pt-3">
+                    <div class="row">
+                        <div class="col-lg-12">
 
 
-                      <?php if (!empty($tabs)): ?>
-                        <?php print render($tabs); ?>
-                      <?php endif; ?>
-                      <?php if (!empty($page['help'])): ?>
-                        <?php print render($page['help']); ?>
-                      <?php endif; ?>
-                      <?php if (!empty($action_links)): ?>
-                          <ul class="action-links"><?php print render($action_links); ?></ul>
-                      <?php endif; ?>
-
-
+                          <?php if (!empty($tabs)): ?>
+                            <?php print render($tabs); ?>
+                          <?php endif; ?>
+                          <?php if (!empty($page['help'])): ?>
+                            <?php print render($page['help']); ?>
+                          <?php endif; ?>
+                          <?php if (!empty($action_links)): ?>
+                              <ul class="action-links"><?php print render($action_links); ?></ul>
+                          <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
 
             <div id="page-content">
               <?php print render($page['content']); ?>

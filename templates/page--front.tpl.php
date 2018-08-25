@@ -36,7 +36,7 @@
         <div>
           <?php if ($messages): ?>
               <div class="system-alert">
-                <?php print $messages; ?>
+                 <?php print $messages; ?>
               </div>
           <?php endif; ?>
 
