@@ -984,3 +984,28 @@ li.with-arrow a {
 .card.list-offset ul.fixed-icon-list {
   padding-left: calc(25% + 10px);
 }
+
+.views-exposed-form {
+  .views-exposed-widget {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    &.views-widget-filter-field_state_no_permit_tid,
+    &.views-widget-filter-field_union_tid {
+      border-top: 2px solid $border-color;
+    }
+
+    & > label {
+      @extend .font-family3;
+      @extend .text-uppercase;
+      margin-bottom: .5rem;
+    }
+
+    &.views-widget-filter-title {
+      display: none;
+    }
+  }
+}
