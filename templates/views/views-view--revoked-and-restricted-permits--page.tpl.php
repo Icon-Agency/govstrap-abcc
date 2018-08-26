@@ -50,11 +50,6 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
     <?php print $title; ?>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
-  <?php if ($header): ?>
-      <div class="view-header">
-        <?php print $header; ?>
-      </div>
-  <?php endif; ?>
 
   <?php if ($exposed): ?>
 
@@ -99,23 +94,26 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
 
     <div class="row">
         <div class="col-lg-8">
-            <div class="news">
-              <?php if ($rows): ?>
-                  <div class="view-content">
-                    <?php print $rows; ?>
-                  </div>
-              <?php elseif ($empty): ?>
-                  <div class="view-empty">
-                    <?php print $empty; ?>
-                  </div>
-              <?php endif; ?>
-              <?php if ($more): ?>
-                <?php print $more; ?>
-              <?php endif; ?>
-              <?php if ($pager): ?>
-                <?php print $pager; ?>
-              <?php endif; ?>
-            </div>
+          <?php if ($header): ?>
+              <div class="view-header">
+                <?php print $header; ?>
+              </div>
+          <?php endif; ?>
+          <?php if ($rows): ?>
+              <div class="view-content container">
+                <?php print $rows; ?>
+              </div>
+          <?php elseif ($empty): ?>
+              <div class="view-empty">
+                <?php print $empty; ?>
+              </div>
+          <?php endif; ?>
+          <?php if ($more): ?>
+            <?php print $more; ?>
+          <?php endif; ?>
+          <?php if ($pager): ?>
+            <?php print $pager; ?>
+          <?php endif; ?>
         </div>
 
         <div class="col-lg-3 offset-lg-1">
