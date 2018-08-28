@@ -115,7 +115,7 @@ if ('All' == $params['field_advice_category_tid'] || !isset($params['field_advic
             <?php print $more; ?>
           <?php endif; ?>
           <?php if ($pager): ?>
-          <div class="mt-5"><?php print $pager; ?></div>           
+          <div class="mt-5"><?php print $pager; ?></div>
           <?php endif; ?>
 
     </div>

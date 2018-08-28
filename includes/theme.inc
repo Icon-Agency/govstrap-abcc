@@ -13,6 +13,26 @@ function govstrap_menu_tree__menu_block__2($variables) {
 }
 
 /**
+ * Implements theme_menu_tree().
+ */
+function govstrap_menu_tree__menu_block__1($variables) {
+  return '<ul>' . $variables['tree'] . '</ul>';
+}
+
+/**
+ * Implements theme_menu_link().
+ */
+function govstrap_menu_link__menu_block__1(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li>' . $output . $sub_menu . "</li>\n";
+}
+
+/**
  * Implements theme_breadrumb().
  */
 function govstrap_breadcrumb($variables) {
