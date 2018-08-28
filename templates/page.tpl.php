@@ -80,9 +80,11 @@
                     <?php if (!empty($page['sidebar_right'])): ?>
                         <div class="col-lg-3 offset-lg-1">
                             <?php if ($active_page_parent): ?>
+                                <div class="text-uppercase font-family3 block safe theme-color pb-2">
+                                    <i class="fal fa-arrow-left float-left line-height-inherit theme-color"></i>&nbsp;Back to
+                                </div>
                                 <h3 class="font-family2 mb-4 h4">
-                                    <a href="/<?php print $active_page_parent['link_path'];?>" class="theme-color theme-color-hover">&nbsp;
-                                      <i class="fal fa-arrow-left float-left line-height-inherit"></i>
+                                    <a href="/<?php print $active_page_parent['link_path'];?>" class="theme-color theme-color-hover">
                                       <?php print $active_page_parent['link_title'];?>
                                     </a>
                                 </h3>

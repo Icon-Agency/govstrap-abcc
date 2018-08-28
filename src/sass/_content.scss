@@ -24,19 +24,21 @@
     text-decoration: none;
 
     &:hover {
-      background: $link-color;
-      color: $white;
+      color: $link-hover-color;
+      border-color: $link-hover-color;
     }
+  }
+}
 
-    &.term-link {
-      color: $default-color;
-      border-bottom: 1px dotted $default-color;
-      &:hover {
-        background: none;
-        text-decoration: none;
-        border-bottom: 1px solid $default-color;
-      }
-    }
+a.term-link {
+  color: $default-color;
+  border-bottom: 1px dashed $default-color;
+  cursor: help;
+
+  &:hover {
+    background: none;
+    text-decoration: none;
+    border-bottom: 1px solid $default-color;
   }
 }
 
