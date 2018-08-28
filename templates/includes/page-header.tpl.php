@@ -122,7 +122,7 @@
                                         <?php print $main_menu_tree['resources']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="resources">
-                                        <?php print str_replace('collapsed', 'collapsed dropdown-item', $sub_menu_tree_markup); ?>
+                                        <?php print str_replace(array('collapsed', 'leaf'), 'dropdown-item', $sub_menu_tree_markup); ?>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -148,7 +148,7 @@
                                       <?php print $main_menu_tree['about']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="<?php print $main_menu_tree['about']['title']; ?>">
-                                      <?php print str_replace('collapsed', 'collapsed dropdown-item', $sub_menu_tree_markup); ?>
+                                      <?php print str_replace(array('collapsed', 'leaf'), 'dropdown-item', $sub_menu_tree_markup); ?>
                                     </div>
                                 </li>
                                 <li class="nav-item">
