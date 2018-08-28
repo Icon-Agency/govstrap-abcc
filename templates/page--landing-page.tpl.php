@@ -20,7 +20,7 @@
                  style="background-size: contain; background-position-x: 100%; background-image: url(/<?php print path_to_theme(); ?>/images/banners/ABCC-Banner-0<?php print rand(1, 8);?>.png)">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-7 col-md-9 py-5">
+                        <div class="col-lg-7 col-md-9 py-md-5 py-sm-0">
                           <?php if (!empty($breadcrumb)): ?>
                               <nav aria-label="breadcrumb" class="breadcrumbs">
                                 <?php print $breadcrumb; ?>
@@ -35,7 +35,7 @@
                                 </div>
                             </div>
 
-                            <div class="btn-wrap">
+                            <div class="btn-wrap hidden-sm-down">
                               <?php if ($active_page_parent): ?>
                                   <a href="/<?php print $active_page_parent['link_path']; ?>"><i
                                               class="fal fa-arrow-left"></i>Back

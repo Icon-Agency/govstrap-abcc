@@ -30,17 +30,20 @@
 
 <?php
 
-$no_permit_type_options[0] = ['type' => 'All', 'name' => 'All'];
-$no_permit_type_options[1] = ['type' => 'no_permit', 'name' => 'No permit'];
-$no_permit_type_options[2] = ['type' => 'with_conditions', 'name' => 'Permit with conditions'];
+$advice_category_options[0] = ['tid' => 'All', 'name' => 'All'];
+$advice_category_options[1] = ['tid' => '141', 'name' => 'Compliant'];
+$advice_category_options[2] = ['tid' => '161', 'name' => 'Compliant with implementation feedback'];
+$advice_category_options[3] = ['tid' => '76', 'name' => 'Non-compliant'];
 
 $params = drupal_get_query_parameters();
-if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_permit_type_value'])) {
-  $no_permit_type_options[0]['class'] = 'active';
-} elseif ('no_permit' == $params['field_no_permit_type_value']) {
-  $no_permit_type_options[1]['class'] = 'active';
-} elseif ('with_conditions' == $params['field_no_permit_type_value']) {
-  $no_permit_type_options[2]['class'] = 'active';
+if ('All' == $params['field_advice_category_tid'] || !isset($params['field_advice_category_tid'])) {
+  $advice_category_options[0]['class'] = 'active';
+} elseif ('141' == $params['field_advice_category_tid']) {
+  $advice_category_options[1]['class'] = 'active';
+} elseif ('161' == $params['field_advice_category_tid']) {
+  $advice_category_options[2]['class'] = 'active';
+} elseif ('76' == $params['field_advice_category_tid']) {
+  $advice_category_options[3]['class'] = 'active';
 }
 ?>
 
@@ -57,19 +60,19 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
           <div class="col-lg-12 pb-5">
               <div class="filter mb-5">
                   <ul class="inline block-active-icon font-family3 bold text-uppercase small mb-5">
-                    <?php foreach ($no_permit_type_options as $no_permit_type_option): ?>
-                        <li class="<?php print $no_permit_type_option['class']; ?>">
-                            <a href="?field_no_permit_type_value=<?php print $no_permit_type_option['type'] ?>"><?php print $no_permit_type_option['name']; ?></a>
+                    <?php foreach ($advice_category_options as $advice_category_option): ?>
+                        <li class="<?php print $advice_category_option['class']; ?>">
+                            <a href="?field_advice_category_tid=<?php print $advice_category_option['tid'] ?>"><?php print $advice_category_option['name']; ?></a>
                         </li>
                     <?php endforeach; ?>
                   </ul>
 
                   <div class="text-right search-options">
-                      <form class="search-wrap" action="/your-rights-and-responsibilities/right-entry/revoked-and-restricted-permits"
+                      <form class="search-wrap" action=""
                             method="get" id="views-exposed-form-revoked-and-restricted-permits-page-2"
                             accept-charset="UTF-8">
                           <input type="text"
-                                 placeholder="Search name"
+                                 placeholder="Search agreement clauses"
                                  id="edit-search-title"
                                  name="title" value=""
                                  size="30" maxlength="128"
@@ -93,7 +96,7 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
   <?php endif; ?>
 
     <div class="row">
-        <div class="col-lg-8">
+
           <?php if ($header): ?>
               <div class="view-header">
                 <?php print $header; ?>
@@ -112,18 +115,9 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
             <?php print $more; ?>
           <?php endif; ?>
           <?php if ($pager): ?>
-            <?php print $pager; ?>
+          <div class="mt-5"><?php print $pager; ?></div>           
           <?php endif; ?>
-        </div>
 
-        <div class="col-lg-3 offset-lg-1">
-          <?php if ($exposed): ?>
-              <div class="view-filters">
-                <h3 class="text-uppercase h5 font-family3 theme-color safe small bold">filters</h3>
-                <?php print $exposed; ?>
-              </div>
-          <?php endif; ?>
-        </div>
     </div>
 
   <?php if ($attachment_after): ?>
