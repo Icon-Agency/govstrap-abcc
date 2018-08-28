@@ -840,16 +840,55 @@ ul.abcc-themed {
 }
 
 // Generic Drupal class overrides
-ul.list-custom.sidebar-menu {
-  .first,
-  .leaf,
-  .last,
-  .collapsed,
-  .expanded {
-    list-style: none;
-    padding: 0;
-    padding-left: 30px;
-    @extend .py-2;
+
+// Any sidebar menu stuff goes here
+.region-sidebar-right > .block-menu-block > .content {
+
+  & > ul.list-custom.sidebar-menu > li {
+
+    &.first,
+    &.leaf,
+    &.last,
+    &.collapsed,
+    &.expanded{
+      @extend .py-3;
+      @extend .px-0;
+      border-top: 1px solid $border-color;
+    }
+
+    &.last {
+      border-bottom: 1px solid $border-color;
+    }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    & > a {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: $font-family3;
+      font-size: $large-font-size;
+    }
+
+    & > ul.list-custom.sidebar-menu {
+      @extend .pt-3;
+    }
+
+  }
+
+  ul.list-custom.sidebar-menu {
+    .first,
+    .leaf,
+    .last,
+    .collapsed,
+    .expanded {
+      list-style: none;
+      padding: 0;
+      padding-left: 30px;
+      @extend .py-2;
+    }
   }
 }
 
