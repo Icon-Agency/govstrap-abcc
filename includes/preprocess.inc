@@ -148,6 +148,10 @@ function govstrap_preprocess_page(&$variables) {
   }
 }
 
+function govstrap_preprocess_views_view__abcc_annual_reports(&$variables) {
+  $variables['template_files'][] = "views-page--abcc-annual-reports.page.tpl.php";
+}
+
 /**
  * Implements hook_preprocess_node().
  */

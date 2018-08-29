@@ -766,6 +766,11 @@ ul.abcc-themed {
   }
 }
 
+//Cover image
+.cover-image img {
+  @include signpost-shadow(true);
+}
+
 //ARCHIVES
 //
 .archives {
@@ -802,6 +807,23 @@ ul.abcc-themed {
 }
 
 // Generic Drupal class overrides
+
+// Book navigation
+.book-navigation {
+  ul.menu {
+    @extend .list-unstyled;
+    li {
+      list-style: none;
+    }
+  }
+  a {
+    border-bottom-color: transparent !important;
+    &:hover {
+      color: $link-hover-color;
+      border-bottom-color: $link-hover-color !important;
+    }
+  }
+}
 
 // Any sidebar menu stuff goes here
 .region-sidebar-right > .block-menu-block > .content {
