@@ -43,13 +43,6 @@
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="collapse navbar-collapse justify-content" id="navbarNavDropdown">
-                          <?php
-                              $rights_and_responsibilities_active_class = '';
-                              $menu_tree_markup = drupal_render($main_menu_tree['your_rights_and_responsibilities']['tree']);
-                              if ($active_page_root['link_title'] == $main_menu_tree['your_rights_and_responsibilities']['title']) {
-                                $rights_and_responsibilities_active_class = 'active';
-                              }
-                          ?>
                             <ul class="navbar-nav large-font">
                                 <li class="nav-item <?php if (drupal_is_front_page()) { print 'active'; } ?>">
                                     <a class="nav-link" href="/">
@@ -57,7 +50,10 @@
                                         <span class="sr-only">Home</span>
                                     </a>
                                 </li>
-                                <li class="nav-item dropdown mega <?php print $rights_and_responsibilities_active_class; ?>">
+                              <?php
+                              $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'your_rights_and_responsibilities', $active_page_root);
+                              ?>
+                                <li class="nav-item dropdown mega <?php print $main_nav_sub_menu_tree['active_class']; ?>">
                                     <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['your_rights_and_responsibilities']['path']; ?>" id="rights" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Your rights & responsibilities
                                     </a>
@@ -76,7 +72,7 @@
                                                     <!-- /.col-md-4  -->
                                                     <div class="col-md-4">
                                                         <div class="main-menu-fragment" id="menu-rights-and-responsibilities">
-                                                            <?php print $menu_tree_markup; ?>
+                                                            <?php print $main_nav_sub_menu_tree['markup']; ?>
                                                         </div>
                                                     </div>
                                                     <!-- /.col-md-4  -->
@@ -96,59 +92,44 @@
                                     </div>
                                 </li>
                               <?php
-                                $building_code_active_class = '';
-                                if ($active_page_root['link_title'] == 'Building Code') {
-                                  $building_code_active_class = 'active';
-                                }
+                              $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'building_code', $active_page_root);
                               ?>
                               <?php if (!empty($page['mega_menu_item_building_code'])): ?>
-                                    <li class="nav-item dropdown mega <?php print $building_code_active_class;?>">
+                                    <li class="nav-item dropdown mega <?php print $main_nav_sub_menu_tree['active_class'];?>">
                                       <?php print render($page['mega_menu_item_building_code']); ?>
                                     </li>
                                 <?php endif; ?>
                             </ul>
                             <ul class="navbar-nav">
-                                <?php
-                                  $new_sub_menu_tree =  govstrap_menu_tree_no_root($main_menu_tree['resources']['tree']);
-                                  govstrap_menu_get_max_level_sub_tree($new_sub_menu_tree, 0);
-                                  $sub_menu_tree_markup = drupal_render($new_sub_menu_tree);
-                                  $resources_active_class = '';
-                                  if ($active_page_root['link_title'] == $main_menu_tree['resources']['title'] ) {
-                                    $resources_active_class = 'active';
-                                  }
-                                ?>
-                                <li class="nav-item dropdown <?php print $resources_active_class; ?>">
-                                    <a class="nav-link dropdown-toggle" href="#" id="resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <?php
+                              $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'resources', $active_page_root);
+                              ?>
+                                <li class="nav-item dropdown <?php print $main_nav_sub_menu_tree['active_class']; ?>">
+                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['resources']['path']; ?>" id="resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <?php print $main_menu_tree['resources']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="resources">
-                                        <?php print str_replace(array('collapsed', 'leaf'), 'dropdown-item', $sub_menu_tree_markup); ?>
+                                        <?php print $main_nav_sub_menu_tree['markup']; ?>
                                     </div>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Legal cases</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="/news-and-media"><?php print $main_menu_tree['news_and_media']['title']; ?></a>
-                                    <div class="dropdown-menu" aria-labelledby="resources">
-                                      <?php print drupal_render($main_menu_tree['news_and_media']['tree']); ?>
-                                    </div>
+                              <?php
+                              $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'news_and_media', $active_page_root);
+                              ?>
+                                <li class="nav-item dropdown <?php print $main_nav_sub_menu_tree['active_class']; ?>">
+                                    <a class="nav-link" href="/<?php print $main_menu_tree['news_and_media']['path']; ?>"><?php print $main_menu_tree['news_and_media']['title']; ?></a>
                                 </li>
-                                <?php
-                                  $new_sub_menu_tree =  govstrap_menu_tree_no_root($main_menu_tree['about']['tree']);
-                                  govstrap_menu_get_max_level_sub_tree($new_sub_menu_tree, 0);
-                                  $sub_menu_tree_markup = drupal_render($new_sub_menu_tree);
-                                  $about_active_class = '';
-                                  if ($active_page_root['link_title'] == $main_menu_tree['about']['title']) {
-                                    $about_active_class = 'active';
-                                  }
-                                ?>
-                                <li class="nav-item dropdown <?php print $about_active_class; ?>">
-                                    <a class="nav-link dropdown-toggle" href="#" id="resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <?php
+                              $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'about', $active_page_root);
+                              ?>
+                                <li class="nav-item dropdown <?php print $main_nav_sub_menu_tree['active_class']; ?>">
+                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['about']['path']; ?>" id="resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       <?php print $main_menu_tree['about']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="<?php print $main_menu_tree['about']['title']; ?>">
-                                      <?php print str_replace(array('collapsed', 'leaf'), 'dropdown-item', $sub_menu_tree_markup); ?>
+                                      <?php print $main_nav_sub_menu_tree['markup']; ?>
                                     </div>
                                 </li>
                                 <li class="nav-item">

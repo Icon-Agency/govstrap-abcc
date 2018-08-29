@@ -293,3 +293,81 @@ function _get_card_theme ($category) {
 function array_cmp($a, $b) {
   return $a['tid'] - $b['tid'];
 }
+
+
+/**
+ * Helper internal function to extract array keys of tree's direct actual
+ * children from menu tree render array
+ *
+ * @param array $tree
+ *   Menu tree render array from menu tree build.
+ *
+ * @return array current tree's direct children's array keys
+ */
+function _govstrap_menu_tree_get_tree_children($tree) {
+  $result = [];
+  $children = element_children($tree);
+  if (!empty($children)) {
+    foreach ($children as $key) {
+      if (isset($tree[$key]['#below'])) {
+        $result[] = $key;
+      }
+    }
+  }
+  return $result;
+}
+
+/**
+ * Helper that generates a machine name using a provided human readable name.
+ *
+ * @param string $human_name
+ *   Human readable name.
+ *
+ * @return string
+ *   Machine name cleaned-up of any special chars.
+ */
+function _human_to_machine($human_readable) {
+  return strtolower(preg_replace([
+    '/[^a-zA-Z0-9]+/',
+    '/-+/',
+    '/^-+/',
+    '/-+$/',
+  ], ['_', '_', '', ''], $human_readable));
+}
+
+/**
+ * Helper that finds current page's active parent in the menu
+ */
+function _get_active_page_parent() {
+  $active_trail = menu_get_active_trail();
+  if ($active_trail) {
+    end($active_trail);
+    $parent = prev($active_trail);
+    if ($parent['link_path']) {
+      return $parent;
+    }
+  }
+  return NULL;
+}
+
+/**
+ * Helper that finds current page's active parent in the menu
+ */
+function _get_active_page_root() {
+  $active_trail = menu_get_active_trail();
+  if ($active_trail[1]) {
+    return $active_trail[1];
+  }
+  return NULL;
+}
+
+function get_main_nav_sub_menu_tree($menu_tree, $item_name, $active_page_root) {
+  $new_sub_menu_tree =  govstrap_menu_tree_no_root($menu_tree[$item_name]['tree']);
+  govstrap_menu_get_max_level_sub_tree($new_sub_menu_tree, 0);
+  $sub_menu_tree['markup'] = render($new_sub_menu_tree);
+  $sub_menu_tree['active_class'] = '';
+  if ($active_page_root['link_title'] == $menu_tree[$item_name]['title']) {
+    $sub_menu_tree['active_class'] = 'active';
+  }
+  return $sub_menu_tree;
+}

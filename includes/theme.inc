@@ -13,6 +13,20 @@ function govstrap_menu_tree__menu_block__2($variables) {
 }
 
 /**
+ * Implements theme_menu_link().
+ */
+function govstrap_menu_link__menu_block__2($variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
+
+
+/**
  * Implements theme_menu_tree().
  */
 function govstrap_menu_tree__menu_block__1($variables) {
@@ -22,7 +36,7 @@ function govstrap_menu_tree__menu_block__1($variables) {
 /**
  * Implements theme_menu_link().
  */
-function govstrap_menu_link__menu_block__1(array $variables) {
+function govstrap_menu_link__menu_block__1($variables) {
   $element = $variables['element'];
   $sub_menu = '';
   if ($element['#below']) {
@@ -30,6 +44,30 @@ function govstrap_menu_link__menu_block__1(array $variables) {
   }
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li>' . $output . $sub_menu . "</li>\n";
+}
+
+/**
+ * Implements theme_menu_link().
+ */
+function govstrap_menu_link__menu_site_main_menu($variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  if (!isset($output)) {
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  }
+  unset($element['#attributes']['class']);
+  $element['#attributes']['class'][] = 'dropdown-item';
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
+
+/**
+ * Implements theme_menu_tree().
+ */
+function govstrap_menu_tree__menu_site_main_menu($variables) {
+  return '<ul class="menu">' . $variables['tree'] . '</ul>';
 }
 
 /**

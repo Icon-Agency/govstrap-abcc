@@ -146,33 +146,6 @@ function govstrap_preprocess_page(&$variables) {
       drupal_set_title($arguments[4]);
     }
   }
-
-}
-
-/**
- * Implements more specific callback to theme_menu_link().
- */
-function govstrap_menu_link__menu_site_main_menu($variables) {
-  $element = $variables['element'];
-  $description = !empty($element['#localized_options']['attributes']['title']) ? $element['#localized_options']['attributes']['title'] : '';
-
-  $sub_menu = '';
-  if ($element['#below']) {
-    $sub_menu = drupal_render($element['#below']);
-  }
-
-  if (!isset($output)) {
-    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-  }
-
-  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
-}
-
-/**
- * Implements more specific callback to theme_menu_tree().
- */
-function govstrap_menu_tree__menu_site_main_menu($variables) {
-  return '<ul class="menu">' . $variables['tree'] . '</ul>';
 }
 
 /**
@@ -273,70 +246,4 @@ function govstrap_menu_tree_no_root($tree) {
   }
 
   return $result;
-}
-
-/**
- * Helper internal function to extract array keys of tree's direct actual
- * children from menu tree render array
- *
- * @param array $tree
- *   Menu tree render array from menu tree build.
- *
- * @return array current tree's direct children's array keys
- */
-function _govstrap_menu_tree_get_tree_children($tree) {
-  $result = [];
-  $children = element_children($tree);
-  if (!empty($children)) {
-    foreach ($children as $key) {
-      if (isset($tree[$key]['#below'])) {
-        $result[] = $key;
-      }
-    }
-  }
-  return $result;
-}
-
-/**
- * Helper that generates a machine name using a provided human readable name.
- *
- * @param string $human_name
- *   Human readable name.
- *
- * @return string
- *   Machine name cleaned-up of any special chars.
- */
-function _human_to_machine($human_readable) {
-  return strtolower(preg_replace([
-    '/[^a-zA-Z0-9]+/',
-    '/-+/',
-    '/^-+/',
-    '/-+$/',
-  ], ['_', '_', '', ''], $human_readable));
-}
-
-/**
- * Helper that finds current page's active parent in the menu
- */
-function _get_active_page_parent() {
-  $active_trail = menu_get_active_trail();
-  if ($active_trail) {
-    end($active_trail);
-    $parent = prev($active_trail);
-    if ($parent['link_path']) {
-      return $parent;
-    }
-  }
-  return NULL;
-}
-
-/**
- * Helper that finds current page's active parent in the menu
- */
-function _get_active_page_root() {
-  $active_trail = menu_get_active_trail();
-  if ($active_trail[1]) {
-    return $active_trail[1];
-  }
-  return NULL;
 }
