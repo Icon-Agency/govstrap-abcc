@@ -4,6 +4,8 @@ import Mmenu from './Elements/Mmenu';
 import InView from './Elements/InView';
 import ShowPopup from './Elements/Search';
 import Slick from './Elements/Slick';
+import Magnific from './Elements/Magnific';
+import Wizard from './Elements/Wizard';
 
 // new Homepage();
 new Mmenu();
@@ -11,63 +13,112 @@ new InView();
 new ShowPopup();
 new Slick();
 
-
 $(document).ready(function() {
- // executes when HTML-Document is loaded and DOM is ready
 
-  $(".anchorLink").click(function(e){
-    e.preventDefault();
+  // Fix glossary menu on scroll
+  var toggleAffix = function(affixElement, wrapper, scrollElement) {
+    var height = affixElement.outerHeight(),
+        top = wrapper.offset().top,
+        footer = $('.footer').offset().top,
+        footerHeight = $('.footer').outerHeight(),
+        screenNoFooter = $(document).height() - footerHeight,
+        visibleFooter = scrollElement.scrollTop() >= screenNoFooter;
 
-    var id     = $(this).attr("href");
-    var offset = $(id).offset();
+    if (scrollElement.scrollTop() >= top){
+      console.log('not in footer');
+      wrapper.height(height);
+      affixElement.addClass("affix");
 
-    $("html, body").animate({
-      scrollTop: offset.top
-    }, 100);
-  });
+      if(scrollElement.scrollTop() >= footer - height){
+        console.log('in footer');
+         // if(scrollElement.scrollTop() >= screenNoFooter){
 
-  // Toggle Google Translate bar at page top
-  $(".translate").click(function(e){
-    $(".translate-container").toggle();
-    $(".translate-indicator").toggle();
-  });
+         // }
 
-  // Smooth scropping to top
-  $(window).scroll(function() {
-    if($(this).scrollTop() != 0) {
-      $("#to-top").fadeIn();
-    } else {
-      $("#to-top").fadeOut();
+        // affixElement.removeClass("affix");
+        // wrapper.height('auto');
+      }
     }
-  });
-  $("#to-top").click(function() {
-    $("body,html").animate({scrollTop:0}, 500);
+    else {
+      console.log('not fixed');
+      affixElement.removeClass("affix");
+      wrapper.height('auto');
+    }
+
+    // console.log('position',scrollElement.scrollTop());
+    // console.log('footer',footer);
+    // console.log('height', height)
+    // console.log('visibleFooter', visibleFooter)
+  };
+
+  $('[data-toggle="affix"] .inner').each(function() {
+    var ele = $(this),
+      wrapper = $('<div></div>');
+
+    ele.before(wrapper);
+    $(window).on('scroll resize', function() {
+      toggleAffix(ele, wrapper, $(this));
+    });
+
+    // init
+    toggleAffix(ele, wrapper, $(window));
   });
 
-  // breakpoint and up
+  // Smooth scroll anchor links
+  $('.anchorLink').bind('click', function (event) {
+    var offset = $('[data-toggle="affix"] .inner').outerHeight();
+    var $anchor = $(this);
+
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top - offset
+    }, 1500, 'easeInOutExpo');
+    event.preventDefault();
+  });
+
+
+  // mega menu
   $(window).resize(function(){
     if ($(window).width() >= 980){
 
-        // when you hover a toggle show its dropdown menu
-        $(".navbar .dropdown-toggle").hover(function () {
-           $(this).parent().toggleClass("show");
-           $(this).parent().find(".dropdown-menu").toggleClass("show");
-         });
+      // when you hover a toggle show its dropdown menu
+      $(".navbar .dropdown-toggle").hover(function () {
+         $(this).parent().toggleClass("show");
+         $(this).parent().find(".dropdown-menu").toggleClass("show");
+       });
 
-          // hide the menu when the mouse leaves the dropdown
-        $( ".navbar .dropdown-menu" ).mouseleave(function() {
-          $(this).removeClass("show");
-        });
+        // hide the menu when the mouse leaves the dropdown
+      $( ".navbar .dropdown-menu" ).mouseleave(function() {
+        $(this).removeClass("show");
+      });
 
       // do something here
     }
   });
 // document ready
-});
+})
 
 if ($('body').hasClass('has-banner')) {
     //Only avalaible on home page
 }
 
+if ($('body').hasClass('has-eligibility-wizard')) {
+  new Magnific()
 
+  var wizard = new Wizard
+  wizard.init('/' + Drupal.settings.pathToTheme + '/data/proofOfEligibility.json')
+}
 
+if ($('body').hasClass('has-sub-contractor-wizard')) {
+  new Magnific()
+
+  var wizard = new Wizard
+  wizard.init('/' + Drupal.settings.pathToTheme + '/data/subContractor.json')
+}
+
+if ($('body').hasClass('has-anonymous-report-wizard')) {
+  console.log('anonymous')
+  new Magnific()
+
+  var wizard = new Wizard
+  wizard.init('/' + Drupal.settings.pathToTheme + '/data/anonymousReport.json')
+}

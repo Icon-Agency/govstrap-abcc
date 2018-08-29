@@ -1036,3 +1036,206 @@ li.with-arrow a {
     }
   }
 }
+
+.wizard-questions{
+  a{
+    overflow-wrap: break-word;
+    color: $blue;
+  }
+  .question-wrap{
+    .item{
+      border-top: 2px solid rgba(0,0,0,.1);
+      &:first-child{
+        border: 0 none;
+      }
+
+      .pre-text{
+        margin-top: -10px;
+        ul{
+          margin-bottom: $spacer*2;
+        }
+      }
+
+      .info{
+        ul{
+          list-style: none;
+          padding: 0;
+          margin: 0 0 $spacer;
+          li{
+            padding: 0;
+            a{
+              display: inline-block;
+              padding-left: 25px;
+              margin-bottom: $spacer/2;
+            }
+          }
+        }
+      }
+
+      &.item-active{
+        background-color: red !important;
+      }
+
+      &.result{
+        >h5{
+          font-size: $h5-font-size;
+        }
+
+        .fake-radio{
+          padding-left: $spacer*1.5;
+          cursor: pointer;
+          &:hover{
+            color: $blue;
+          }
+          .icon{
+            top: 0;
+            border: 0 none;
+            &:after{
+              display: none;
+            }
+            &:before{
+              display: block;
+            }
+          }
+        }
+
+        a{
+          position: relative;
+          padding-left: 20px;
+          &:before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: 'Font Awesome 5 Pro';
+            content: '\f08e';
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .not-focused{
+    .control {
+      input[type=checkbox],
+      input[type=radio] {
+        &:not(:checked) ~ .control {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.fake-radio{
+  position: relative;
+  padding-left: $spacer*2;
+  margin-bottom: $spacer;
+  .icon{
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    border: 2px solid $blue;
+    //Fake link button
+    &:before{
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: 'Font Awesome 5 Pro';
+      content: '\f054';
+      font-weight: 700;
+      color: $blue;
+    }
+
+    //Radio select icon
+    &:after{
+      display: none;
+      height: 8px;
+      width: 8px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      content: '';
+      background-color: $blue;
+      border-radius: 100%;
+    }
+    &.active{
+      &:after{
+        display: block;
+      }
+    }
+  }
+  span{
+
+  }
+}
+
+.step-list{
+  padding-left: $spacer*2;
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    li{
+      display: flex;
+      align-items: center;
+      min-height: 62px;
+      position: relative;
+      padding: 0 0 0 calc(62px + 36px + 30px + 30px); //img width + step-no width + step-no margin + spacing
+      margin: 0 0 $spacer*3 !important;
+      &:after{
+        position: absolute;
+        top: calc(14px + 36px + 10px); // step-no top value + step-no height + visual gap/2
+        left: 109px;
+        background-color: $dark-blue;
+        width: 2px;
+        height: calc(100% - 8px); // 100% - visual gap between step numbers
+        content: '';
+        z-index: 0;
+      }
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+
+      img,
+      .step-no{
+        position: absolute;
+      }
+
+      img{
+        top: 0;
+        left: 0;
+        height: 62px;
+        width: 62px;
+      }
+
+      .step-no{
+        top: 14px;
+        left: 92px;
+        display: inline-block;
+        color: $green;
+        height: 36px;
+        width: 36px;
+        line-height: 36px - 4px;
+        border-radius: 100%;
+        border: 2px solid $dark-blue;
+        text-align: center;
+        background-color: $body-bg;
+        z-index: 1;
+      }
+      .step-label{
+
+      }
+    }
+  }
+}

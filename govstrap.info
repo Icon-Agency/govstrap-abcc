@@ -26,8 +26,11 @@ settings[govstrap_skip_link_text]   = Skip to main content
 settings[govstrap_rebuild_registry] = 0
 
 ;;;;;;;;;;;;;;;;;;;;;
-;; Javascript.
+;; Scripts
 ;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = 'build/js/vendors.js'
+scripts[] = 'build/js/app.js'
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheet.

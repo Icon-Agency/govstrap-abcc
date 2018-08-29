@@ -80,6 +80,9 @@ function govstrap_preprocess_html(&$variables, $hook) {
 
   // Add active page theme class to <body> if available.
   $variables['classes_array'][] = _abcc_get_active_page_theme();
+
+  // TEST TEST TEST
+  $variables['classes_array'][] = 'has-eligibility-wizard';
 }
 
 /**
@@ -146,10 +149,6 @@ function govstrap_preprocess_page(&$variables) {
       drupal_set_title($arguments[4]);
     }
   }
-}
-
-function govstrap_preprocess_views_view__abcc_annual_reports(&$variables) {
-  $variables['template_files'][] = "views-page--abcc-annual-reports.page.tpl.php";
 }
 
 /**
