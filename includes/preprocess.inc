@@ -85,6 +85,9 @@ function govstrap_preprocess_html(&$variables, $hook) {
   if ($variables['page']['wizard']['bean_eligibility-wizard']) {
     $variables['classes_array'][] = 'has-eligibility-wizard';
   }
+  if ($variables['page']['wizard']['bean_sub-contractor-wizard']) {
+    $variables['classes_array'][] = 'has-sub-contractor-wizard';
+  }
 }
 
 /**
