@@ -15,7 +15,20 @@ new Slick();
 
 $(document).ready(function() {
 
-  // Fix glossary menu on scroll
+
+  // Smooth scropping to top
+  $(window).scroll(function() {
+    if ($(this).scrollTop() != 0) {
+      $("#to-top").fadeIn();
+    } else {
+      $("#to-top").fadeOut();
+    }
+  });
+  $("#to-top").click(function () {
+    $("body,html").animate({scrollTop: 0}, 500);
+  });
+
+    // Fix glossary menu on scroll
   var toggleAffix = function(affixElement, wrapper, scrollElement) {
     var height = affixElement.outerHeight(),
         top = wrapper.offset().top,
@@ -25,12 +38,10 @@ $(document).ready(function() {
         visibleFooter = scrollElement.scrollTop() >= screenNoFooter;
 
     if (scrollElement.scrollTop() >= top){
-      console.log('not in footer');
       wrapper.height(height);
       affixElement.addClass("affix");
 
       if(scrollElement.scrollTop() >= footer - height){
-        console.log('in footer');
          // if(scrollElement.scrollTop() >= screenNoFooter){
 
          // }
@@ -40,7 +51,6 @@ $(document).ready(function() {
       }
     }
     else {
-      console.log('not fixed');
       affixElement.removeClass("affix");
       wrapper.height('auto');
     }
@@ -116,7 +126,6 @@ if ($('body').hasClass('has-sub-contractor-wizard')) {
 }
 
 if ($('body').hasClass('has-anonymous-report-wizard')) {
-  console.log('anonymous')
   new Magnific()
 
   var wizard = new Wizard

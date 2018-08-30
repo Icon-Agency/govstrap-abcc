@@ -86,6 +86,9 @@
 
             <div id="page-content">
               <?php print render($page['content']); ?>
+              <?php if (!empty($page['wizard'])): ?>
+                <?php print render($page['wizard']); ?>
+              <?php endif;?>
             </div>
         </section>
         <!-- /main page content -->

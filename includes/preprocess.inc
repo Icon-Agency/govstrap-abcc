@@ -81,8 +81,10 @@ function govstrap_preprocess_html(&$variables, $hook) {
   // Add active page theme class to <body> if available.
   $variables['classes_array'][] = _abcc_get_active_page_theme();
 
-  // TEST TEST TEST
-  $variables['classes_array'][] = 'has-eligibility-wizard';
+  // Add wizard class to the body tag
+  if ($variables['page']['wizard']['bean_eligibility-wizard']) {
+    $variables['classes_array'][] = 'has-eligibility-wizard';
+  }
 }
 
 /**

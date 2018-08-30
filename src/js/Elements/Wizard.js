@@ -1,4 +1,4 @@
-// import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from 'smoothscroll-polyfill';
 
 /**
  * Wizard2
@@ -316,4 +316,4 @@ function Wizard () {
   }
 }
 
-module.exports = Wizard
+export default Wizard;
