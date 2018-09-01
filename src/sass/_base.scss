@@ -1239,3 +1239,29 @@ li.with-arrow a {
     }
   }
 }
+
+// Legal cases
+.page-legal-cases {
+
+  .views-widget-filter-search_api_views_fulltext {
+    display: none;
+  }
+
+  .views-widget-filter-field_case_status,
+  .views-widget-filter-field_state_no_permit,
+  .views-widget-filter-field_breaches {
+    border-top: 2px solid $border-color;
+  }
+
+  h5.category {
+    font-size: 1rem;
+
+    &.case-decision-358 {
+      color: $green;
+    }
+
+    &.case-decision-357 {
+      color: $blue;
+    }
+  }
+}
