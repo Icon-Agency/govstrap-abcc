@@ -131,6 +131,10 @@
         }
         &:hover {
           opacity: 0.8;
+          &:after {
+            display: block;
+            background: darken($border-color, 10%) !important;
+          }
         }
         &.dropdown-toggle {
           &:before {

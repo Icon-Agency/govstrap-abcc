@@ -66,3 +66,57 @@ ul.related-resources li a {
     top: 4px;
   }
 }
+
+// Legal cases
+.page-legal-cases {
+
+  .views-widget-filter-search_api_views_fulltext {
+    display: none;
+  }
+
+  .views-widget-filter-field_case_status,
+  .views-widget-filter-field_state_no_permit,
+  .views-widget-filter-field_breaches {
+    border-top: 2px solid $border-color;
+  }
+
+  h5.category {
+    font-size: 1rem;
+
+    &.case-decision-358 {
+      color: $green;
+    }
+
+    &.case-decision-357 {
+      color: $blue;
+    }
+  }
+}
+
+.node-type-legal-case {
+  table {
+    @extend .table-responsive;
+
+    tr:first-of-type {
+      border-bottom: 4px solid $border-color;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .sidebar-menu a.active-trail {
+    color: $safe-green;
+  }
+}
+
+
+// Drupal overrides {
+div.toc-filter-back-to-top {
+  border-top: 1px solid $border-color !important;
+  margin: 2rem 0;
+}
+
+.toc-filter-bullet .item-list ul li {
+  padding-top: 0.5rem;
+}
