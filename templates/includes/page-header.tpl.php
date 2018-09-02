@@ -135,8 +135,11 @@
                                       <?php print $main_nav_sub_menu_tree['markup']; ?>
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact</a>
+                              <?php
+                              $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'contact', $active_page_root);
+                              ?>
+                                <li class="nav-item dropdown <?php print $main_nav_sub_menu_tree['active_class']; ?>">
+                                    <a class="nav-link" href="/<?php print $main_menu_tree['contact']['path']; ?>"><?php print $main_menu_tree['contact']['title']; ?></a>
                                 </li>
                             </ul>
                         </div>
