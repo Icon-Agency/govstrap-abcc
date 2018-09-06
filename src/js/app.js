@@ -18,19 +18,19 @@ new Slick();
   Drupal.behaviors.govstrap = {
     attach: function (context, settings) {
 
-      $(document).ready(function () {
+      // Smooth scropping to top
+      $(window).scroll(function () {
+        if ($(this).scrollTop() != 0) {
+          $("#to-top").fadeIn();
+        } else {
+          $("#to-top").fadeOut();
+        }
+      });
+      $("#to-top").click(function () {
+        $("body,html").animate({scrollTop: 0}, 500);
+      });
 
-        // Smooth scropping to top
-        $(window).scroll(function () {
-          if ($(this).scrollTop() != 0) {
-            $("#to-top").fadeIn();
-          } else {
-            $("#to-top").fadeOut();
-          }
-        });
-        $("#to-top").click(function () {
-          $("body,html").animate({scrollTop: 0}, 500);
-        });
+      $(document).ready(function () {
 
         // Fix glossary menu on scroll
         var toggleAffix = function (affixElement, wrapper, scrollElement) {
