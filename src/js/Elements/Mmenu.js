@@ -3,13 +3,13 @@ import mmenu from 'jquery.mmenu'
 /**
  * Mmenu
  */
-class Mmenu {
+export default class Mmenu {
 
   constructor() {
-    this.init();
+    this.attach();
   }
 
-  init() {
+  attach() {
     // console.log('Mmenu!!!');
 
     $("#menu").mmenu({
@@ -20,5 +20,3 @@ class Mmenu {
     });
   }
 }
-
-export default Mmenu;

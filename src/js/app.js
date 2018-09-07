@@ -7,7 +7,6 @@ import Slick from './Elements/Slick';
 import Magnific from './Elements/Magnific';
 import Wizard from './Elements/Wizard';
 
-// new Homepage();
 new Mmenu();
 new InView();
 new ShowPopup();
