@@ -31,8 +31,8 @@
 }
 
 a.term-link {
-  color: $default-color;
-  border-bottom: 1px dashed $default-color;
+  color: $default-color !important;
+  border-bottom: 1px dashed $default-color !important;
   cursor: help;
 
   &:hover {
