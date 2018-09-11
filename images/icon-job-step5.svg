@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.98 62.5">
+  <title>icon-job-step5</title>
+  <path d="M1066.89,524.24c-3.8-1.46-8-3.28-8.36-4.42v-1.19a7.35,7.35,0,0,0,1.77-3.24,1.92,1.92,0,0,0,.38-2.79v-2.66c0-2.75-1.53-4.64-5-4.64s-5,1.89-5,4.64v2.66a1.93,1.93,0,0,0,.37,2.79,7.46,7.46,0,0,0,1.78,3.24v1.19c-.35,1.14-4.56,3-8.36,4.42a.85.85,0,0,0-.53.8v3a.84.84,0,0,0,.83.85h21.89a.84.84,0,0,0,.83-.85v-3A.85.85,0,0,0,1066.89,524.24Z" transform="translate(-1034.87 -493.61)" fill="#ceede3"/>
+  <path d="M1066.89,524.24c-3.8-1.46-8-3.28-8.36-4.42v-1.19a7.35,7.35,0,0,0,1.77-3.24,1.92,1.92,0,0,0,.38-2.79v-2.66c0-2.75-1.53-4.64-5-4.64s-5,1.89-5,4.64v2.66a1.93,1.93,0,0,0,.37,2.79,7.46,7.46,0,0,0,1.78,3.24v1.19c-.35,1.14-4.56,3-8.36,4.42a.85.85,0,0,0-.53.8v3a.84.84,0,0,0,.83.85h21.89a.84.84,0,0,0,.83-.85v-3A.85.85,0,0,0,1066.89,524.24Z" transform="translate(-1034.87 -493.61)" fill="none" stroke="#17b791" stroke-linecap="square" stroke-width="2"/>
+  <line x1="32.62" y1="45.77" x2="8.89" y2="45.77" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="29.99" y1="51.03" x2="11.52" y2="51.03" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <rect x="1" y="1" width="39.46" height="60.5" rx="2.63" ry="2.63" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M1084.42,516.59a11.69,11.69,0,1,0,0,16.54A11.7,11.7,0,0,0,1084.42,516.59Z" transform="translate(-1034.87 -493.61)" fill="#fff" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <polyline points="36.59 33.24 39.38 35.78 47.03 29.16" fill="none" stroke="#26313f" stroke-linecap="square" stroke-linejoin="round" stroke-width="2"/>
+</svg>

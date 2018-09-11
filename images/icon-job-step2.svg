@@ -1,0 +1,15 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.46 61.53">
+  <title>icon-job-step2</title>
+  <path d="M1030.2,237.06v-28a1.33,1.33,0,0,1,1.33-1.34h39.11a1.33,1.33,0,0,1,1.33,1.34v28" transform="translate(-1020.36 -200.68)" fill="#f9d5d2" stroke="#e15047" stroke-miterlimit="10" stroke-width="1.5"/>
+  <line x1="9.84" y1="12.38" x2="51.62" y2="12.38" fill="none" stroke="#e15047" stroke-miterlimit="10" stroke-width="1.5"/>
+  <g>
+    <path d="M1041.55,252.54l-1.24,7.66a1.14,1.14,0,0,0,1.24,1h19.07a1.14,1.14,0,0,0,1.24-1l-1.25-7.66" transform="translate(-1020.36 -200.68)" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+    <path d="M1076.61,201.68h-51.06a4.17,4.17,0,0,0-4.19,4.22v35.49a4.19,4.19,0,0,0,4.19,4.24h51.06a4.2,4.2,0,0,0,4.2-4.24V205.9A4.18,4.18,0,0,0,1076.61,201.68Z" transform="translate(-1020.36 -200.68)" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="1" y1="37.19" x2="60.46" y2="37.19" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+  <circle cx="18.23" cy="9.72" r="0.67" fill="#e15047"/>
+  <circle cx="15.56" cy="9.72" r="0.67" fill="#e15047"/>
+  <circle cx="12.9" cy="9.72" r="0.67" fill="#e15047"/>
+  <line x1="24.29" y1="18.25" x2="37.16" y2="31.12" fill="#f9d5d2" stroke="#e15047" stroke-miterlimit="10" stroke-width="1.5"/>
+  <line x1="24.29" y1="31.12" x2="37.16" y2="18.25" fill="#f9d5d2" stroke="#e15047" stroke-miterlimit="10" stroke-width="1.5"/>
+</svg>

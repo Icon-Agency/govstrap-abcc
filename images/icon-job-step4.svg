@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.77 66.77">
+  <title>icon-job-step4</title>
+  <path d="M1062.25,423.42s.28-11.69-2.57-12.81c-4-1.57-8.5-3.49-8.87-4.69v-1.26a8,8,0,0,0,1.88-3.44,2.05,2.05,0,0,0,.4-3v-2.83c0-2.92-1.72-4.91-5.34-4.91s-5.35,2-5.35,4.91v2.83a2.06,2.06,0,0,0,.4,3,8.1,8.1,0,0,0,1.88,3.44v1.26c-.37,1.2-4.85,3.12-8.87,4.69-2.85,1.12-2.57,12.81-2.57,12.81" transform="translate(-1020.65 -389.73)" fill="#cde8f7" stroke="#26a2dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.56"/>
+  <path d="M1086,442.93s.26-4.15-2.33-5.17c-3.66-1.43-7.73-3.17-8.07-4.26v-1.15a7.34,7.34,0,0,0,1.72-3.13,1.85,1.85,0,0,0,.35-2.69V424c0-2.66-1.56-4.47-4.85-4.47S1068,421.3,1068,424v2.57a1.86,1.86,0,0,0,.36,2.69,7.33,7.33,0,0,0,1.71,3.13v1.15c-.34,1.09-4.41,2.83-8.06,4.26-2.59,1-2.34,4.94-2.34,4.94" transform="translate(-1020.65 -389.73)" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="18.06" y1="26.5" x2="18.06" y2="33" fill="none" stroke="#26a2dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.56"/>
+  <line x1="35.96" y1="26.5" x2="35.96" y2="33.7" fill="none" stroke="#26a2dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.56"/>
+  <polyline points="37.81 56.13 1 56.13 5.03 33.7 47.15 33.7" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <polyline points="37.11 66.77 37.11 53.54 41.6 53.54 66.71 53.66 66.71 66.77" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <polyline points="57.23 33.7 69.14 33.7 71.77 56.13 66.71 56.13" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="11.07" y1="56.13" x2="11.07" y2="66.77" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="7.44" y1="56.13" x2="7.44" y2="66.77" fill="none" stroke="#26313f" stroke-linejoin="round" stroke-width="2"/>
+  <polygon points="22.14 38.87 20.99 48.07 33.78 48.07 32.63 38.87 22.14 38.87" fill="#cde8f7" stroke="#26a2dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.53"/>
+  <line x1="26" y1="44.91" x2="30.81" y2="44.91" fill="#cde8f7" stroke="#26a2dc" stroke-linejoin="round" stroke-width="1.5"/>
+</svg>
