@@ -37,17 +37,15 @@
                                   <?php if ($decision == 'archived'): ?>
                                       <span class="h5 font-family3 bold block pb-1 text-uppercase text-red"><?php print render($node_content['field_case_decision']); ?></span>
                                   <?php endif; ?>
-                                    <?php if ($node_content['field_known_as']): ?>
+                                    <?php if ($decision == 'archived'): ?>
+                                        <h1><?php print $title; ?></h1>
+                                    <?php else: ?>
                                         <h1><?php print render($node_content['field_known_as']); ?></h1>
                                         <?php print $title; ?>
-                                    <?php else: ?>
-                                        <h1><?php print $title; ?></h1>
                                     <?php endif; ?>
-
                                   <?php print render($title_suffix); ?>
                                 </div>
                             </div>
-
                             <div class="btn-wrap hidden-sm-down">
                               <?php if ($active_page_parent): ?>
                                   <a href="/<?php print $active_page_parent['link_path'];?>"><i class="fal fa-arrow-left"></i>Back to <?php print $active_page_parent['link_title'];?></a>
