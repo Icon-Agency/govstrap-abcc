@@ -33,6 +33,7 @@
 $legal_case_decision_options[0] = ['decision' => 'All', 'name' => 'All'];
 $legal_case_decision_options[1] = ['decision' => '358', 'name' => 'Decision made'];
 $legal_case_decision_options[2] = ['decision' => '357', 'name' => 'No decision'];
+$legal_case_decision_options[3] = ['decision' => '381', 'name' => 'Archived'];
 
 $params = drupal_get_query_parameters();
 if ('All' == $params['field_case_decision'] || !isset($params['field_case_decision'])) {
@@ -41,6 +42,8 @@ if ('All' == $params['field_case_decision'] || !isset($params['field_case_decisi
   $legal_case_decision_options[1]['class'] = 'active';
 } elseif ('357' == $params['field_case_decision']) {
   $legal_case_decision_options[2]['class'] = 'active';
+} elseif ('381' == $params['field_case_decision']) {
+  $legal_case_decision_options[3]['class'] = 'active';
 }
 ?>
 

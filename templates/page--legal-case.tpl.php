@@ -34,8 +34,16 @@
                                   <?php if ($decision == 'no decision'): ?>
                                       <span class="h5 font-family3 bold block pb-1 text-uppercase text-blue"><?php print render($node_content['field_case_decision']); ?></span>
                                   <?php endif; ?>
-                                    <h1><?php print render($node_content['field_known_as']); ?></h1>
-                                    <?php print $title; ?>
+                                  <?php if ($decision == 'archived'): ?>
+                                      <span class="h5 font-family3 bold block pb-1 text-uppercase text-red"><?php print render($node_content['field_case_decision']); ?></span>
+                                  <?php endif; ?>
+                                    <?php if ($node_content['field_known_as']): ?>
+                                        <h1><?php print render($node_content['field_known_as']); ?></h1>
+                                        <?php print $title; ?>
+                                    <?php else: ?>
+                                        <h1><?php print $title; ?></h1>
+                                    <?php endif; ?>
+
                                   <?php print render($title_suffix); ?>
                                 </div>
                             </div>
