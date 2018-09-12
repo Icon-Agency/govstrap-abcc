@@ -102,10 +102,12 @@
                                 <?php endif; ?>
 
 
+                              <?php if ($decision != 'archived'): ?>
                                 <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                     Decision
                                 </div>
-                              <?php print render($node_content['field_case_decision']); ?>
+                                <?php print render($node_content['field_case_decision']); ?>
+                              <?php endif; ?>
 
 
                               <?php print render($node_content['field_commonwealth_courts_ref']); ?>
