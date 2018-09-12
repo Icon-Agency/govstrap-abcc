@@ -307,6 +307,18 @@ ul {
       margin-left: 0;
       padding-left: 0;
       list-style: none;
+      li{
+        &:before {
+          position: absolute;
+          top: 7px;
+          left: 0;
+          content: '\f068';
+          font-family: 'Font Awesome 5 Pro';
+          font-weight: 700;
+          font-size: 8px;
+          color: $default-color;
+        }
+      }
     }
   }
   &.side-indictor {
