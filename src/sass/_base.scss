@@ -837,6 +837,15 @@ ul.abcc-themed {
       border-bottom-color: $link-hover-color !important;
     }
   }
+  .page-next {
+    width: unset;
+  }
+  .page-previous {
+    width: unset;
+  }
+  .navdiv-up{
+    margin-left: 50%;
+  }
 }
 
 // Any sidebar menu stuff goes here
