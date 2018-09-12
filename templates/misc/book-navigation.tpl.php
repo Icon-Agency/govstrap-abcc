@@ -48,7 +48,9 @@
           <a href="<?php print $prev_url; ?>" class="page-previous" title="<?php print t('Go to previous page'); ?>"><i class="fal fa-arrow-left theme-color"></i> <?php print $prev_title; ?></a>
         <?php endif; ?>
         <?php if ($parent_url): ?>
-          <a href="<?php print $parent_url; ?>" class="page-up" title="<?php print t('Go to parent page'); ?>"><i class="fal fa-arrow-up theme-color"></i> <span class="sr-only">up</span></a>
+        <div class="navdiv-up">
+            <a href="<?php print $parent_url; ?>" class="page-up" title="<?php print t('Go to parent page'); ?>"><i class="fal fa-arrow-up theme-color"></i> <span class="sr-only">up</span></a>
+        </div>
         <?php endif; ?>
         <?php if ($next_url): ?>
           <a href="<?php print $next_url; ?>" class="page-next" title="<?php print t('Go to next page'); ?>"><?php print $next_title; ?> <i class="fal fa-arrow-right theme-color"></i></a>
