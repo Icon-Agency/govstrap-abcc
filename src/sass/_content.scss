@@ -22,7 +22,9 @@
     color: $link-color;
     border-bottom: 1px solid $link-color;
     text-decoration: none;
-
+    &.border-none{
+      border: none;
+    }
     &:hover {
       color: $link-hover-color;
       border-color: $link-hover-color;
