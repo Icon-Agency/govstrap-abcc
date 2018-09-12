@@ -30,6 +30,18 @@
       border-color: $link-hover-color;
     }
   }
+
+  // External link icon
+  a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):after {
+    text-align: center;
+    font-family: 'Font Awesome 5 pro';
+    font-weight: 300;
+    content: '\f35d';
+    color: inherit;
+    font-size: .75em;
+    padding-left: .5em;
+  }
+
 }
 
 a.term-link {
@@ -130,5 +142,9 @@ div.toc-filter-back-to-top {
 
 
 .page-resources-frequently-asked-questions .views-submit-button {
+  display: none;
+}
+
+.webform-client-form-31871 .form-actions {
   display: none;
 }

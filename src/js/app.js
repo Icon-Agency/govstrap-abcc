@@ -130,9 +130,6 @@ new Slick();
 
       if ($('body').hasClass('has-anonymous-report-wizard')) {
         new Magnific()
-
-        var wizard = new Wizard
-        wizard.init('/' + Drupal.settings.pathToTheme + '/data/anonymousReport.json')
       }
 
 

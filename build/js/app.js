@@ -9070,9 +9070,6 @@ new _Slick2.default();
 
       if ($('body').hasClass('has-anonymous-report-wizard')) {
         new _Magnific2.default();
-
-        var wizard = new _Wizard2.default();
-        wizard.init('/' + Drupal.settings.pathToTheme + '/data/anonymousReport.json');
       }
     }
   };
