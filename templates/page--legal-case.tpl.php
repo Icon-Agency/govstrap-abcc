@@ -4,7 +4,10 @@
  * page.tpl.php - Returns the HTML for a single Drupal page.
  */
 ?>
-<?php $decision = trim(strtolower(render($node_content['field_case_decision']))); ?>
+<?php
+    $decision = trim(strtolower(render($node_content['field_case_decision'])));
+    $status = trim(strtolower(render($node_content['field_case_status'])));
+?>
 <div class="page">
     <!-- page mobile header -->
   <?php include 'includes/page-header--mobile.tpl.php'; ?>
@@ -28,14 +31,14 @@
                             <div class="text">
                                 <div class="accent text-white">
                                   <?php print render($title_prefix); ?>
-                                    <?php if ($decision == 'decision made'): ?>
-                                    <span class="h5 font-family3 bold block pb-1 text-uppercase text-green"><?php print render($node_content['field_case_decision']); ?></span>
+                                    <?php if ($status == 'finalised'): ?>
+                                    <span class="h5 font-family3 bold block pb-1 text-uppercase text-green"><?php print render($node_content['field_case_status']); ?></span>
                                     <?php endif; ?>
-                                  <?php if ($decision == 'no decision'): ?>
-                                      <span class="h5 font-family3 bold block pb-1 text-uppercase text-blue"><?php print render($node_content['field_case_decision']); ?></span>
+                                  <?php if ($status == 'current'): ?>
+                                      <span class="h5 font-family3 bold block pb-1 text-uppercase text-blue"><?php print render($node_content['field_case_status']); ?></span>
                                   <?php endif; ?>
-                                  <?php if ($decision == 'archived'): ?>
-                                      <span class="h5 font-family3 bold block pb-1 text-uppercase text-red"><?php print render($node_content['field_case_decision']); ?></span>
+                                  <?php if ($decision == 'under appeal'): ?>
+                                      <span class="h5 font-family3 bold block pb-1 text-uppercase text-red"><?php print render($node_content['field_case_status']); ?></span>
                                   <?php endif; ?>
                                     <?php if ($decision == 'archived'): ?>
                                         <h1><?php print $title; ?></h1>
@@ -99,6 +102,10 @@
                                 <?php endif; ?>
 
 
+                                <div class="theme-color safe font-family3 text-uppercase bold block my-2">
+                                    Decision
+                                </div>
+                              <?php print render($node_content['field_case_decision']); ?>
 
 
                               <?php print render($node_content['field_commonwealth_courts_ref']); ?>
@@ -119,13 +126,17 @@
                                 <?php if($decision == 'no decision'): ?>
                                     Alleged breach(es) at time of filing
                                 <?php endif; ?>
+                                <?php if($decision == 'archived'): ?>
+                                    Breach(es)
+                                <?php endif; ?>
                                 </div>
                                 <?php print render($node_content['field_breaches']); ?>
                               <?php endif; ?>
 
+                              <div class="theme-color safe font-family3 text-uppercase bold block my-2">
+                                  Status
+                              </div>
                               <?php print render($node_content['field_case_status']); ?>
-
-
                               <!-- Various links to judgement -->
                               <?php if($decision == 'decision made'): ?>
                                 <?php
