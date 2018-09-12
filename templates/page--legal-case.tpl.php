@@ -47,9 +47,7 @@
                                 </div>
                             </div>
                             <div class="btn-wrap hidden-sm-down">
-                              <?php if ($active_page_parent): ?>
-                                  <a href="/<?php print $active_page_parent['link_path'];?>"><i class="fal fa-arrow-left"></i>Back to <?php print $active_page_parent['link_title'];?></a>
-                              <?php endif; ?>
+                                <a href="/legal-cases"><i class="fal fa-arrow-left"></i>Back to Legal cases</a>
                             </div>
                         </div>
                     </div>
