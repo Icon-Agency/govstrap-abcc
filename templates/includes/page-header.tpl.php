@@ -78,12 +78,10 @@
                                                     <!-- /.col-md-4  -->
                                                     <div class="col-md-4">
                                                         <span class="theme-colour text-uppercase font-family3 bold block">Popular</span>
-                                                        <a href="#" class="block text-body">No permit list</a>
-                                                        <a href="#" class="block text-body">Strike pay</a>
+                                                        <a href="/your-rights-and-responsibilities/right-entry/right-entry-permit-lists" class="block text-body">Right of entry permit lists</a>
 
                                                         <span class="theme-colour text-uppercase font-family3 bold block mt-3">Related</span>
-                                                        <a href="#" class="block text-body">Fact Sheets</a>
-                                                        <a href="#" class="block text-body">Strike pay</a>
+                                                        <a href="/resources/factsheets#fs-rights-responsibilities" class="block text-body">Fact Sheets</a>
                                                     </div>
                                                     <!-- /.col-md-4  -->
                                                 </div>
