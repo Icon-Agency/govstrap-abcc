@@ -13,6 +13,7 @@ regions[help]                           = Help
 regions[content]                        = Content
 regions[wizard]                         = Wizard
 regions[sidebar_right]                  = Sidebar right
+regions[pre_footer]                     = Above footer and under main content
 regions[footer]                         = Footer
 regions[mega_menu_item_building_code]   = Mega menu item - Building Code
 

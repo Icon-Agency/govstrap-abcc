@@ -30,20 +30,21 @@
 
 <?php
 
-$legal_case_decision_options[0] = ['decision' => 'All', 'name' => 'All'];
-$legal_case_decision_options[1] = ['decision' => '358', 'name' => 'Decision made'];
-$legal_case_decision_options[2] = ['decision' => '357', 'name' => 'No decision'];
-$legal_case_decision_options[3] = ['decision' => '381', 'name' => 'Archived'];
+$legal_case_status_options[0] = ['status' => 'All', 'name' => 'All'];
+$legal_case_status_options[1] = ['status' => '2', 'name' => 'Current'];
+$legal_case_status_options[2] = ['status' => '3', 'name' => 'Finalised'];
+$legal_case_status_options[3] = ['status' => '349', 'name' => 'Under appeal'];
 
 $params = drupal_get_query_parameters();
-if ('All' == $params['field_case_decision'] || !isset($params['field_case_decision'])) {
-  $legal_case_decision_options[0]['class'] = 'active';
-} elseif ('358' == $params['field_case_decision']) {
-  $legal_case_decision_options[1]['class'] = 'active';
-} elseif ('357' == $params['field_case_decision']) {
-  $legal_case_decision_options[2]['class'] = 'active';
-} elseif ('381' == $params['field_case_decision']) {
-  $legal_case_decision_options[3]['class'] = 'active';
+
+if ('All' == $params['field_case_status'] || !isset($params['field_case_status'])) {
+  $legal_case_status_options[0]['class'] = 'active';
+} elseif ('2' == $params['field_case_status']) {
+  $legal_case_status_options[1]['class'] = 'active';
+} elseif ('3' == $params['field_case_status']) {
+  $legal_case_status_options[2]['class'] = 'active';
+} elseif ('349' == $params['field_case_status']) {
+  $legal_case_status_options[3]['class'] = 'active';
 }
 ?>
 
@@ -60,9 +61,9 @@ if ('All' == $params['field_case_decision'] || !isset($params['field_case_decisi
           <div class="col-lg-12 pb-5">
               <div class="filter mb-5">
                   <ul class="inline block-active-icon font-family3 bold text-uppercase small mb-5">
-                    <?php foreach ($legal_case_decision_options as $legal_case_decision_option): ?>
-                        <li class="<?php print $legal_case_decision_option['class']; ?>">
-                            <a href="?field_case_decision=<?php print $legal_case_decision_option['decision'] ?>"><?php print $legal_case_decision_option['name']; ?></a>
+                    <?php foreach ($legal_case_status_options as $legal_case_status_option): ?>
+                        <li class="<?php print $legal_case_status_option['class']; ?>">
+                            <a href="?field_case_status=<?php print $legal_case_status_option['status'] ?>"><?php print $legal_case_status_option['name']; ?></a>
                         </li>
                     <?php endforeach; ?>
                   </ul>

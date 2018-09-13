@@ -68,30 +68,5 @@
     </div>
 </div>
 
-
-<nav id="navigation" class="<?php print $container_class; ?>">
-  <?php print render($page['navigation']); ?>
-</nav><!-- /#navigation -->
-
-<main>
-  <div id="main" class="main-container <?php print $container_class; ?>">
-
-    <div id="content" class="row">
-      <?php if (!empty($page['sidebar_first'])): ?>
-        <aside class="col-sm-3" role="complementary">
-          <?php print render($page['sidebar_first']); ?>
-        </aside>  <!-- /#sidebar-first -->
-      <?php endif; ?>
-
-      <?php if (!empty($page['sidebar_second'])): ?>
-        <aside class="col-sm-3" role="complementary">
-          <?php print render($page['sidebar_second']); ?>
-        </aside>  <!-- /#sidebar-second -->
-      <?php endif; ?>
-    </div>
-  </div>
-</main>
-
 <!-- page mobile menu -->
 <?php include 'includes/page-menu--mobile.tpl.php'; ?>
-

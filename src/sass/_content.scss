@@ -88,7 +88,7 @@ ul.related-resources li a {
     display: none;
   }
 
-  .views-widget-filter-field_case_status,
+  .views-widget-filter-field_case_decision,
   .views-widget-filter-field_state_no_permit,
   .views-widget-filter-field_breaches {
     border-top: 2px solid $border-color;
@@ -97,15 +97,15 @@ ul.related-resources li a {
   h5.category {
     font-size: 1rem;
 
-    &.case-decision-358 {
+    &.case-status-3 {
       color: $green;
     }
 
-    &.case-decision-357 {
+    &.case-status-2 {
       color: $blue;
     }
 
-    &.case-decision-381 {
+    &.case-status-349 {
       color: $red;
     }
 
