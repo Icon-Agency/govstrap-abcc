@@ -222,9 +222,6 @@
                                       </div>
                                   <?php print $field_total_penalties; ?>
                                 <?php endif; ?>
-
-                                <?php print render($node_content['field_penalties']); ?>
-                                <?php print render($node_content['field_total_penalties']); ?>
                               <?php endif; ?>
 
                               <?php print render($node_content['field_related_content']); ?>
