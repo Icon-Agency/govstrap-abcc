@@ -5,20 +5,22 @@
                 <h3 class="text-white mb-4">Need assistance?</h3>
                 <div class="row">
                     <div class="col-md-6">
+                        <a href="tel:1800003338" class="item">
                         <div class="item phone">
                             <img src="/<?php print path_to_theme(); ?>/images/icon-call.svg">
                             <span class="text-uppercase">
                                                 Call ABCC hotline
-                                                <a href="tel:1800003338">
+
                                                     <strong class="text-green">
                                                         1800 003 338
+                                                        <i class="fal fa-arrow-circle-right"></i>
                                                     </strong>
-                                                </a>
                                             </span>
                         </div>
+                        </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="#" class="item">
+                        <a href="/contact" class="item">
                             <img src="/<?php print path_to_theme(); ?>/images/icon-contact-form.svg">
                             <span class="text-uppercase">
                                                 Use our
@@ -33,7 +35,7 @@
             </div>
             <div class="col-lg-4">
                 <h3 class="text-white mb-4 hide-xs-down">Stay up to date</h3>
-                <a href="#" class="item">
+                <a href="/news-and-media/industry-update" class="item">
                     <img src="/<?php print path_to_theme(); ?>/images/icon-email.svg">
                     <span class="text-uppercase">
                                         E-alerts &amp; industry updates

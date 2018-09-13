@@ -149,6 +149,8 @@
                                     $field_high_court_appeal_ref = render($node_content['field_high_court_appeal_ref']);
                                     $field_federal_court_appeal_judge = render($node_content['field_federal_court_appeal_judge']);
                                     $field_high_court_appeal_judgemenrender = render($node_content['field_high_court_appeal_judgemen']);
+                                    $field_penalties = render($node_content['field_penalties']);
+                                    $field_total_penalties = render($node_content['field_total_penalties']);
                                 ?>
                                   <?php if ($field_liability_judgement): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
@@ -208,6 +210,19 @@
                               <?php endif; ?>
 
                               <?php if($decision == 'decision made'): ?>
+                                <?php if ($field_penalties): ?>
+                                      <div class="theme-color safe font-family3 text-uppercase bold block my-2">
+                                          Penalities
+                                      </div>
+                                  <?php print $field_penalties; ?>
+                                <?php endif; ?>
+                                <?php if ($field_total_penalties): ?>
+                                      <div class="theme-color safe font-family3 text-uppercase bold block my-2">
+                                          Total penalities
+                                      </div>
+                                  <?php print $field_total_penalties; ?>
+                                <?php endif; ?>
+
                                 <?php print render($node_content['field_penalties']); ?>
                                 <?php print render($node_content['field_total_penalties']); ?>
                               <?php endif; ?>
