@@ -171,8 +171,6 @@ function govstrap_preprocess_node(&$variables, $hook) {
     $current_path = $current_path_alias;
   }
 
-  var_dump(theme_get_setting('path_excluded_auto_linking'));
-
   if (!drupal_match_path($current_path, theme_get_setting('path_excluded_auto_linking'))) {
     // Link taxonomy terms appearing in the body section
     $variables['content']['body'][0]['#markup'] = _taxonomy_autolink_add_links($variables['content']['body'][0]['#markup']);
