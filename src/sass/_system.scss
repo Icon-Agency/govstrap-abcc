@@ -92,3 +92,23 @@ input[type="submit"] {
   padding-top: .5rem;
   padding-bottom: .5rem;
 }
+.form-radios{
+  margin-left: 2rem;
+}
+
+.form-checkboxes{
+  margin-left: 2rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+
+
+
+
+
