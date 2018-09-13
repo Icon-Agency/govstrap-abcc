@@ -18,7 +18,7 @@
     @extend .table;
   }
 
-  a {
+  a:not(.btn) {
     color: $link-color;
     border-bottom: 1px solid $link-color;
     text-decoration: none;
