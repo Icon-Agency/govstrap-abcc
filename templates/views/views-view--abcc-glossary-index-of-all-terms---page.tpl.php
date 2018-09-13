@@ -85,7 +85,7 @@
   <?php endif; ?>
 
   <div class="row">
-      <div class="col-lg-8 mb-5">
+      <div class="col-lg-12 mb-5">
         <?php if ($rows): ?>
             <div class="view-content">
               <?php print $rows; ?>
@@ -93,13 +93,6 @@
         <?php elseif ($empty): ?>
             <div class="view-empty">
               <?php print $empty; ?>
-            </div>
-        <?php endif; ?>
-      </div>
-      <div class="col-lg-3 offset-lg-1">
-        <?php if ($footer): ?>
-            <div class="view-footer">
-              <?php print $footer; ?>
             </div>
         <?php endif; ?>
       </div>
