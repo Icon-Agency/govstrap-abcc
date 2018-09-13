@@ -117,6 +117,12 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     '#title' => t('Case sensitive'),
     '#default_value' => theme_get_setting('taxonomy_autolink_case_sensitivity'),
   );
+  $form['taxonomy_autolink']['path_excluded_auto_linking'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Paths that are excluded from auto-linking'),
+    '#default_value' => theme_get_setting('path_excluded_auto_linking'),
+  );
+  
   // Page theme settings.
   $form['page_theme'] = array(
     '#type' => 'fieldset',
