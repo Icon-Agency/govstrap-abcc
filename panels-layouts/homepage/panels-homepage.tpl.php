@@ -57,10 +57,10 @@
                         <div class="text">
                             <div class="accent color-green">
                               <?php
-                              $book_news_and_media_bid = variable_get('book_news_and_media_bid', 4);
-                              $book_news_and_media_menu_tree = menu_tree_all_data('book-toc-' . $book_news_and_media_bid);
-                              $book_latest_industry_update = $book_news_and_media_menu_tree["50000 News and Media 491"]["below"]["50028 Industry Update 622"]["below"]["49999 Latest Industry Update 1870"]["below"];
-                              if ($book_news_and_media_menu_tree) {
+                              $book_industry_updat_bid = variable_get('book_industry_update_bid', 104);
+                              $book_industry_updat_menu_tree = menu_tree_all_data('book-toc-' . $book_industry_updat_bid);
+                              $book_latest_industry_update = $book_industry_updat_menu_tree["50000 Industry Update 8946"]["below"]["50000 Latest Industry Update 8951"]["below"];
+                              if ($book_industry_updat_menu_tree) {
                                 $book_latest_industry_update = array_shift(array_slice($book_latest_industry_update, 0, 1));
                                 $latest_industry_updates['links'] = $book_latest_industry_update['below'];
                                 $latest_industry_update['title'] = trim(str_replace('Industry Update', '', $book_latest_industry_update["link"]["link_title"]));
