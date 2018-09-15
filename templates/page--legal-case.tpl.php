@@ -94,7 +94,7 @@
                               <?php print $title; ?>
                                 <?php endif; ?>
 
-                                <?php if ($node_content['field_known_as']): ?>
+                                <?php if ($node_content['field_known_as'] && ($decision != 'archived')): ?>
                                 <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                     Known as
                                 </div>

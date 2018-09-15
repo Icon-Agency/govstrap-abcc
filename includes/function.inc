@@ -261,7 +261,7 @@ function _social_share_buttons() {
   return $render_array;
 }
 
-function _get_card_theme ($category) {
+function _get_card_theme($category) {
   $category = trim(strtolower($category));
   switch($category) {
     default:
