@@ -31,6 +31,12 @@ new Slick();
 
       $(document).ready(function () {
 
+        // Toggle Google translate widget
+        $(".translate").click(function(e){
+          $(".translate-container").toggle(500);
+          $(".translate-indicator").toggle(500);
+        });
+
         // Fix glossary menu on scroll
         var toggleAffix = function (affixElement, wrapper, scrollElement) {
           var height = affixElement.outerHeight(),

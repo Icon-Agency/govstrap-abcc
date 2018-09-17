@@ -30,7 +30,9 @@
                                 <img src="/<?php print path_to_theme(); ?>/images/google-translate-logo.png" />
                                 Translate
                             </div>
-                            <img src="/<?php print path_to_theme(); ?>/images/logo.svg" class="logo" alt="Australian Building and Construction Commission" />
+                            <a href="/" aria-label="homepage">
+                                <img src="/<?php print path_to_theme(); ?>/images/logo.svg" class="logo" alt="Australian Building and Construction Commission" />
+                            </a>
                         </div>
                     </div>
                 </div>
