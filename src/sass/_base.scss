@@ -1,5 +1,7 @@
 html { scroll-behavior: smooth; }
 
+body { line-height: $body-line-height; }
+
 // Classes
 //
 .font-family1 {
@@ -1043,6 +1045,7 @@ li.with-arrow a {
     padding-bottom: 0;
     margin-bottom: 0;
 
+    &.views-widget-filter-field_case_year,
     &.views-widget-filter-field_state_no_permit_tid,
     &.views-widget-filter-field_union_tid {
       border-top: 2px solid $border-color;
@@ -1054,8 +1057,16 @@ li.with-arrow a {
       margin-bottom: .5rem;
     }
 
+    &.views-widget-filter-field_case_decision,
+    &.views-widget-filter-field_case_status,
     &.views-widget-filter-title {
       display: none;
+    }
+  }
+
+  .form-item-field-case-year {
+    select {
+      @extend .form-control;
     }
   }
 }

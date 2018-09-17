@@ -36,7 +36,7 @@ if ($content['field_additional_classes']) {
 <?php if ($content['field_accent_text']): ?>
 <div class="bg-white">
 <div class="container">
-<div class="row">
+<div class="row pb-3">
     <div class="col-lg-3">
       <?php print render($content['field_accent_text']); ?>
     </div>
