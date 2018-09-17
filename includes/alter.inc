@@ -75,6 +75,11 @@ function govstrap_js_callback_filter_xss_alter(array &$allowed_tags = array()) {
  * Search block form alter.
  */
 function govstrap_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'webform_client_form_'.theme_get_setting('abcc_newsletter_signup_form')) {
+    $form['#submit'][0] = 'govstrap_industry_update_subscribe_submit';
+  }
+
   if ($form_id == 'search_block_form') {
     // Update search keys filed attributes.
     $form['search_block_form']['#attributes']['title'] = 'Search';
@@ -95,11 +100,48 @@ function govstrap_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-function govstrap_search_block_form_submit ($form, &$form_state) {
+function govstrap_search_block_form_submit($form, &$form_state) {
   $keys = $form_state['values']['search_block_form'];
   if (empty($keys)) {
     form_set_error('keys', t('Please enter some keywords.'));
   } else {
     $form_state['redirect'] = array('/search/'.$keys);
   }
+}
+
+function govstrap_industry_update_subscribe_submit($form, &$form_state) {
+
+  $cmstate = $form_state["values"]["submitted"]["state"];
+  $cmemail = $form_state["values"]["submitted"]["email"];
+
+  $cm_api_key = theme_get_setting('abcc_newsletter_cm_api_key');
+  $cm_list_id = theme_get_setting('abcc_newsletter_cm_api_list_id');
+
+  if (strlen($cm_api_key) && strlen($cm_list_id)) {
+
+    // Add subscriber using Campaignmonitor's API
+    require_once path_to_theme().'/lib/campaignmonitor/csrest_subscribers.php';
+
+    $auth = array(
+      'api_key' => $cm_api_key,
+    );
+    $wrap = new CS_REST_Subscribers($cm_list_id, $auth);
+    $result = $wrap->add(array(
+      'EmailAddress' => $cmemail,
+      'CustomFields' => array(
+        array(
+          'Key' => 'State',
+          'Value' => $cmstate
+        ),
+      ),
+    ));
+
+    if ($result->was_successful()) {
+      drupal_set_message('You have successfully signed up for our newsletter', $type = 'status');
+      $_SESSION['newsletter_signup_action'] = 'success';
+    } else {
+      drupal_set_message($result->response->Message, $type = 'error');
+    }
+  }
+
 }
