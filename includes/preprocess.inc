@@ -14,6 +14,11 @@
  */
 function govstrap_preprocess_html(&$variables, $hook) {
 
+  $node = menu_get_object();
+  if ($node->type) {
+    $variables['theme_hook_suggestions'][] = 'html__' . $node->type;
+  }
+
   // Set common variables.
   $variables['base_path'] = base_path();
   $variables['path_to_govstrap'] = drupal_get_path('theme', 'govstrap');
