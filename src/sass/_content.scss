@@ -1,4 +1,4 @@
-.content.node-page-content {
+.content {
   h2 {
     @extend .h3;
   }
@@ -32,22 +32,22 @@
       border-color: $link-hover-color;
     }
   }
+}
 
-  // External link icon
-  a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']) {
+// External link icon
+a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']) {
+  &::after {
+    text-align: center;
+    font-family: 'Font Awesome 5 pro';
+    font-weight: 300;
+    content: '\f35d';
+    color: inherit;
+    font-size: .75em;
+    padding-left: .5em;
+  }
+  &:not([href]):not([tabindex]) {
     &::after {
-      text-align: center;
-      font-family: 'Font Awesome 5 pro';
-      font-weight: 300;
-      content: '\f35d';
-      color: inherit;
-      font-size: .75em;
-      padding-left: .5em;
-    }
-    &:not([href]):not([tabindex]) {
-      &::after {
-        content: none;
-      }
+      content: none;
     }
   }
 }
