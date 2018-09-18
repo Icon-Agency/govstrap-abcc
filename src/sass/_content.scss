@@ -1,4 +1,9 @@
-.content {
+.content.node-page-content {
+  h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
   h2 {
     @extend .h3;
   }
@@ -11,11 +16,6 @@
     @extend .h5;
   }
 
-  h2, h3, h4, h5, h6 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-
   table {
     @extend .table;
   }
@@ -24,9 +24,11 @@
     color: $link-color;
     border-bottom: 1px solid $link-color;
     text-decoration: none;
+
     &.border-none{
       border: none;
     }
+    
     &:hover {
       color: $link-hover-color;
       border-color: $link-hover-color;
@@ -35,7 +37,9 @@
 }
 
 // External link icon
-a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']) {
+a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']) {
+  position: relative;
+
   &::after {
     text-align: center;
     font-family: 'Font Awesome 5 pro';
@@ -44,7 +48,10 @@ a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):
     color: inherit;
     font-size: .75em;
     padding-left: .5em;
+    position: absolute;
+    top: 2px;
   }
+
   &:not([href]):not([tabindex]) {
     &::after {
       content: none;

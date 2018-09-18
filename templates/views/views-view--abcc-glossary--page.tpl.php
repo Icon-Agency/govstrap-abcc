@@ -34,7 +34,7 @@ $content_type_options = array();
 $content_type_options[] = ['option' => 'All', 'name' => 'All'];
 $content_type_options[] = ['option' => 'article', 'name' => 'News'];
 $content_type_options[] = ['option' => 'publication', 'name' => 'Publication'];
-$content_type_options[] = ['option' => 'newsletter', 'name' => 'Newsletter'];
+$content_type_options[] = ['option' => 'newsletter_section', 'name' => 'Industry Update'];
 if (strtolower($params['type']) == 'all') {
   $content_type_options[0]['class'] = 'active';
 }
