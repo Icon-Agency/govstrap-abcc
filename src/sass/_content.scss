@@ -37,7 +37,7 @@
 }
 
 // External link icon
-a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']) {
+a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']):not([href^='tel']):not([href^='mailto']) {
   position: relative;
 
   &::after {

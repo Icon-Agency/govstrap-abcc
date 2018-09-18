@@ -5,9 +5,11 @@
                 <h3 class="text-white mb-4">Need assistance?</h3>
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="tel:1800003338" class="item">
-                        <div class="item phone">
+
+
+                            <a href="tel:1800003338" class="item">
                             <img src="/<?php print path_to_theme(); ?>/images/icon-call.svg">
+
                             <span class="text-uppercase">
                                                 Call ABCC hotline
 
@@ -15,9 +17,9 @@
                                                         1800 003 338
                                                         <i class="fal fa-arrow-circle-right"></i>
                                                     </strong>
-                                            </span>
-                        </div>
-                        </a>
+                                            </span></a>
+                 
+
                     </div>
                     <div class="col-md-6">
                         <a href="/contact" class="item">
