@@ -53,6 +53,12 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
 
   <?php if ($exposed): ?>
 
+    <?php if ($header): ?>
+      <div class="row">
+        <?php print $header; ?>
+      </div>
+    <?php endif; ?>
+
       <div class="row">
           <div class="col-lg-12 pb-5">
               <div class="filter mb-5">
@@ -94,11 +100,6 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
 
     <div class="row">
         <div class="col-lg-8">
-          <?php if ($header): ?>
-              <div class="view-header">
-                <?php print $header; ?>
-              </div>
-          <?php endif; ?>
           <?php if ($rows): ?>
               <div class="view-content container">
                 <?php print $rows; ?>
