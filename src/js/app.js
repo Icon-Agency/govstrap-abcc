@@ -31,6 +31,11 @@ new Slick();
 
       $(document).ready(function () {
 
+        var hash = window.location.hash.substr(1);
+        if (hash == 'wizard-form') {
+          $("#wizard-form-launch").click();
+        }
+
         // Toggle Google translate widget
         $(".translate").click(function(e){
           $(".translate-container").toggle(500);

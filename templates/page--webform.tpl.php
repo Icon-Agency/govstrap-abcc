@@ -78,7 +78,6 @@
 
 
                             <?php if (render($node_content['field_launch_form_in_a_wizard']) == 'Yes'): ?>
-
                                 <div id="wizard-form" class="mfp-hide white-popup-block">
                                     <header class="header">
                                         <div class="container">
