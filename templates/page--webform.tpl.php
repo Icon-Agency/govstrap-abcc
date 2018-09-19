@@ -77,35 +77,44 @@
                             </div>
 
 
-                            <div id="report-form" class="mfp-hide white-popup-block">
-                                <header class="header">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="top">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <img src="/<?php print path_to_theme(); ?>/images/abcc-logo.svg" class="abcc-logo" alt="Australian Government Australian Building and Construction Commission"/>
-                                                        </div>
-                                                        <div class="col-md-8 text-right">
-                                                            <img src="/<?php print path_to_theme(); ?>/images/logo.svg" class="logo" alt="Australian Building and Construction Commission" />
+                            <?php if (render($node_content['field_launch_form_in_a_wizard']) == 'Yes'): ?>
+
+                                <div id="wizard-form" class="mfp-hide white-popup-block">
+                                    <header class="header">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="top">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <img src="/<?php print path_to_theme(); ?>/images/abcc-logo.svg" class="abcc-logo" alt="Australian Government Australian Building and Construction Commission"/>
+                                                            </div>
+                                                            <div class="col-md-8 text-right">
+                                                                <img src="/<?php print path_to_theme(); ?>/images/logo.svg" class="logo" alt="Australian Building and Construction Commission" />
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </header>
-                                <div class="wizard-questions">
-                                    <div class="container py-5">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                              <?php print render($node_content['webform']); ?>
+                                    </header>
+
+                                    <div class="wizard-questions">
+                                        <div class="container py-5">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                  <?php print render($node_content['webform']); ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+
+                            <?php else: ?>
+
+                              <?php print render($node_content['webform']); ?>
+
+                            <?php endif; ?>
 
 
                         </section>
