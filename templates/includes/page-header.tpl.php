@@ -56,7 +56,7 @@
                               $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'your_rights_and_responsibilities', $active_page_root);
                               ?>
                                 <li class="nav-item dropdown mega <?php print $main_nav_sub_menu_tree['active_class']; ?>">
-                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['your_rights_and_responsibilities']['path']; ?>" id="rights" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['your_rights_and_responsibilities']['path']; ?>" id="rights" aria-haspopup="true" aria-expanded="false">
                                         Your rights & responsibilities
                                     </a>
                                     <div class="dropdown-menu theme-rights" aria-labelledby="rights">
@@ -105,7 +105,7 @@
                               $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'resources', $active_page_root);
                               ?>
                                 <li class="nav-item dropdown <?php print $main_nav_sub_menu_tree['active_class']; ?>">
-                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['resources']['path']; ?>" id="resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['resources']['path']; ?>" id="resources" aria-haspopup="true" aria-expanded="false">
                                         <?php print $main_menu_tree['resources']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="resources">
@@ -128,7 +128,7 @@
                               $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'about', $active_page_root);
                               ?>
                                 <li class="nav-item dropdown <?php print $main_nav_sub_menu_tree['active_class']; ?>">
-                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['about']['path']; ?>" id="resources" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['about']['path']; ?>" id="resources" aria-haspopup="true" aria-expanded="false">
                                       <?php print $main_menu_tree['about']['title']; ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="<?php print $main_menu_tree['about']['title']; ?>">
