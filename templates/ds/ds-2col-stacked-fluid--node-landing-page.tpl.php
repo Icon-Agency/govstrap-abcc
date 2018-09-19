@@ -14,18 +14,17 @@ if (($left && !$right) || ($right && !$left)) {
 <?php if (isset($title_suffix['contextual_links'])): ?>
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
-    <<?php print $header_wrapper ?>
-    class="group-header<?php print $header_classes; ?>">
+
 <?php if($header): ?>
-<div class="bg-white pt-5"></div>
-<?php else: ?>
-    <div class="pt-5"></div>
+    <div class="bg-white pt-5 pb-4">
+        <<?php print $header_wrapper ?> class="group-header<?php print $header_classes; ?>">
+            <?php print $header; ?>
+        </<?php print $header_wrapper ?>>
+    </div>
 <?php endif; ?>
-  <?php print $header; ?>
-</<?php print $header_wrapper ?>>
 
 <?php if ($left || $right): ?>
-    <div class="container">
+    <div class="container pt-5">
         <div class="row signposts pb-3">
               <?php if ($left): ?>
                 <div class="col-lg-6">
