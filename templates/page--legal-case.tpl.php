@@ -101,15 +101,6 @@
                               <?php print render($node_content['field_known_as']); ?>
                                 <?php endif; ?>
 
-
-                              <?php if ($decision != 'archived'): ?>
-                                <div class="theme-color safe font-family3 text-uppercase bold block my-2">
-                                    Decision
-                                </div>
-                                <?php print render($node_content['field_case_decision']); ?>
-                              <?php endif; ?>
-
-
                               <?php print render($node_content['field_commonwealth_courts_ref']); ?>
 
                               <?php print render($node_content['field_applicant']); ?>
@@ -122,14 +113,10 @@
 
                               <?php if ($node_content['field_breaches']): ?>
                                 <div class="theme-color safe font-family3 text-uppercase bold block my-2">
-                                <?php if($decision == 'decision made'): ?>
-                                    Breach(es) found
-                                <?php endif; ?>
                                 <?php if($decision == 'no decision'): ?>
                                     Alleged breach(es) at time of filing
-                                <?php endif; ?>
-                                <?php if($decision == 'archived'): ?>
-                                    Breach(es)
+                                <?php else: ?>
+                                    Breach(es) found
                                 <?php endif; ?>
                                 </div>
                                 <?php print render($node_content['field_breaches']); ?>
@@ -151,6 +138,7 @@
                                     $field_high_court_appeal_judgemenrender = render($node_content['field_high_court_appeal_judgemen']);
                                     $field_penalties = render($node_content['field_penalties']);
                                     $field_total_penalties = render($node_content['field_total_penalties']);
+                                    $field_related_content = render($node_content['field_related_content']);
                                 ?>
                                   <?php if ($field_liability_judgement): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
@@ -224,7 +212,9 @@
                                 <?php endif; ?>
                               <?php endif; ?>
 
-                              <?php print render($node_content['field_related_content']); ?>
+                              <?php if ($field_related_content): ?>
+                                <?php print $field_related_content; ?>
+                              <?php endif; ?>
 
                               <?php if($decision == 'decision made'): ?>
                                 <?php print render($node_content['field_current_abcc_case_url']); ?>

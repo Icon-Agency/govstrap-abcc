@@ -406,10 +406,12 @@
     background-clip: content-box;
     padding: 3px;
   }
+
   input[type="checkbox"]:checked + label:before {
     background-image: none;
     background-clip: content-box;
   }
+
   input[type="checkbox"]:checked + label:after{
     color: $color;
     position: absolute;
@@ -417,16 +419,15 @@
     font-family: 'Font Awesome 5 Pro';
     left: 0;
     margin-left: -28px;
-    margin-top: .3rem;
     font-size: 12px;
   }
+
   label{
     &.option{
       position: relative;
     }
   }
 }
-
 
 @mixin site-map-list {
   border-left: 1px dashed $border-color;

@@ -20,6 +20,11 @@
     @extend .table;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   a:not(.btn) {
     color: $link-color;
     border-bottom: 1px solid $link-color;
