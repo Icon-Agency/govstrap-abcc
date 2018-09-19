@@ -57,7 +57,9 @@ a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):
     top: 2px;
   }
 
-  &:not([href]):not([tabindex]):not(.no-icon) {
+  // Exclude those...
+  &.no-icon,
+  &:not([href]):not([tabindex]) {
     &::after {
       content: none;
     }

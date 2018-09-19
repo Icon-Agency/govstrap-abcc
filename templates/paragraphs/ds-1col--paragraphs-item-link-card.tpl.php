@@ -32,7 +32,7 @@ if ($content['field_additional_classes']) {
 }
 $link_href = strip_tags(render($content['field_link_to']));
 ?>
-<a href="<?php print $link_href; ?>" class="card fade-in-up animated <?php print $additional_classes; ?>">
+<a href="<?php print $link_href; ?>" class="no-icon card fade-in-up animated <?php print $additional_classes; ?>">
     <div class="card-body">
     <?php print render($content['field_title']); ?>
     <?php print render($content['field_text']); ?>
