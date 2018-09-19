@@ -24,7 +24,7 @@ if (($left && !$right) || ($right && !$left)) {
   <?php print $header; ?>
 </<?php print $header_wrapper ?>>
 
-<?php if ($left && $right): ?>
+<?php if ($left || $right): ?>
     <div class="container">
         <div class="row">
             <div class="container">
