@@ -26,15 +26,13 @@ if (($left && !$right) || ($right && !$left)) {
 
 <?php if ($left || $right): ?>
     <div class="container">
-        <div class="row">
-            <div class="container">
-              <div class="row signposts pb-3">
-                  <?php if ($left): ?>
-                    <div class="col-lg-6">
-                        <<?php print $left_wrapper ?> class="group-left<?php print $left_classes; ?>">
-                        <?php print $left; ?>
-                      </<?php print $left_wrapper ?>>
-                    </div>
+        <div class="row signposts pb-3">
+              <?php if ($left): ?>
+                <div class="col-lg-6">
+                    <<?php print $left_wrapper ?> class="group-left<?php print $left_classes; ?>">
+                    <?php print $left; ?>
+                  </<?php print $left_wrapper ?>>
+                </div>
               <?php endif; ?>
               <?php if ($right): ?>
                 <div class="col-lg-6">
@@ -43,10 +41,8 @@ if (($left && !$right) || ($right && !$left)) {
                    </<?php print $right_wrapper ?>>
                 </div>
               <?php endif; ?>
-             </div> <!-- /.row -->
-           </div> <!-- /.container -->
-      </div> <!-- /.container -->
-    </div> <!-- /.bg-white -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
 <?php endif; ?>
 
 <<?php print $footer_wrapper ?>>

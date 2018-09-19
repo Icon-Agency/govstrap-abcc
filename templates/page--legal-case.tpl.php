@@ -227,7 +227,7 @@
                                 <?php print $field_current_abcc_case_url; ?>
                               <?php endif; ?>
                                 <!-- /Legal case fileds -->
-                                
+
                             </div>
                           <?php if (!empty($page['wizard'])): ?>
                             <?php print render($page['wizard']); ?>
