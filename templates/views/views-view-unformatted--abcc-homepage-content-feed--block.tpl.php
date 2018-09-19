@@ -12,7 +12,7 @@
 <?php endif; ?>
 <div class="row">
     <div class="col-lg-8">
-        <a href="#" class="card img-card h-100 fade-in-up animated">
+        <a href="/app" class="card img-card h-100 fade-in-up animated">
             <img src="/<?php print path_to_theme(); ?>/images/sp-need-to-know.png"
                  alt=" Get the ABCC app promo image">
             <span class="sr-only">Need to know your rights on site. Get the app</span>

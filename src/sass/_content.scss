@@ -54,7 +54,6 @@ a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):
     font-size: .75em;
     padding-left: .5em;
     position: absolute;
-    top: 2px;
   }
 
   // Exclude those...
@@ -64,6 +63,9 @@ a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):
       content: none;
     }
   }
+}
+p a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']):not([href^='tel']):not([href^='mailto']) {
+  padding-right: 1.5em;
 }
 
 a.term-link {
