@@ -139,6 +139,7 @@
                                     $field_penalties = render($node_content['field_penalties']);
                                     $field_total_penalties = render($node_content['field_total_penalties']);
                                     $field_related_content = render($node_content['field_related_content']);
+                                    $field_current_abcc_case_url = render($node_content['field_current_abcc_case_url']);
                                 ?>
                                   <?php if ($field_liability_judgement): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
@@ -213,15 +214,20 @@
                               <?php endif; ?>
 
                               <?php if ($field_related_content): ?>
+                                  <div class="theme-color safe font-family3 text-uppercase bold block my-2">
+                                      Related content
+                                  </div>
                                 <?php print $field_related_content; ?>
                               <?php endif; ?>
 
-                              <?php if($decision == 'decision made'): ?>
-                                <?php print render($node_content['field_current_abcc_case_url']); ?>
+                              <?php if($field_current_abcc_case_url): ?>
+                                  <div class="theme-color safe font-family3 text-uppercase bold block my-2">
+                                      Current ABCC case URL
+                                  </div>
+                                <?php print $field_current_abcc_case_url; ?>
                               <?php endif; ?>
                                 <!-- /Legal case fileds -->
-
-
+                                
                             </div>
                           <?php if (!empty($page['wizard'])): ?>
                             <?php print render($page['wizard']); ?>
