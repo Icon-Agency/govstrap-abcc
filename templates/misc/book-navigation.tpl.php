@@ -33,30 +33,40 @@
  */
 ?>
 <?php if ($tree || $has_links): ?>
-  <div id="book-navigation-<?php print $book_id; ?>" class="book-navigation pt-5">
+    <div id="book-navigation-<?php print $book_id; ?>" class="book-navigation pt-5">
 
-    <?php if ($tree && $parent_url): ?>
-    <h2>In this section</h2>
-    <?php print $tree; ?>
-    <?php endif; ?>
-    <?php if ($has_links): ?>
-    <?php if (!$prev_url): ?>
-      <div class="text-center"><h3>Start reading</h3></div>
-    <?php endif; ?>
-      <div class="clearfix text-center border-top border-bottom py-3">
-        <?php if ($prev_url): ?>
-          <a href="<?php print $prev_url; ?>" class="page-previous" title="<?php print t('Go to previous page'); ?>"><i class="fal fa-arrow-left theme-color"></i> <?php print $prev_title; ?></a>
+      <?php if ($tree && $parent_url): ?>
+          <h2>In this section</h2>
+        <?php print $tree; ?>
+      <?php endif; ?>
+      <?php if ($has_links): ?>
+        <?php if (!$prev_url): ?>
+              <div class="text-center"><h3>Start reading</h3></div>
         <?php endif; ?>
-        <?php if ($parent_url): ?>
-        <div class="navdiv-up">
-            <a href="<?php print $parent_url; ?>" class="page-up" title="<?php print t('Go to parent page'); ?>"><i class="fal fa-arrow-up theme-color"></i> <span class="sr-only">up</span></a>
-        </div>
-        <?php endif; ?>
-        <?php if ($next_url): ?>
-          <a href="<?php print $next_url; ?>" class="page-next" title="<?php print t('Go to next page'); ?>"><?php print $next_title; ?> <i class="fal fa-arrow-right theme-color"></i></a>
-        <?php endif; ?>
-      </div>
-    <?php endif; ?>
 
-  </div>
+          <div class="clearfix border-top border-bottom py-3 row align-items-center">
+              <div class="col-5 text-left">
+                <?php if ($prev_url): ?>
+                    <a href="<?php print $prev_url; ?>" class="page-previous" title="<?php print t('Go to previous page'); ?>"><i class="fal fa-arrow-left theme-color"></i> <?php print $prev_title; ?> <span class="nav-mob-helper">Next</span></a>
+                <?php endif; ?>
+              </div>
+
+              <div class="col-2 text-center">
+                <?php if ($parent_url): ?>
+                    <div class="navdiv-up">
+                        <a href="<?php print $parent_url; ?>" class="page-up col-2" title="<?php print t('Go to parent page'); ?>"><i class="fas fa-bars theme-color"></i> <span class="sr-only">up</span></a>
+                    </div>
+                <?php endif; ?>
+              </div>
+
+              <div class="col-5 text-right">
+                <?php if ($next_url): ?>
+                    <a href="<?php print $next_url; ?>" class="page-next" title="<?php print t('Go to next page'); ?>"><?php print $next_title; ?> <span class="nav-mob-helper">Prev</span><i class="fal fa-arrow-right theme-color"></i></a>
+                <?php endif; ?>
+              </div>
+
+          </div>
+      <?php endif; ?>
+
+    </div>
 <?php endif; ?>

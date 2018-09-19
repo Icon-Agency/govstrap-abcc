@@ -367,7 +367,19 @@
     }
   }
 }
+
 @include media-breakpoint-down(sm) { //768px
+
+  .book-navigation {
+    .page-previous,
+    .page-next{
+      font-size: 0;
+    }
+    .nav-mob-helper{
+      display: inline-block;
+    }
+  }
+
   body.responsive{
     background-color: pink !important;
   }

@@ -18,7 +18,7 @@
                                                         <i class="fal fa-arrow-circle-right"></i>
                                                     </strong>
                                             </span></a>
-                 
+
 
                     </div>
                     <div class="col-md-6">

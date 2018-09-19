@@ -174,3 +174,34 @@ div.toc-filter-back-to-top {
     padding-bottom: 0.5rem;
   }
 }
+
+// Book navigation
+.book-navigation {
+  .page-previous,
+  .page-next{
+    display: inline-block;
+    i{
+      position: absolute;
+      top: 50%;
+      font-size: 16px;
+      line-height: 1;
+      margin-top: -8px;
+    }
+  }
+  .page-previous{
+    padding-left: $spacer*2;
+    i{
+      left: $spacer;
+    }
+  }
+  .page-next{
+    padding-right: $spacer*2;
+    i{
+      right: $spacer;
+    }
+  }
+  .nav-mob-helper{
+    display: none;
+    font-size: $font-size-base;
+  }
+}
