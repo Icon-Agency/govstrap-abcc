@@ -115,7 +115,6 @@
 
                             <?php endif; ?>
 
-
                         </section>
                     </div>
                     <!-- /main page content -->
@@ -140,6 +139,21 @@
                 </div>
             </div>
         </div>
+
+        <?php $field_bottom_content = render($node_content['field_bottom_content']); ?>
+
+        <?php if ($field_bottom_content): ?>
+
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-12">
+                  <?php print render($node_content['field_bottom_content']); ?>
+                </div>
+            </div>
+        </div>
+
+        <?php endif; ?>
+
 
         <!-- page footer -->
         <?php include 'includes/page-footer.tpl.php'; ?>
