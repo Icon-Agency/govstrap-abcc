@@ -137,21 +137,23 @@ new Slick();
       }
 
 
-      if ($('body').hasClass('has-eligibility-wizard')) {
+// Wizards
+//
+      if ($('body').hasClass('has-wizard-button')) {
         new Magnific()
-
         var wizard = new Wizard
-        wizard.init('/' + Drupal.settings.pathToTheme + '/data/proofOfEligibility.json')
+
+        $('.eligibility-wizard-launch').on('click', function(){
+          wizard.init('/' + Drupal.settings.pathToTheme + '/data/proofOfEligibility.json');
+        })
+
+        $('.sub-contractor-wizard-launch').on('click', function(){
+          wizard.init('/' + Drupal.settings.pathToTheme + '/data/subContractor.json');
+        })
+
       }
 
-      if ($('body').hasClass('has-sub-contractor-wizard')) {
-        new Magnific()
-
-        var wizard = new Wizard
-        wizard.init('/' + Drupal.settings.pathToTheme + '/data/subContractor.json')
-      }
-
-      if ($('body').hasClass('has-anonymous-report-wizard')) {
+      if ($('body').hasClass('has-form-wizard')) {
         new Magnific()
       }
 

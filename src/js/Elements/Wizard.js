@@ -4,17 +4,54 @@ import smoothscroll from 'smoothscroll-polyfill';
  * Wizard2
  */
 function Wizard () {
-  let globalData, pathway = [], currentParent = null, previousOption = null
-
+  let globalData = null, introData = '', pathway = [], currentParent = null, previousOption = null
   /**
    * initilise the wizard
    *
    */
   this.init = (source) => {
+    this.thePurge()
+    this.clearDisplayedQuestions()
+    this.clearIntroText()
+
     $.get(source, (node) => {
-      globalData = node.nodes
-      this.setup()
+      globalData = node.nodes.content
+      introData = node.nodes.intro
+      this.setIntroText()
     })
+  }
+
+  /**
+   * purge all data / questions
+   *
+   */
+  this.thePurge = () => {
+    globalData = null
+    introData = ''
+    pathway = []
+    currentParent = null
+    previousOption = null
+  }
+
+  /**
+   * get intro text
+   *
+   */
+  this.setIntroText = () => {
+    let intro = document.querySelector('.wizard-intro')
+    intro.querySelector('h2').innerHTML = introData[0].title
+    intro.querySelector('.intro-text').innerHTML = introData[0].content
+    this.setup()
+  }
+
+  /**
+   * clear intro text
+   *
+   */
+  this.clearIntroText = () => {
+    let intro = document.querySelector('.wizard-intro')
+    intro.querySelector('h2').innerHTML = ''
+    intro.querySelector('.intro-text').innerHTML = ''
   }
 
   /**
@@ -23,7 +60,6 @@ function Wizard () {
    */
   this.setup = () => {
     let startQuestion = globalData[0]
-
     this.showQuestion(startQuestion)
   }
 
@@ -229,10 +265,10 @@ function Wizard () {
   }
 
   /**
-     * check to see if a selected question has already been
-     * previously chosen
-     *
-  */
+   * check to see if a selected question has already been
+   * previously chosen
+   *
+   */
   this.pathwayExists = (el) => {
     return pathway.filter(path => path.id === el.id).length > 0
   }
@@ -316,4 +352,4 @@ function Wizard () {
   }
 }
 
-export default Wizard;
+module.exports = Wizard

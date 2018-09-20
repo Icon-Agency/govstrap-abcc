@@ -70,7 +70,7 @@
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 </head>
-<body class="<?php print $classes ?> has-anonymous-report-wizard"<?php print $attributes ?>>
+<body class="<?php print $classes ?> has-form-wizard"<?php print $attributes ?>>
 <?php if ($skip_link_text && $skip_link_anchor): ?>
     <div id="skip-link">
         <a href="#<?php print $skip_link_anchor; ?>"

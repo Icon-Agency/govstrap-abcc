@@ -9074,21 +9074,20 @@ new _Slick2.default();
 
       if ($('body').hasClass('has-banner')) {}
 
-      if ($('body').hasClass('has-eligibility-wizard')) {
+      if ($('body').hasClass('has-wizard-button')) {
         new _Magnific2.default();
-
         var wizard = new _Wizard2.default();
-        wizard.init('/' + Drupal.settings.pathToTheme + '/data/proofOfEligibility.json');
+
+        $('.eligibility-wizard-launch').on('click', function () {
+          wizard.init('/' + Drupal.settings.pathToTheme + '/data/proofOfEligibility.json');
+        });
+
+        $('.sub-contractor-wizard-launch').on('click', function () {
+          wizard.init('/' + Drupal.settings.pathToTheme + '/data/subContractor.json');
+        });
       }
 
-      if ($('body').hasClass('has-sub-contractor-wizard')) {
-        new _Magnific2.default();
-
-        var wizard = new _Wizard2.default();
-        wizard.init('/' + Drupal.settings.pathToTheme + '/data/subContractor.json');
-      }
-
-      if ($('body').hasClass('has-anonymous-report-wizard')) {
+      if ($('body').hasClass('has-form-wizard')) {
         new _Magnific2.default();
       }
     }
@@ -14499,10 +14498,6 @@ $.magnificPopup.registerModule(RETINA_NS, {
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _smoothscrollPolyfill = __webpack_require__(341);
 
 var _smoothscrollPolyfill2 = _interopRequireDefault(_smoothscrollPolyfill);
@@ -14512,21 +14507,47 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Wizard() {
   var _this = this;
 
-  var globalData = void 0,
+  var globalData = null,
+      introData = '',
       pathway = [],
       currentParent = null,
       previousOption = null;
 
   this.init = function (source) {
+    _this.thePurge();
+    _this.clearDisplayedQuestions();
+    _this.clearIntroText();
+
     $.get(source, function (node) {
-      globalData = node.nodes;
-      _this.setup();
+      globalData = node.nodes.content;
+      introData = node.nodes.intro;
+      _this.setIntroText();
     });
+  };
+
+  this.thePurge = function () {
+    globalData = null;
+    introData = '';
+    pathway = [];
+    currentParent = null;
+    previousOption = null;
+  };
+
+  this.setIntroText = function () {
+    var intro = document.querySelector('.wizard-intro');
+    intro.querySelector('h2').innerHTML = introData[0].title;
+    intro.querySelector('.intro-text').innerHTML = introData[0].content;
+    _this.setup();
+  };
+
+  this.clearIntroText = function () {
+    var intro = document.querySelector('.wizard-intro');
+    intro.querySelector('h2').innerHTML = '';
+    intro.querySelector('.intro-text').innerHTML = '';
   };
 
   this.setup = function () {
     var startQuestion = globalData[0];
-
     _this.showQuestion(startQuestion);
   };
 
@@ -14732,7 +14753,7 @@ function Wizard() {
   };
 }
 
-exports.default = Wizard;
+module.exports = Wizard;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ }),
