@@ -74,12 +74,12 @@
       flex-wrap: wrap;
       > li{
         padding-left: 0;
-        width: 30%;
+        width: 40%;
+        opacity: 0.9;
         &:hover{
           background-color: transparent;
         }
         a{
-
           font-weight: 700;
           &:hover{
             color: $green !important;
@@ -87,6 +87,7 @@
         }
         ul{
           li{
+            opacity: 0.8;
             a{
               font-weight: 400;
               font-size: .95rem;
