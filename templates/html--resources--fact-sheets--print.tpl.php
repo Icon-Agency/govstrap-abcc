@@ -301,6 +301,8 @@
 
 <?php print $page ?>
 
-
+<script>
+  window.print();
+</script>
 </body>
 </html>
