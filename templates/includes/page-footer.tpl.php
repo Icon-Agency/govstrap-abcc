@@ -59,12 +59,19 @@
                   <?php endif; ?>
                 </div>
                 <div class="col-lg-4">
-                    <a href="#" class="btn alt btn-outline-primary">
+                    <a href="#" class="btn alt btn-outline-primary" id="footer-explore-menu-toggle">
                         Explore the website
                         <i class="fal fa-bars ml-4"></i>
                     </a>
                 </div>
             </div>
+              <?php if (!empty($page['footer_explore'])): ?>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <?php print render($page['footer_explore']); ?>
+                    </div>
+                </div>
+              <?php endif; ?>
         </div>
     </div>
     <div class="sr-only">Designed and built by <a

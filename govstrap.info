@@ -15,6 +15,7 @@ regions[wizard]                         = Wizard
 regions[sidebar_right]                  = Sidebar right
 regions[pre_footer]                     = Pre-footer - above footer and under main content
 regions[footer]                         = Footer
+regions[footer_explore]                 = Footer explore menu
 regions[mega_menu_item_building_code]   = Mega menu item - Building Code
 
 ;;;;;;;;;;;;;;;;;;;;;
