@@ -54,7 +54,7 @@
             <span>ABN 68 003 725 098</span>
         </div>
         <div class="col-sm-6 text-right float-right text-mini">
-            <span>© Commonwealth of Australia 2016</span>
+            <span>© Commonwealth of Australia <?php print date('Y'); ?></span>
         </div>
     </div>
 </div>
