@@ -66,7 +66,7 @@
                 </div>
             </div>
               <?php if (!empty($page['footer_explore'])): ?>
-                <div class="row">
+                <div class="row pt-5">
                     <div class="col-lg-12">
                         <?php print render($page['footer_explore']); ?>
                     </div>

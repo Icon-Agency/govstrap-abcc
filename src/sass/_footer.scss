@@ -69,12 +69,17 @@
   }
   #block-menu-block-3{
     display: none;
+
+    & > .content > ul > li {
+      width: 31%;
+    }
+
     ul{
       display: flex;
       flex-wrap: wrap;
-      > li{
+
+      & > li{
         padding-left: 0;
-        width: 40%;
         opacity: 0.9;
         &:hover{
           background-color: transparent;

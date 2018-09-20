@@ -343,7 +343,6 @@
     }
   }
 
-
   .footer{
     .container{
       &.py-5{
@@ -369,6 +368,14 @@
 }
 
 @include media-breakpoint-down(sm) { //768px
+
+  .footer {
+    #block-menu-block-3 {
+      & > .content > ul > li {
+        width: 90%;
+      }
+    }
+  }
 
   .book-navigation {
     .page-previous,
