@@ -30,6 +30,7 @@ new Slick();
       });
 
       $(document).ready(function () {
+        var animationDuration = 220;
 
         var hash = window.location.hash.substr(1);
         if (hash == 'wizard-form') {
@@ -121,6 +122,14 @@ new Slick();
             // do something here
           }
         });
+
+          // Explore the site (footer) behaviour
+          $("#footer-explore-menu-toggle").click(function (e) {
+              e.preventDefault();
+              $("#block-menu-block-3").slideToggle(animationDuration);
+              $(this).toggleClass("explore-open");
+          });
+
       })
 
       if ($('body').hasClass('has-banner')) {

@@ -67,4 +67,42 @@
       color: $blue !important;
     }
   }
+  #block-menu-block-3{
+    display: none;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      > li{
+        padding-left: 0;
+        width: 30%;
+        &:hover{
+          background-color: transparent;
+        }
+        a{
+
+          font-weight: 700;
+          &:hover{
+            color: $green !important;
+          }
+        }
+        ul{
+          li{
+            a{
+              font-weight: 400;
+              font-size: .95rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #footer-explore-menu-toggle{
+    &.explore-open {
+      .fal,.fa-bars::before {
+        content: '\f00d';
+        color: $white;
+      }
+    }
+  }
 }
