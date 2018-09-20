@@ -71,13 +71,15 @@
                               <ul class="action-links"><?php print render($action_links); ?></ul>
                           <?php endif; ?>
                             <div id="page-content">
-                              <?php print render($node_content['body']); ?>
                               <?php $field_page_type = strtolower(strip_tags(render($node_content['field_page_typpe']))); ?>
                                 <?php if (($field_page_type == 'factsheet') && isset($node)): ?>
+                                  <?php print render($node_content['body']); ?>
                                     <div class="fs-print pt-5">
                                         <a class="btn btn-primary" href="/resources/fact-sheets/print/<?php print $node->nid; ?>">Print this factsheet</a>
                                     </div>
-                                <?php endif ?>
+                                <?php else: ?>
+                                    <?php print render($page['content']); ?>
+                                <?php endif; ?>
                             </div>
                           <?php if (!empty($page['wizard'])): ?>
                             <?php print render($page['wizard']); ?>
