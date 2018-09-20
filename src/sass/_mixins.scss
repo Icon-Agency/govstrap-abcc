@@ -422,6 +422,7 @@
     font-size: 12px;
     top: 0;
     line-height: 1.35rem;
+    font-weight: 400;
   }
 
   label{
@@ -429,6 +430,11 @@
       position: relative;
     }
   }
+
+  .webform-client-form input[type="checkbox"]:checked + label:after {
+    top: 2px;
+  }
+
 }
 
 @mixin site-map-list {
