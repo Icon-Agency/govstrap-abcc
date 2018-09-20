@@ -86,6 +86,15 @@
 
             <div id="page-content">
               <?php print render($page['content']); ?>
+              <?php if (!empty($page['pre_footer'])): ?>
+                  <div class="container pb-5">
+                      <div class="row">
+                          <div class="col-lg-12">
+                            <?php print render($page['pre_footer']); ?>
+                          </div>
+                      </div>
+                  </div>
+              <?php endif; ?>
               <?php if (!empty($page['wizard'])): ?>
                 <?php print render($page['wizard']); ?>
               <?php endif;?>
