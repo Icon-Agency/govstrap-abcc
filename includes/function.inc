@@ -129,16 +129,27 @@ function _taxonomy_autolink_links_rule($needle, $configs = array()) {
  */
 function _taxonomy_autolink_link_create ($tid, $text, $synonyms) {
   $term = taxonomy_term_load($tid);
+  $description = strip_tags($term->description);
   $term = $term->name;
+
   // We want to point the link to the glossary auto-search page
   $url = 'glossary/content/'.$text.$synonyms.'/'.$tid.'/'.$term;
-  return l(check_plain($text), $url, array(
-    'html' => TRUE,
-    'attributes' => array(
-      'class' => array('term-link'),
-      'title' => $text,
-    ),
-  ));
+
+  if ($description) {
+    $url = 'glossary/content/'.$text.$synonyms.'/'.$tid.'/'.$term;
+
+
+    return '<a href="/'.$url.'" class="term-link has-tooltip" title="" data-toggle="tooltip" data-original-title="'.$description.'">'.$term.'</a>';
+
+  } else {
+    return l(check_plain($text), $url, array(
+      'html' => TRUE,
+      'attributes' => array(
+        'class' => array('term-link'),
+        'title' => $text,
+      ),
+    ));
+  }
 }
 
 

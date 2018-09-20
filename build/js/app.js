@@ -9003,6 +9003,8 @@ new _Slick2.default();
           $("#wizard-form-launch").click();
         }
 
+        $('[data-toggle="tooltip"]').tooltip({ html: true });
+
         $(".translate").click(function (e) {
           $(".translate-container").toggle(500);
           $(".translate-indicator").toggle(500);

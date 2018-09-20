@@ -215,3 +215,38 @@ div.toc-filter-back-to-top {
     font-size: $font-size-base;
   }
 }
+
+.has-tooltip{
+  position: relative;
+  &:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: '';
+  }
+  &:hover{
+    &:after{
+      border-color: $dark-blue;
+    }
+  }
+}
+
+.tooltip{
+  color: $dark-blue;
+  opacity: 1 !important;
+  .arrow{
+    color: $dark-blue;
+  }
+  .tooltip-inner{
+    max-width: 300px;
+    text-align: left;
+    opacity: 1 !important;
+    padding: $spacer;
+    background-color: $white;
+    color: inherit;
+    border-bottom: 3px solid $dark-blue;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.2);
+  }
+}

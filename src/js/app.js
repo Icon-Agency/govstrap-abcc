@@ -36,6 +36,9 @@ new Slick();
           $("#wizard-form-launch").click();
         }
 
+        // Initilise tooltips
+        $('[data-toggle="tooltip"]').tooltip({html: true})
+
         // Toggle Google translate widget
         $(".translate").click(function(e){
           $(".translate-container").toggle(500);
