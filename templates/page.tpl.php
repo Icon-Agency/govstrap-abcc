@@ -75,7 +75,7 @@
                                 <?php if (($field_page_type == 'factsheet') && isset($node)): ?>
                                   <?php print render($node_content['body']); ?>
                                     <div class="fs-print pt-5">
-                                        <a class="btn btn-primary" href="/resources/fact-sheets/print/<?php print $node->nid; ?>">Print this factsheet</a>
+                                        <a class="btn btn-primary" href="/resources/fact-sheets/print/<?php print $node->nid; ?>">Print this fact sheet</a>
                                     </div>
                                 <?php else: ?>
                                     <?php print render($page['content']); ?>

@@ -449,10 +449,18 @@ ul.abcc-themed {
       }
     }
   }
+
   a {
     color: $body-color !important;
     &:hover {
       color: $body-color !important;
+    }
+
+    &.btn-primary {
+      color: $white !important;
+      &:hover {
+        color: $white !important;
+      }
     }
   }
   .card {
@@ -711,6 +719,7 @@ ul.abcc-themed {
 //
 .filter {
   min-height: 48px;
+  line-height: 21px;
   position: relative;
   &:after {
     position: absolute;
@@ -735,6 +744,9 @@ ul.abcc-themed {
     display: inline-block;
     float: right;
     // margin: 19px 0;
+  }
+  input {
+    margin-top: 0;
   }
   select,
   input[type] {
