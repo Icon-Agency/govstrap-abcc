@@ -390,6 +390,12 @@ ul.abcc-themed {
     font-weight: 400;
     padding: $spacer $spacer*2;
     background-color: $body-bg;
+
+    // Fix IE display issue.
+    .row {
+      width: 100%;
+    }
+
     ul {
       &.fixed-icon-list {
         li {
