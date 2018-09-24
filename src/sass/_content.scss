@@ -64,8 +64,19 @@ a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):
     }
   }
 }
-p a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']):not([href^='tel']):not([href^='mailto']) {
-  padding-right: 1.5em;
+
+.content {
+  p, li, td, th {
+    a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']):not([href^='tel']):not([href^='mailto']) {
+      padding-right: 1.5em;
+    }
+  }
+}
+
+li.with-arrow a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']):not([href^='tel']):not([href^='mailto']) {
+  &::before {
+    left: -30px;
+  }
 }
 
 a.term-link {

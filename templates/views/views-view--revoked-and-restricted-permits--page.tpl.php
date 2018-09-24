@@ -71,7 +71,7 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
                   </ul>
 
                   <div class="text-right search-options">
-                      <form class="search-wrap" action="/your-rights-and-responsibilities/right-entry/revoked-and-restricted-permits"
+                      <form class="search-wrap" action=""
                             method="get" id="views-exposed-form-revoked-and-restricted-permits-page-2"
                             accept-charset="UTF-8">
                           <input type="text"
