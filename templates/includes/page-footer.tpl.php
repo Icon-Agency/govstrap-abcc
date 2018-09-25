@@ -25,9 +25,9 @@
                         <a href="/contact" class="item">
                             <img src="/<?php print path_to_theme(); ?>/images/icon-contact-form.svg">
                             <span class="text-uppercase">
-                                                Use our
+                                                See our
                                                 <strong class="text-green">
-                                                    contact form
+                                                    contact details
                                                     <i class="fal fa-arrow-circle-right"></i>
                                                 </strong>
                                             </span>
