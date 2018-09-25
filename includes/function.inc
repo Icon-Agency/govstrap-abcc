@@ -141,6 +141,8 @@ function _taxonomy_autolink_link_create ($tid, $text, $synonyms) {
   if ($description) {
     $url = 'glossary/content/'.$text.$synonyms.'/'.$tid.'/'.$term;
 
+    // We do not want any tooltip text be linked again
+    $description = str_replace(' ', '&#32;', $description);
 
     return '<a href="/'.$url.'" class="term-link has-tooltip" title="" data-toggle="tooltip" data-original-title="'.$description.'">'.$text.'</a>';
 
