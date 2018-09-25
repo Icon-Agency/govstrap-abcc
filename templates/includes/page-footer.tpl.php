@@ -22,7 +22,7 @@
 
                     </div>
                     <div class="col-md-6">
-                        <a href="/contact#wizard-form" class="item">
+                        <a href="/contact" class="item">
                             <img src="/<?php print path_to_theme(); ?>/images/icon-contact-form.svg">
                             <span class="text-uppercase">
                                                 Use our
