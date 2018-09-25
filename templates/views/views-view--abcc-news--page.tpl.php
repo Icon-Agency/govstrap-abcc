@@ -138,7 +138,7 @@ usort($news_type_options, "array_cmp");
         <div class="col-lg-3 offset-lg-1">
             <div class="row">
                 <div class="col-lg-12 col-sm-6">
-                    <a href="#" class="block mb-5">
+                    <a href="/news-and-media/industry-update" class="block mb-5">
                         <img src="/<?php print path_to_theme(); ?>/images/sp-subscribe-mini.jpg"
                              class="img-fluid">
                     </a>

@@ -19,6 +19,11 @@
     <?php print $right; ?>
     <h5 class="font-family3 standard text-uppercase theme-color">Share</h5>
     <?php print drupal_render(_social_share_buttons()); ?>
+    <?php $block = module_invoke('bean', 'block_view', 'media-contact'); ?>
+    <?php if ($block): ?>
+        <hr>
+        <?php print render($block['content']); ?>
+    <?php endif; ?>
   </<?php print $right_wrapper ?>>
 
 </<?php print $layout_wrapper ?>>
