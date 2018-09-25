@@ -52,6 +52,12 @@ if (strtolower($params['type']) == 'all') {
       </div>
   <?php endif; ?>
 
+  <div class="row">
+      <div class="col-lg-12 pb-5">
+        <?php print views_embed_view('abcc_glossary_term_page_and_block_', 'block'); ?>
+      </div>
+  </div>
+
   <?php if ($exposed): ?>
 
       <div class="row">
@@ -88,7 +94,7 @@ if (strtolower($params['type']) == 'all') {
   <?php endif; ?>
 
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="glossary">
               <?php if ($rows): ?>
                   <div class="view-content">
@@ -106,10 +112,6 @@ if (strtolower($params['type']) == 'all') {
                 <?php print $pager; ?>
               <?php endif; ?>
             </div>
-        </div>
-
-        <div class="col-lg-3 offset-lg-1">
-          <?php print views_embed_view('abcc_glossary_term_page_and_block_', 'block'); ?>
         </div>
     </div>
 
