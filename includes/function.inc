@@ -139,7 +139,7 @@ function _taxonomy_autolink_link_create ($tid, $text, $synonyms) {
     $url = 'glossary/content/'.$text.$synonyms.'/'.$tid.'/'.$term;
 
 
-    return '<a href="/'.$url.'" class="term-link has-tooltip" title="" data-toggle="tooltip" data-original-title="'.$description.'">'.$term.'</a>';
+    return '<a href="/'.$url.'" class="term-link has-tooltip" title="" data-toggle="tooltip" data-original-title="'.$description.'">'.$text.'</a>';
 
   } else {
     return l(check_plain($text), $url, array(
@@ -282,12 +282,8 @@ function _get_card_theme($category) {
     case 'e-alert':
       $card_class = 'card-rights';
       break;
-    case 'statement':
-    case 'transcript':
+    case 'industry update':
       $card_class = 'card-government';
-      break;
-    case 'media backgrounder':
-      $card_class = 'card-worker';
       break;
   }
   return $card_class;
