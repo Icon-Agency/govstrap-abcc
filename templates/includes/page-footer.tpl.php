@@ -11,7 +11,7 @@
                             <img src="/<?php print path_to_theme(); ?>/images/icon-call.svg">
 
                             <span class="text-uppercase">
-                                                Call ABCC hotline
+                                                Call the ABCC hotline
 
                                                     <strong class="text-green">
                                                         1800 003 338
