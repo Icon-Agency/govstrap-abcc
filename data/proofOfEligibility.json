@@ -199,7 +199,7 @@
         "id": 15,
         "type": "result",
         "value": "You are not eligible for an exemption",
-        "infoText": "<p>To express interest in and tender for Commonwealth funded building work, you will need a letter of compliance for any enterprise agreement made on or after 2 December 2016. </p><p><a target='_blank' href='/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
+        "infoText": "<p>To express interest in and tender for Commonwealth funded building work, you will need a letter of compliance for any enterprise agreement made on or after 2 December 2016. </p><p><a target='_blank' href='/building-code/contractors/tendering/tendering-commonwealth-funded-building-work'>Find out how to obtain a letter of compliance</a></p>"
       },
       {
         "id": 16,
@@ -245,13 +245,13 @@
         "id": 19,
         "type": "result",
         "value": "You are not eligible for an exemption",
-        "infoText": "<p>To be eligible to express interest in, tender for and be awarded Commonwealth funded building work, the enterprise agreement that covers you and your related entities must meet the requirements of section 11 of the Building Code 2016. You will need a letter of compliance. </p><p><a target='_blank' href='/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
+        "infoText": "<p>To be eligible to express interest in, tender for and be awarded Commonwealth funded building work, the enterprise agreement that covers you and your related entities must meet the requirements of section 11 of the Building Code 2016. You will need a letter of compliance. </p><p><a target='_blank' href='/building-code/contractors/tendering/tendering-commonwealth-funded-building-work'>Find out how to obtain a letter of compliance</a></p>"
       },
       {
         "id": 20,
         "type": "result",
         "value": "To express interest in and tender for Commonwealth funded building work, you will need a letter of compliance for any enterprise agreement made on or after 2 December 2016.",
-        "preOptionText": "<p><a target='_blank' href='/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a>  </p><p>Note: if you are also covered by any enterprise agreements made on or after 25 April 2014 but before 2 December 2016, you will also require a letter of compliance unless you are eligible for an exemption. </p><p> If this applies to you, click the button below to check if you are eligible for an exemption.</p>",
+        "preOptionText": "<p><a target='_blank' href='/building-code/contractors/tendering/tendering-commonwealth-funded-building-work'>Find out how to obtain a letter of compliance</a>  </p><p>Note: if you are also covered by any enterprise agreements made on or after 25 April 2014 but before 2 December 2016, you will also require a letter of compliance unless you are eligible for an exemption. </p><p> If this applies to you, click the button below to check if you are eligible for an exemption.</p>",
         "options": [
           {
             "id": "20-1",
@@ -320,7 +320,7 @@
         "id": 25,
         "type": "result",
         "value": "You are not eligible for an exemption",
-        "infoText": "<p>To be eligible to express interest in, tender for and be awarded Commonwealth funded building work, the enterprise agreement(s) that cover you and your related entities must meet the requirements of section 11 of the Building Code 2016. You will need a letter of compliance. </p><p><a target='_blank' href='/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
+        "infoText": "<p>To be eligible to express interest in, tender for and be awarded Commonwealth funded building work, the enterprise agreement(s) that cover you and your related entities must meet the requirements of section 11 of the Building Code 2016. You will need a letter of compliance. </p><p><a target='_blank' href='/building-code/contractors/tendering/tendering-commonwealth-funded-building-work'>Find out how to obtain a letter of compliance</a></p>"
       }
     ]
   }
