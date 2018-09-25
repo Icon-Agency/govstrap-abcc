@@ -129,7 +129,10 @@ function _taxonomy_autolink_links_rule($needle, $configs = array()) {
  */
 function _taxonomy_autolink_link_create ($tid, $text, $synonyms) {
   $term = taxonomy_term_load($tid);
-  $description = strip_tags($term->description);
+  // Limit tags that can be in the tooltip
+  $description = strip_tags($term->description, '<strong><em><p><ul><ol><li><br>');
+  // Strip all HTML attributes from the markup in the tooltip text
+  $description = preg_replace("/<([a-z][a-z0-9]*)[^>]*?(\/?)>/i",'<$1$2>', $description);
   $term = $term->name;
 
   // We want to point the link to the glossary auto-search page
