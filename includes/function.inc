@@ -74,20 +74,33 @@ function _taxonomy_autolink_links($text, $terms, $configs = array()) {
   // Start processing.
   foreach ($terms as $term_name => $term) {
 
-    $rule = _taxonomy_autolink_links_rule($term_name, $configs);
+    $keys = array();
+
+    $keys[] = preg_quote($term_name, '/');
+    // Load synonyms
+    $result = db_query("SELECT field_synonyms_value FROM {field_data_field_synonyms} WHERE entity_id = $term->tid");
+    if ($result) {
+      $synonyms = $result->fetchAllAssoc('field_synonyms_value');
+      foreach ($synonyms as $synonym) {
+        $keys[] = preg_quote($synonym->field_synonyms_value, '/');
+      }
+    }
+
+    $rule = _taxonomy_autolink_links_rule($keys, $configs);
+
     $text = preg_replace_callback($rule, function ($match) use ($term) {
       if (!empty($match[0])) {
-        // Load synonyms
         $result = db_query("SELECT field_synonyms_value FROM {field_data_field_synonyms} WHERE entity_id = $term->tid");
         $synonyms = $result->fetchAllAssoc('field_synonyms_value');
         $synonyms_string = '';
         foreach ($synonyms as $synonym) {
-          $synonyms_string .= ' '.$synonym->field_synonyms_value;
+          $synonyms_string .= ' ' . $synonym->field_synonyms_value;
         }
-        return _taxonomy_autolink_link_create ($term->tid, $match[0], $synonyms_string);
+        return _taxonomy_autolink_link_create($term->tid, $match[0], $synonyms_string);
       }
     }, $text, $limit);
-  }
+
+  } // End matching terms
 
   return $text;
 }
@@ -97,22 +110,17 @@ function _taxonomy_autolink_links($text, $terms, $configs = array()) {
  * @param array $configs
  * @return string
  */
-function _taxonomy_autolink_links_rule($needle, $configs = array()) {
+function _taxonomy_autolink_links_rule($needles, $configs = array()) {
   $case = isset($configs['case']) ? $configs['case'] : 0;
   $mode = isset($configs['mode']) ? $configs['mode'] : 0;
   $rule = '';
-  // @todo Allow user to define this number.
-  if (strlen($needle) > 150) {
-    $needle = substr($needle, 0, strpos(wordwrap($needle, 150), "\n"));
-  }
-  // Quote regular expression characters.
-  $needle = preg_quote($needle, '/');
+
   switch ($mode) {
     case 0:
-      $rule = '/(?<=\s|^|<li>)' . $needle . '(?=\s|$|\<|<\/li>)/';
+      $rule = '/(?<=\s|^|<li>)' . implode('|',$needles) . '(?=\s|$|[.,;?]|\<|<\/li>)/';
       break;
     case 1:
-      $rule = '/(?<=\s|^|<li>)\b(' . $needle . '[ieds]*)\b(?=\s|$|\<|<\/li>)/';
+      $rule = '/(?<=\s|^|<li>)\b(' . implode('|',$needles) . '[ieds]*)\b(?=\s|$|[.,;?]|\<|<\/li>)/';
       break;
   }
   // If case not sensitive, set to lowercase.
