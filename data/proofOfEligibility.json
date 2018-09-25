@@ -151,13 +151,13 @@
         "id": 9,
         "type": "result",
         "value": "You are eligible to express interest in, tender for and be awarded Commonwealth funded building work",
-        "infoText": "<h5>How to demonstrate your eligibility</h5><p>Use Self-Declaration A to express interest in, tender for and be awarded Commonwealth funded building work at any time. </p><p><a href='https://www.abcc.gov.au/sites/g/files/net2406/f/self_declaration_of_eligibility_a_0.pdf'>Download Self Declaration A</a></p>"
+        "infoText": "<h5>How to demonstrate your eligibility</h5><p>Use Self-Declaration A to express interest in, tender for and be awarded Commonwealth funded building work at any time. </p><p><a href='/[path_to_public_files]/self_declaration_of_eligibility_a_0.pdf'>Download Self Declaration A</a></p>"
       },
       {
         "id": 12,
         "type": "result",
         "value": "You are eligible to express interest in, tender for and be awarded Commonwealth funded building work",
-        "infoText": "<h5>How to demonstrate your eligibility</h5><p>Use Self-Declaration A to express interest in, tender for and be awarded Commonwealth funded building work at any time. </p><p><a href='https://www.abcc.gov.au/sites/g/files/net2406/f/self_declaration_of_eligibility_a_0.pdf'>Download Self Declaration A</a></p>"
+        "infoText": "<h5>How to demonstrate your eligibility</h5><p>Use Self-Declaration A to express interest in, tender for and be awarded Commonwealth funded building work at any time. </p><p><a href='/[path_to_public_files]/self_declaration_of_eligibility_a_0.pdf'>Download Self Declaration A</a></p>"
       },
       {
         "id": 13,
@@ -199,7 +199,7 @@
         "id": 15,
         "type": "result",
         "value": "You are not eligible for an exemption",
-        "infoText": "<p>To express interest in and tender for Commonwealth funded building work, you will need a letter of compliance for any enterprise agreement made on or after 2 December 2016. </p><p><a href='https://www.abcc.gov.au/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
+        "infoText": "<p>To express interest in and tender for Commonwealth funded building work, you will need a letter of compliance for any enterprise agreement made on or after 2 December 2016. </p><p><a href='/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
       },
       {
         "id": 16,
@@ -239,19 +239,19 @@
         "id": 18,
         "type": "result",
         "value": "You are eligible for an exemption",
-        "infoText": "An exemption applies if you expressed interest in or tendered for the work between 2 December 2016 and 16 February 2017. You are eligible to be awarded the contract for this work before 29 November 2018 even if the enterprise agreement that will cover you in respect of the work is not compliant. </p><p><a href='https://www.abcc.gov.au/sites/g/files/net2406/f/self_declaration_of_eligibility_c.docx'>Self-Declaration C</a> can be used for work for which you expressed interest or tendered between 2 December 2016 and 16 February 2017. </p><p><a href='https://www.abcc.gov.au/sites/g/files/net2406/f/self_declaration_of_eligibility_c.docx'>Self-Declaration C</a> will demonstrate your eligibility to be awarded that Commonwealth funded building work before 29 November 2018.</p>"
+        "infoText": "An exemption applies if you expressed interest in or tendered for the work between 2 December 2016 and 16 February 2017. You are eligible to be awarded the contract for this work before 29 November 2018 even if the enterprise agreement that will cover you in respect of the work is not compliant. </p><p><a href='/[path_to_public_files]/self_declaration_of_eligibility_c.docx'>Self-Declaration C</a> can be used for work for which you expressed interest or tendered between 2 December 2016 and 16 February 2017. </p><p><a href='/[path_to_public_files]/self_declaration_of_eligibility_c.docx'>Self-Declaration C</a> will demonstrate your eligibility to be awarded that Commonwealth funded building work before 29 November 2018.</p>"
       },
       {
         "id": 19,
         "type": "result",
         "value": "You are not eligible for an exemption",
-        "infoText": "<p>To be eligible to express interest in, tender for and be awarded Commonwealth funded building work, the enterprise agreement that covers you and your related entities must meet the requirements of section 11 of the Building Code 2016. You will need a letter of compliance. </p><p><a href='https://www.abcc.gov.au/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
+        "infoText": "<p>To be eligible to express interest in, tender for and be awarded Commonwealth funded building work, the enterprise agreement that covers you and your related entities must meet the requirements of section 11 of the Building Code 2016. You will need a letter of compliance. </p><p><a href='/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
       },
       {
         "id": 20,
         "type": "result",
         "value": "To express interest in and tender for Commonwealth funded building work, you will need a letter of compliance for any enterprise agreement made on or after 2 December 2016.",
-        "preOptionText": "<p><a href='https://www.abcc.gov.au/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a>  </p><p>Note: if you are also covered by any enterprise agreements made on or after 25 April 2014 but before 2 December 2016, you will also require a letter of compliance unless you are eligible for an exemption. </p><p> If this applies to you, click the button below to check if you are eligible for an exemption.</p>",
+        "preOptionText": "<p><a href='/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a>  </p><p>Note: if you are also covered by any enterprise agreements made on or after 25 April 2014 but before 2 December 2016, you will also require a letter of compliance unless you are eligible for an exemption. </p><p> If this applies to you, click the button below to check if you are eligible for an exemption.</p>",
         "options": [
           {
             "id": "20-1",
@@ -314,13 +314,13 @@
         "id": 24,
         "type": "result",
         "value": "You are eligible for an exemption",
-        "infoText": "<p>An exemption applies if you expressed interest in or tendered for the work between 2 December 2016 and 16 February 2017. You are eligible to be awarded the contract for this work before 29 November 2018 even if the enterprise agreement(s) that will cover you in respect of the work is not compliant. </p><p><a href='https://www.abcc.gov.au/sites/g/files/net2406/f/self_declaration_of_eligibility_c.docx'>Self-Declaration C </a> can be used for work for which you expressed interest or tendered between 2 December 2016 and 16 February 2017. </p><p><a href='https://www.abcc.gov.au/sites/g/files/net2406/f/self_declaration_of_eligibility_c.docx'>Self-Declaration C</a> will demonstrate your eligibility to be awarded that Commonwealth funded building work before 29 November 2018.</p>"
+        "infoText": "<p>An exemption applies if you expressed interest in or tendered for the work between 2 December 2016 and 16 February 2017. You are eligible to be awarded the contract for this work before 29 November 2018 even if the enterprise agreement(s) that will cover you in respect of the work is not compliant. </p><p><a href='/[path_to_public_files]/self_declaration_of_eligibility_c.docx'>Self-Declaration C </a> can be used for work for which you expressed interest or tendered between 2 December 2016 and 16 February 2017. </p><p><a href='/[path_to_public_files]/self_declaration_of_eligibility_c.docx'>Self-Declaration C</a> will demonstrate your eligibility to be awarded that Commonwealth funded building work before 29 November 2018.</p>"
       },
       {
         "id": 25,
         "type": "result",
         "value": "You are not eligible for an exemption",
-        "infoText": "<p>To be eligible to express interest in, tender for and be awarded Commonwealth funded building work, the enterprise agreement(s) that cover you and your related entities must meet the requirements of section 11 of the Building Code 2016. You will need a letter of compliance. </p><p><a href='https://www.abcc.gov.au/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
+        "infoText": "<p>To be eligible to express interest in, tender for and be awarded Commonwealth funded building work, the enterprise agreement(s) that cover you and your related entities must meet the requirements of section 11 of the Building Code 2016. You will need a letter of compliance. </p><p><a href='/building-code/eligibility-tender'>Find out how to obtain a letter of compliance</a></p>"
       }
     ]
   }
