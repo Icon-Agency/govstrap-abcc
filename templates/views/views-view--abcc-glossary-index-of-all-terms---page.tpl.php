@@ -57,7 +57,7 @@
                   </ul>
 
                   <div class="text-right search-options">
-                      <form class="search-wrap" action="/glossary"
+                      <form class="search-wrap" action=""
                             method="get" id="views-exposed-form-glossary-page"
                             accept-charset="UTF-8">
                           <input type="text"
