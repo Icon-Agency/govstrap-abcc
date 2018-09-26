@@ -1,7 +1,7 @@
 // Breakpoint options
 // @include media-breakpoint-up/down/down
 
-@media only screen and (max-width:"1260px"){
+@media only screen and (max-width: 1260px){
   button.mfp-close{
     top: 0;
     right: 0;
@@ -97,6 +97,17 @@
     background-color: purple !important;
   }
 
+
+  .signposts{
+    &.img-card{
+
+      img{
+        height: auto;
+        min-height: auto;
+      }
+    }
+  }
+
   .hide-md-down{
     display: none;
   }
@@ -106,7 +117,7 @@
   }
 
   $menu-buttons: calc(80px + 2rem); // logo padding top and bottom
-  $menu-buttons-logo-pad: calc((80px + 2rem) *2; // logo padding top and bottom
+  $menu-buttons-logo-pad: calc((80px + 2rem) *2); // logo padding top and bottom
 
   .mm-header{
     height: $menu-buttons;
@@ -831,7 +842,7 @@
   }
 
   $menu-buttons: calc(50px + 2rem); // logo padding top and bottom
-  $menu-buttons-logo-pad: calc((50px + 2rem) *2; // logo padding top and bottom
+  $menu-buttons-logo-pad: calc((50px + 2rem) *2); // logo padding top and bottom
 
   .mm-header{
     height: $menu-buttons;
@@ -868,6 +879,10 @@
     }
     .bg-img{
       min-height: 1px;
+      background-image: none !important;
+    }
+    .btn-wrap {
+      padding-left: 15px;
     }
     .accent{
       padding-bottom: 0;
@@ -984,7 +999,7 @@
   }
 }
 
-@media only screen and (max-width:"370px"){
+@media only screen and (max-width: 370px){
   body.responsive{
     background-color: yellow !important;
   }
@@ -1012,7 +1027,7 @@
   }
 
   $menu-buttons: calc(40px + 2rem); // logo padding top and bottom
-  $menu-buttons-logo-pad: calc((40px + 2rem) *2; // logo padding top and bottom
+  $menu-buttons-logo-pad: calc((40px + 2rem) *2); // logo padding top and bottom
 
   .mm-header{
     height: $menu-buttons;
@@ -1043,7 +1058,11 @@
   }
 
   .banner{
+    .btn-wrap {
+      padding-left: 15px;
+    }
     .bg-img{
+      background-image: none !important;
       div{
         .text{
           .accent{
