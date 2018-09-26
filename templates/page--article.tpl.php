@@ -19,7 +19,7 @@
             <div class="bg-img" style="background-size: contain; background-position-x: 100%; background-image: url(/<?php print path_to_theme(); ?>/images/banners/ABCC-Banner-0<?php print rand(1, 8);?>.png)">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12 py-md-5 py-sm-0">
+                        <div class="col-lg-9 py-md-5 py-sm-0">
                             <?php if (!empty($breadcrumb)): ?>
                                 <nav aria-label="breadcrumb" class="breadcrumbs">
                                   <?php print $breadcrumb; ?>
