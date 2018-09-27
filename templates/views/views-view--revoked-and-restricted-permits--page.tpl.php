@@ -65,19 +65,19 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
                   <ul class="inline block-active-icon font-family3 bold text-uppercase small mb-5">
                     <?php foreach ($no_permit_type_options as $no_permit_type_option): ?>
                         <li class="<?php print $no_permit_type_option['class']; ?>">
-                            <a href="?field_no_permit_type_value=<?php print $no_permit_type_option['type'] ?>"><?php print $no_permit_type_option['name']; ?></a>
+                            <a href="<?php $params['field_no_permit_type_value'] = $no_permit_type_option['type'];  print url(current_path(), ['query' => $params]); ?>"><?php print $no_permit_type_option['name']; ?></a>
                         </li>
                     <?php endforeach; ?>
                   </ul>
 
                   <div class="text-right search-options">
-                      <form class="search-wrap" action=""
+                      <form class="search-wrap" action="<?php print '/' . current_path();?>"
                             method="get" id="views-exposed-form-revoked-and-restricted-permits-page-2"
                             accept-charset="UTF-8">
                           <input type="text"
                                  placeholder="Search name"
                                  id="edit-search-title"
-                                 name="title" value=""
+                                 name="title" value="<?php print empty($params['title']) ? '' : $params['title'];?>"
                                  size="30" maxlength="128"
                                  class="form-text ctools-auto-submit-processed">
                           <button>
