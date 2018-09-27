@@ -502,6 +502,18 @@ ul.abcc-themed {
   }
 }
 
+// Accordion within card
+.signposts .card .accordion .card {
+  min-height: unset;
+  box-shadow: none;
+  border: none !important;
+
+  .card-header {
+    padding-top: 1rem;
+    border: none;
+  }
+}
+
 // Custom Radio & Checkbox
 //
 .stackinline {
