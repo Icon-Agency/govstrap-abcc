@@ -380,6 +380,35 @@
 
 @include media-breakpoint-down(sm) { //768px
 
+  .banner{
+    &.single-image-left,
+    &.single-image-right,
+    &.industry-update,
+    &.slim-line{
+      .bg-img{
+        min-height: 200px;
+        padding: 0;
+
+        .accent{
+          padding-bottom: 0 !important;
+        }
+
+        div{
+          min-height: 200px;
+        }
+      }
+    }
+
+    .bg-img{
+      min-height: 200px;
+      padding: 0;
+
+      div{
+        min-height: 200px;
+      }
+    }
+  }
+
   .footer {
     #block-menu-block-3 {
       & > .content > ul > li {
@@ -815,7 +844,7 @@
   }
 }
 
-@media only screen and (max-width:"480px"){
+@media only screen and (max-width: 480px){
   body.responsive{
     background-color: orange !important;
   }
