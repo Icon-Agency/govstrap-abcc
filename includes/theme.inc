@@ -336,3 +336,72 @@ function govstrap_pager($variables) {
   }
 }
 
+/*
+ * Theme a webform date element.
+ */
+function govstrap_webform_date($variables) {
+  $element = $variables['element'];
+
+  $element['year']['#attributes']['class'][] = 'year';
+  $element['month']['#attributes']['class'][] = 'month';
+  $element['day']['#attributes']['class'][] = 'day';
+
+  // Save the data from the array into variables.
+  $day = $element['day'];
+  $month = $element['month'];
+  $year = $element['year'];
+
+  // reverse year options order
+  $first_year_option = array_shift($year['#options']);
+  $year['#options'] = drupal_map_assoc(array_reverse($year['#options']));
+  $year['#options'] = [$first_year_option => $first_year_option] + $year['#options'];
+
+  // Remove these keys from the array.
+  unset($element['day']);
+  unset($element['month']);
+  unset($element['year']);
+
+  // Re-add the data to the array in the correct order.
+  $element['day'] = $day;
+  $element['month'] = $month;
+  $element['year'] = $year;
+
+  // Add error classes to all items within the element.
+  if (form_get_error($element)) {
+    $element['year']['#attributes']['class'][] = 'error';
+    $element['month']['#attributes']['class'][] = 'error';
+    $element['day']['#attributes']['class'][] = 'error';
+  }
+
+  // Add HTML5 required attribute, if needed.
+  if ($element['#required']) {
+    $element['year']['#attributes']['required'] = 'required';
+    $element['month']['#attributes']['required'] = 'required';
+    $element['day']['#attributes']['required'] = 'required';
+  }
+
+  $class = array('webform-container-inline');
+
+  // Add the JavaScript calendar if available (provided by Date module package).
+  if (!empty($element['#datepicker'])) {
+    $class[] = 'webform-datepicker';
+    $calendar_class = array('webform-calendar');
+    if ($element['#start_date']) {
+      $calendar_class[] = 'webform-calendar-start-' . $element['#start_date'];
+    }
+    if ($element['#end_date']) {
+      $calendar_class[] = 'webform-calendar-end-' . $element['#end_date'];
+    }
+    $calendar_class[] = 'webform-calendar-day-' . variable_get('date_first_day', 0);
+
+    $calendar = theme('webform_calendar', array('component' => $element['#webform_component'], 'calendar_classes' => $calendar_class));
+  }
+
+  $output = '';
+  $output .= '<div class="' . implode(' ', $class) . '">';
+  $output .= drupal_render_children($element);
+  $output .= isset($calendar) ? $calendar : '';
+  $output .= '</div>';
+
+  return $output;
+}
