@@ -85,41 +85,42 @@
 
 
 
-  .navbar-nav {
+  .navbar-nav{
     font-family: $font-family3;
     color: $dark-blue;
     font-weight: 600;
     @include font-smoothing();
-    &.large-font {
-      .nav-item {
+    &.large-font{
+      .nav-item{
         font-size: 21px;
-        &:after {
+        &:after{
           bottom: -13px;
         }
-        .nav-link {
+        .nav-link{
           top: 0;
           text-transform: uppercase;
-          &:after {
+          &:after{
             bottom: -13px;
           }
         }
       }
     }
-    .nav-item {
+    .nav-item{
       font-size: 18px;
 
-      &.active {
-        .nav-link {
-          &:after {
+      &.active{
+        .nav-link{
+          &:after{
             display: block;
           }
         }
       }
 
-      .nav-link {
+      .nav-link{
+        padding-left: 25px;
         color: inherit;
         position: relative;
-        &:after {
+        &:after{
           display: none;
           position: absolute;
           bottom: -15px;
@@ -129,15 +130,18 @@
           content: '';
           border: 0 none;
         }
-        &:hover {
+        &:hover{
           opacity: 0.8;
           &:after {
             display: block;
             background: darken($border-color, 10%) !important;
           }
         }
-        &.dropdown-toggle {
-          &:before {
+        &.dropdown-toggle{
+          &:before{
+            position: absolute;
+            top: 16px;
+            left: 8px;
             display: inline-block;
             margin-right: .255em;
             vertical-align: 3px;
@@ -146,16 +150,17 @@
             font-weight: 300;
             font-size: 11px;
           }
-          &:after {
+          &:after{
             // display: none;
           }
         }
-        .fa-home {
+        .fa-home{
           font-size: 22px;
         }
       }
     }
   }
+
   .dropdown-menu {
     a {
       color: $white;

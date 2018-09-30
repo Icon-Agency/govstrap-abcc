@@ -130,16 +130,21 @@ blockquote {
   }
 }
 
-.btn {
+.btn{
   font-family: $font-family3;
   text-transform: uppercase;
-  &.alt {
+
+  &.alt{
     border-radius: 0;
     color: $body-color;
-    padding: .5rem 1.75rem;
+    padding: .5rem 40px .5rem 1.75rem;
     font-weight: 600;
     text-align: left;
-    i {
+    position: relative;
+    i{
+      position: absolute;
+      top: 8px;
+      right: 14px;
       float: right;
       line-height: inherit;
     }
