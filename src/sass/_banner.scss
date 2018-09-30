@@ -65,6 +65,9 @@
     margin-bottom: $spacer*2;
   }
   .bg-img{
+
+    position: relative;
+    z-index: 1;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;

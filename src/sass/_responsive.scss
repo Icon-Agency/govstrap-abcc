@@ -97,6 +97,38 @@
     background-color: purple !important;
   }
 
+  .filter{
+    &:after{
+      display: none;
+    }
+    ul{
+      display: block;
+      margin-bottom: 0 !important;
+      position: relative;
+      &:after{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-family: inherit;
+        content: '';
+        height: 5px;
+        width: 100%;
+        background-color: $border-color;
+        z-index: -1;
+      }
+    }
+    .search-options{
+      width: 100%;
+      float: none;
+      margin-top: $spacer/2;
+    }
+    select{
+      border-left: 0 none !important;
+    }
+    .select{
+      display: none;
+    }
+  }
 
   .signposts{
     &.img-card{
@@ -380,6 +412,16 @@
 
 @include media-breakpoint-down(sm) { //768px
 
+  .filter{
+    .search-wrap{
+      width: 100%;
+      max-width: 100%;
+      input[type]{
+        width: 100%;
+      }
+    }
+  }
+
   .banner{
     &.single-image-left,
     &.single-image-right,
@@ -567,6 +609,33 @@
         background-image: none !important;
       }
     }
+
+    &.single-image-left,
+    &.single-image-right,
+    &.industry-update,
+    &.slim-line{
+      .bg-img{
+        min-height: 200px;
+        padding: 0;
+
+        .accent{
+          padding-bottom: 0 !important;
+        }
+
+        div{
+          min-height: 200px;
+        }
+      }
+    }
+
+    .bg-img{
+      min-height: 200px;
+      padding: 0;
+
+      div{
+        min-height: 200px;
+      }
+    }
   }
 
   $arrow-font-size: 36px;
@@ -694,8 +763,9 @@
     }
   }
 
-  .filter{
-    display: none;
+
+  .filter ul li a {
+    padding: .5rem !important;
   }
 
   .news{
