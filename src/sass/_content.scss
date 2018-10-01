@@ -78,9 +78,12 @@ a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):
   }
 }
 
-li.with-arrow a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']):not([href^='tel']):not([href^='mailto']) {
-  &::before {
-    left: -30px;
+ul.related-resources li,
+li.with-arrow {
+  a:not([href*='abcc.gov.au']):not([href*='.local']):not([href*='govcms.gov.au']):not([href^='#']):not([href^='/']):not([href^='?']):not([href^='tel']):not([href^='mailto']) {
+    &::before {
+      left: -30px;
+    }
   }
 }
 
