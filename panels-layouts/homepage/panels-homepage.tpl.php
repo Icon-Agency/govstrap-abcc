@@ -59,19 +59,34 @@
                               <?php
                               $book_industry_updat_bid = variable_get('book_industry_update_bid', 104);
                               $book_industry_updat_menu_tree = menu_tree_all_data('book-toc-' . $book_industry_updat_bid);
-                              $book_latest_industry_update = $book_industry_updat_menu_tree["50000 Industry Update 8946"]["below"]["50000 Latest Industry Update 8951"]["below"];
+
+                              $latest_update = array();
+                              foreach($book_industry_updat_menu_tree["50000 Subscribe to receive Industry Update, e-alerts and media releases 8946"]["below"] as $industry_update) {
+                                $link_path = $industry_update['link']['link_path'];
+                                //$node_id = str_replace('node/', '', $link_path);
+                                $node = menu_get_item($link_path);
+                                $node_sticky = $node['page_arguments'][0]->sticky;
+                                $node_promoted = $node['page_arguments'][0]->promote;
+                                if ($node_sticky && $node_promoted) {
+                                  $latest_update = $industry_update;
+                                  break;
+                                }
+
+                              }
+
+                              $book_latest_industry_update = $latest_update["below"];
                               if ($book_industry_updat_menu_tree) {
                                 $book_latest_industry_update = array_shift(array_slice($book_latest_industry_update, 0, 1));
                                 $latest_industry_updates['links'] = $book_latest_industry_update['below'];
-                                $latest_industry_update['title'] = trim(str_replace('Industry Update', '', $book_latest_industry_update["link"]["link_title"]));
+                                $latest_industry_update['title'] = trim(str_replace(array('Industry Update', 'Industry update'), '', $latest_update["link"]["link_title"]));
                               }
                               ?>
                               <?php if ($book_latest_industry_update): ?>
                                   <span class="font-family3 text-uppercase small"><strong
-                                              class="text-green">Issue </strong> — <?php print $latest_industry_update['title']; ?></span>
-                                  <h2 class="h1 text-green mb-4">Industry update
+                                          class="text-green">Issue - </strong> <a class="text-white" href="/<?php print $latest_update["link"]["link_path"]; ?>"><?php print $latest_industry_update['title']; ?></a></span>
+                                <a href="/news-and-media/industry-update"><h2 class="h1 text-green mb-4">Industry update
                                       <i class="fal fa-arrow-circle-right fa-xs ml-1"></i>
-                                  </h2>
+                                    </h2></a>
                                   <ul class="list-unstyled fixed-number-list font-family3 color-white large">
                                     <?php
                                     $chapter_index = 0;
@@ -79,7 +94,7 @@
                                     if (count($book_latest_industry_update['below']) >= 10) {
                                       $chapter_prefix = '';
                                     }
-                                    foreach ($book_latest_industry_update['below'] as $book_latest_industry_update_chapter): ?>
+                                    foreach ($latest_update['below'] as $book_latest_industry_update_chapter): ?>
                                       <?php $chapter_index++; ?>
                                         <li class="mb-1"><span
                                                     class="icon text-green"><?php print $chapter_prefix . $chapter_index; ?>

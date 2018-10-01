@@ -93,6 +93,13 @@
   }
 }
 @include media-breakpoint-down(md) { //992px
+
+  .field-items{
+    .accent-top{
+      padding-left: $accent-size;
+    }
+  }
+
   body.responsive{
     background-color: purple !important;
   }
@@ -419,6 +426,12 @@
       input[type]{
         width: 100%;
       }
+    }
+  }
+
+  .field-items {
+    .accent-top {
+      padding-left: 0;
     }
   }
 
@@ -765,7 +778,7 @@
 
 
   .filter ul li a {
-    padding: .5rem !important;
+    padding: .25rem !important;
   }
 
   .news{
