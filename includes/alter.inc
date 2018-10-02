@@ -113,7 +113,7 @@ function govstrap_industry_update_subscribe_submit($form, &$form_state) {
 
   // First, we need to find if the user wants to subscribe to Industry update
 
-  if (in_array('industry-update-abcc-bi-monthly-enewsletter', $form_state["values"]["submitted"]["14"]) ) {
+  if (in_array('industry-updates', $form_state["values"]["submitted"]["14"]) ) {
     $cmstate = $form_state["values"]["submitted"]["8"];
     $cmemail = $form_state["values"]["submitted"]["2"];
     $cm_api_key = theme_get_setting('abcc_newsletter_cm_api_key');
