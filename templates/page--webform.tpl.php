@@ -16,7 +16,7 @@
 
         <!-- page banner -->
         <div class="banner slim-line bg-dark-blue text-white theme-color-gradient-after">
-            <div class="bg-img" style="background-size: contain; background-position-x: 100%; background-image: url(/<?php print path_to_theme(); ?>/images/banners/ABCC-Banner-0<?php print rand(1, 8);?>.png)">
+            <div class="bg-img" style="background-size: contain; background-position-x: 100%; background-image: url(/<?php print path_to_theme(); ?>/images/banners/ABCC-Banner-0<?php print rand(1, 13);?>.png)">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 py-md-5 py-sm-0">
