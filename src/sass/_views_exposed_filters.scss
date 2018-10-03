@@ -1,0 +1,72 @@
+// Agreement clauses for contractors
+.view-abcc-agreement-clauses {
+  .filter {
+
+    line-height: unset;
+
+    &:after {
+      display: none;
+    }
+
+    form {
+      .abcc-views-exposed-form {
+        border-bottom: 5px solid #e7e7e7;
+        .views-widget-edit-field-advice-category-tid {
+          margin-top: 0.67em;
+          .form-item {
+            margin: 0;
+          }
+          .form-item-field-advice-category-tid {
+            .bef-select-as-links {
+              .form-type-bef-link {
+                display: inline-block;
+                padding: 0 0.5em;
+                & > a {
+                  padding: 1rem;
+                  color: #5b7586;
+
+                  &:hover{
+                    text-decoration: unset;
+                    color: #5b7586;
+                    border-bottom: 5px solid #c1c1c1;
+                  }
+
+                  &.active{
+                    border-bottom: 5px solid #17b791;
+
+                    &:hover{
+                      border-bottom: 5px solid #17b791;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .text-right.search-options {
+          .views-widget-per-page {
+            label {
+              display: none;
+            }
+
+            .select__arrow {
+              border-top-color: #e15047;
+            }
+
+            .form-item {
+              margin: 0;
+            }
+          }
+        }
+
+        &:after {
+          content: "";
+          clear: both;
+          display: block;
+          position: relative;
+        }
+      }
+    }
+  }
+
+}

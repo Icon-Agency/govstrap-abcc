@@ -28,25 +28,6 @@
  */
 ?>
 
-<?php
-
-$advice_category_options[0] = ['tid' => 'All', 'name' => 'All'];
-$advice_category_options[1] = ['tid' => '141', 'name' => 'Compliant'];
-$advice_category_options[2] = ['tid' => '161', 'name' => 'Compliant with implementation feedback'];
-$advice_category_options[3] = ['tid' => '76', 'name' => 'Non-compliant'];
-
-$params = drupal_get_query_parameters();
-if ('All' == $params['field_advice_category_tid'] || !isset($params['field_advice_category_tid'])) {
-  $advice_category_options[0]['class'] = 'active';
-} elseif ('141' == $params['field_advice_category_tid']) {
-  $advice_category_options[1]['class'] = 'active';
-} elseif ('161' == $params['field_advice_category_tid']) {
-  $advice_category_options[2]['class'] = 'active';
-} elseif ('76' == $params['field_advice_category_tid']) {
-  $advice_category_options[3]['class'] = 'active';
-}
-?>
-
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
@@ -59,30 +40,7 @@ if ('All' == $params['field_advice_category_tid'] || !isset($params['field_advic
       <div class="row">
           <div class="col-lg-12 pb-5">
               <div class="filter mb-5">
-                  <ul class="inline block-active-icon font-family3 bold text-uppercase small mb-5">
-                    <?php foreach ($advice_category_options as $advice_category_option): ?>
-                        <li class="<?php print $advice_category_option['class']; ?>">
-                            <a href="?field_advice_category_tid=<?php print $advice_category_option['tid'] ?>"><?php print $advice_category_option['name']; ?></a>
-                        </li>
-                    <?php endforeach; ?>
-                  </ul>
-
-                  <div class="text-right search-options">
-                      <form class="search-wrap" action=""
-                            method="get" id="views-exposed-form-revoked-and-restricted-permits-page-2"
-                            accept-charset="UTF-8">
-                          <input type="text"
-                                 placeholder="Search agreement clauses"
-                                 id="edit-search-title"
-                                 name="title" value=""
-                                 size="30" maxlength="128"
-                                 class="form-text ctools-auto-submit-processed">
-                          <button>
-                              <i class="far fa-search"></i>
-                              <span class="sr-only">Search</span>
-                          </button>
-                      </form>
-                  </div>
+                <?php print $exposed;?>
               </div>
           </div>
       </div>

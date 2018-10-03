@@ -91,6 +91,29 @@
       }
     }
   }
+
+  // Agreement clauses for contractors
+  .view-abcc-agreement-clauses {
+    .filter {
+      form {
+        .abcc-views-exposed-form {
+          border-bottom: none;
+          .views-widget-edit-field-advice-category-tid {
+            margin-top: 0;
+            padding-bottom: .6rem;
+            margin-bottom: .5rem;
+            display: block;
+            border-bottom: 5px solid #e7e7e7;
+          }
+
+          .text-right.search-options {
+            display: block;
+            float: none;
+          }
+        }
+      }
+    }
+  }
 }
 @include media-breakpoint-down(md) { //992px
 
@@ -722,6 +745,32 @@
         align-items: center;
         i{
           font-size: $arrow-font-size;
+        }
+      }
+    }
+  }
+
+  // Agreement clauses for contractors
+  .view-abcc-agreement-clauses {
+    .filter {
+      form {
+        .abcc-views-exposed-form {
+          .views-widget-edit-field-advice-category-tid {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+
+            .form-item-field-advice-category-tid {
+              .bef-select-as-links {
+                .form-type-bef-link {
+                  & > a {
+                    padding: 0;
+                    border-bottom: 5px solid #e7e7e7;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
