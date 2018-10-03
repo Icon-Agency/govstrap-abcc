@@ -111,14 +111,13 @@ function govstrap_search_block_form_submit($form, &$form_state) {
 
 function govstrap_industry_update_subscribe_submit($form, &$form_state) {
 
-  // First, we need to find if the user wants to subscribe to Industry update
+  $cmstate = $form_state["values"]["submitted"]["8"];
+  $cmemail = $form_state["values"]["submitted"]["2"];
+  $cm_api_key = theme_get_setting('abcc_newsletter_cm_api_key');
 
   if (in_array('industry-updates', $form_state["values"]["submitted"]["14"]) ) {
-    $cmstate = $form_state["values"]["submitted"]["8"];
-    $cmemail = $form_state["values"]["submitted"]["2"];
-    $cm_api_key = theme_get_setting('abcc_newsletter_cm_api_key');
-    $cm_list_id = theme_get_setting('abcc_newsletter_cm_api_list_id');
 
+    $cm_list_id = theme_get_setting('abcc_industry_update_cm_api_list_id');
     if (strlen($cm_api_key) && strlen($cm_list_id)) {
 
       // Add subscriber using Campaignmonitor's API
@@ -139,12 +138,40 @@ function govstrap_industry_update_subscribe_submit($form, &$form_state) {
       ));
 
       if ($result->was_successful()) {
-        drupal_set_message('You have successfully signed up for our industry update', $type = 'status');
         $_SESSION['newsletter_signup_action'] = 'success';
       } else {
         drupal_set_message($result->response->Message, $type = 'error');
       }
     }
-
   }
+
+  if (in_array('e-alerts', $form_state["values"]["submitted"]["14"]) ) {
+    $cm_list_id = theme_get_setting('abcc_e-alert_cm_api_list_id');
+    if (strlen($cm_api_key) && strlen($cm_list_id)) {
+
+      // Add subscriber using Campaignmonitor's API
+      require_once path_to_theme().'/lib/campaignmonitor/csrest_subscribers.php';
+
+      $auth = array(
+        'api_key' => $cm_api_key,
+      );
+      $wrap = new CS_REST_Subscribers($cm_list_id, $auth);
+      $result = $wrap->add(array(
+        'EmailAddress' => $cmemail,
+        'CustomFields' => array(
+          array(
+            'Key' => 'State',
+            'Value' => $cmstate
+          ),
+        ),
+      ));
+
+      if ($result->was_successful()) {
+        $_SESSION['newsletter_signup_action'] = 'success';
+      } else {
+        drupal_set_message($result->response->Message, $type = 'error');
+      }
+    }
+  }
+
 }

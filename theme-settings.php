@@ -212,31 +212,27 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
       '#default_value' => theme_get_setting('abcc_newsletter_signup_form')
     );
 
-    $place_holder_text_api_key = 'Please provide API key';
-    if (theme_get_setting('abcc_newsletter_cm_api_key')) {
-      $place_holder_text_api_key = 'API key has been provided and is hidden for your security';
-    }
-
     $form['abcc_forms']['abcc_newsletter_cm_api_key'] = array(
-      '#type' => 'password',
+      '#type' => 'textfield',
       '#title' => 'Campaign Monitor API key',
       '#size' => 60,
       '#default_value' => theme_get_setting('abcc_newsletter_cm_api_key'),
-      '#attributes' =>array('placeholder' => t($place_holder_text_api_key)),
     );
 
-    $place_holder_text_list_id = 'Please provide list ID';
-    if (theme_get_setting('abcc_newsletter_cm_api_list_id')) {
-      $place_holder_text_list_id = 'List ID has been provided and is hidden for your security';
-    }
-
-    $form['abcc_forms']['abcc_newsletter_cm_api_list_id'] = array(
-      '#type' => 'password',
-      '#title' => 'Campaign Monitor API subscriber list ID',
+    $form['abcc_forms']['abcc_industry_update_cm_api_list_id'] = array(
+      '#type' => 'textfield',
+      '#title' => 'Industry update subscriber list ID',
       '#size' => 60,
-      '#default_value' => theme_get_setting('abcc_newsletter_cm_api_list_id'),
-      '#attributes' =>array('placeholder' => t($place_holder_text_list_id)),
+      '#default_value' => theme_get_setting('abcc_industry_update_cm_api_list_id'),
     );
+
+    $form['abcc_forms']['abcc_e-alert_cm_api_list_id'] = array(
+      '#type' => 'textfield',
+      '#title' => 'E alert subscriber list ID',
+      '#size' => 60,
+      '#default_value' => theme_get_setting('abcc_e-alert_cm_api_list_id'),
+    );
+
   }
 
   // Accessibility and support settings.
