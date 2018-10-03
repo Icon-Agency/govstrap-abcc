@@ -3,6 +3,41 @@ mark {
   background: none !important;
 }
 
+.field-name-field-page-typpe {
+  display: none;
+}
+
+div.toc-filter-content {
+  background: $body-bg;
+  border: none;
+  @extend .p-4;
+
+  h3 {
+    color: $green !important;
+  }
+
+  .toc-filter-links {
+    li {
+      &::before {
+        content: '\f078';
+        top: 8px;
+        font-size: 1rem;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+div.toc-filter-back-to-top {
+  @extend .pb-4;
+}
+
+.link-back-to {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .content.node-page-content {
   h2, h3, h4, h5, h6 {
     margin-top: 2rem;
