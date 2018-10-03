@@ -87,7 +87,7 @@
                                     <i class="fal fa-arrow-left float-left line-height-inherit theme-color"></i>&nbsp;Back to
                                 </div>
                                 <h3 class="font-family2 mb-4 h4">
-                                    <a href="/<?php print $active_page_parent['link_path'];?>" class="theme-color theme-color-hover">
+                                    <a href="/<?php print $active_page_parent['link_path'];?>" class="link-back-to">
                                       <?php print $active_page_parent['link_title'];?>
                                     </a>
                                 </h3>
