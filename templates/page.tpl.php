@@ -71,15 +71,7 @@
                               <ul class="action-links"><?php print render($action_links); ?></ul>
                           <?php endif; ?>
                             <div id="page-content">
-                              <?php $field_page_type = strtolower(strip_tags(render($node_content['field_page_typpe']))); ?>
-                                <?php if (($field_page_type == 'factsheet') && isset($node)): ?>
-                                  <?php print render($node_content['body']); ?>
-                                    <div class="fs-print pt-5">
-                                        <a class="btn btn-primary" href="/resources/fact-sheets/print/<?php print $node->nid; ?>">Print this fact sheet</a>
-                                    </div>
-                                <?php else: ?>
-                                    <?php print render($page['content']); ?>
-                                <?php endif; ?>
+                              <?php print render($page['content']); ?>
                             </div>
                           <?php if (!empty($page['wizard'])): ?>
                             <?php print render($page['wizard']); ?>
@@ -101,6 +93,16 @@
                                 </h3>
                             <?php endif; ?>
                             <?php print render($page['sidebar_right']); ?>
+                          <?php $field_page_type = strtolower(strip_tags(render($node_content['field_page_typpe']))); ?>
+                          <?php if (($field_page_type == 'factsheet') && isset($node)): ?>
+
+                            <h5 class="font-family3 standard text-uppercase theme-color pt-5">Share</h5>
+                            <?php print drupal_render(_social_share_buttons()); ?>
+                            <hr>
+                            <div class="fs-print pt-3">
+                                <a class="btn alt btn-outline btn-block margin-sm-down" href="/resources/fact-sheets/print/<?php print $node->nid; ?>">Print this fact sheet <i class="fal fa-arrow-right ml-4"></i></a>
+                            </div>
+                          <?php endif; ?>
                         </div>
                     <?php endif; ?>
                     <!-- /sidebar right -->
