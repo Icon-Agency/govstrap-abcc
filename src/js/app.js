@@ -157,7 +157,10 @@ new Slick();
         new Magnific()
       }
 
-
+      // Agreement clauses for contractors
+      $('.view-abcc-agreement-clauses .abcc-views-exposed-form .text-right.search-options #edit-items-per-page').on('change', function(){
+        $('.view-abcc-agreement-clauses .abcc-views-exposed-form input#edit-submit-abcc-agreement-clauses').trigger('click');
+      });
     }
   };
 })(jQuery, Drupal);

@@ -9090,6 +9090,10 @@ new _Slick2.default();
       if ($('body').hasClass('has-form-wizard')) {
         new _Magnific2.default();
       }
+
+      $('.view-abcc-agreement-clauses .abcc-views-exposed-form .text-right.search-options #edit-items-per-page').on('change', function () {
+        $('.view-abcc-agreement-clauses .abcc-views-exposed-form input#edit-submit-abcc-agreement-clauses').trigger('click');
+      });
     }
   };
 })(jQuery, Drupal);
