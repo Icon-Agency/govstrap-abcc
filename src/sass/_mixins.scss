@@ -249,6 +249,13 @@
     }
   }
 
+  blockquote {
+    color: $safe-color;
+    &:before{
+      background-color: $color;
+    }
+  }
+
   .stackinline{
     margin-bottom: $spacer /2;
     .control{

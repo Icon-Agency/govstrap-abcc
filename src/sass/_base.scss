@@ -74,13 +74,40 @@ html { scroll-behavior: smooth; }
 
 // Components
 //
-blockquote {
+
+blockquote{
+  padding-left: $spacer*2;
+  font-style: italic;
+  font-family: $font-family2;
+  position: relative;
+  &:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    content: '';
+  }
+}
+
+// Case stories
+.case-story {
   background: $nav-bg;
-  padding: $spacer*2;
+  padding: $spacer*2 !important;
+  font-family: $font-family1;
+  font-style: normal;
+  color: $body-color !important;
 
   h3 {
     font-family: $font-family2;
+    font-style: normal;
   }
+
+  &::before {
+    width: 0;
+    height: 0;
+  }
+
 }
 
 .search-cluster form > div,
