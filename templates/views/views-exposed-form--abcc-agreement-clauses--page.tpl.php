@@ -32,7 +32,6 @@
 
 <?php
 $params = drupal_get_query_parameters();
-//dpm($widgets);
 ?>
 <div class="abcc-views-exposed-form">
   <?php if (!empty($widgets['filter-field_advice_category_tid'])):
@@ -46,11 +45,12 @@ $params = drupal_get_query_parameters();
       </div>
   <?php endif; ?>
 
-  <?php if (!empty($widgets['filter-title'])): ?>
+  <?php if (!empty($widgets['filter-combine'])): ?>
       <div class="text-right search-options">
         <?php if (!empty($items_per_page)): ?>
             <div class="views-exposed-widget views-widget-per-page select">
-              <?php print $items_per_page; ?>
+                <span class="font-family3 bold small" style="position: absolute; left: -3rem;">SHOW </span>
+                <?php print $items_per_page; ?>
                 <div class="select__arrow"></div>
             </div>
         <?php endif; ?>
