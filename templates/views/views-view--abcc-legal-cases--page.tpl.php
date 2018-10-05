@@ -58,6 +58,16 @@ if ('All' == $params['field_case_status'] || !isset($params['field_case_status']
   <?php if ($exposed): ?>
 
       <div class="row">
+          <div class="col-lg-12">
+            <?php if ($header): ?>
+                <div class="view-header">
+                  <?php print $header; ?>
+                </div>
+            <?php endif; ?>
+          </div>
+      </div>
+
+      <div class="row">
           <div class="col-lg-12 pb-5">
               <div class="filter mb-5">
                   <ul class="inline block-active-icon font-family3 bold text-uppercase small mb-5">
@@ -98,11 +108,6 @@ if ('All' == $params['field_case_status'] || !isset($params['field_case_status']
 
     <div class="row">
         <div class="col-lg-8">
-          <?php if ($header): ?>
-              <div class="view-header">
-                <?php print $header; ?>
-              </div>
-          <?php endif; ?>
           <?php if ($rows): ?>
               <div class="view-content container">
                 <?php print $rows; ?>
