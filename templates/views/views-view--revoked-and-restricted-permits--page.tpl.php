@@ -119,10 +119,7 @@ if ('All' == $params['field_no_permit_type_value'] || !isset($params['field_no_p
 
         <div class="col-lg-3 offset-lg-1">
           <?php if ($exposed): ?>
-              <div class="view-filters">
-                <h3 class="text-uppercase h5 font-family3 theme-color safe small bold">filters</h3>
-                <?php print $exposed; ?>
-              </div>
+            <?php print $exposed; ?>
           <?php endif; ?>
         </div>
     </div>

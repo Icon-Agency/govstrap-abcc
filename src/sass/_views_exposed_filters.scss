@@ -70,3 +70,31 @@
   }
 
 }
+
+// revoked_and_restricted_permits -- Right of entry permit lists
+.view-revoked-and-restricted-permits{
+  form{
+    .view-filters{
+      .views-exposed-widgets{
+
+        .views-exposed-widget{
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
+
+        .views-widget-edit-sort-bef-combine{
+
+          border-top: 2px solid #e7e7e7;
+
+          #edit-sort-bef-combine{
+            margin-left: 0;
+          }
+
+          label{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
