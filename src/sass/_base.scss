@@ -498,6 +498,15 @@ ul.abcc-themed {
       }
     }
   }
+
+  p a {
+    color: $link-color !important;
+
+    &:hover {
+      color: $link-hover-color !important;
+    }
+  }
+
   .card {
     background: transparent;
     border: 0 none;
