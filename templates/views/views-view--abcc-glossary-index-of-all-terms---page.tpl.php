@@ -27,9 +27,6 @@
  * @ingroup views_templates
  */
 ?>
-<?php
-    $alphas = range('a', 'z');
-?>
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
@@ -37,9 +34,9 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
-    <div class="view-header">
-      <?php print $header; ?>
-    </div>
+      <div class="view-header">
+        <?php print $header; ?>
+      </div>
   <?php endif; ?>
 
 
@@ -48,14 +45,21 @@
       <div class="row">
           <div class="col-lg-12 pb-5">
               <div class="filter mb-5">
-                  <ul class="inline glossary-list font-family3 bold text-uppercase mb-5">
-                    <?php foreach ($alphas as $alpha): ?>
-                        <li>
-                            <a href="#section-<?php print $alpha;?>"><?php print $alpha; ?></a>
-                        </li>
-                    <?php endforeach; ?>
-                  </ul>
-
+                <?php if (isset($alphas) && isset($display_all_alphas)): ?>
+                    <ul class="inline glossary-list font-family3 bold text-uppercase mb-5">
+                      <?php foreach ($alphas as $alpha => $alpha_value): ?>
+                      <?php if($display_all_alphas || $alpha_value['has_item']):?>
+                          <li>
+                              <a href="#section-<?php print $alpha_value['value']; ?>"><?php print $alpha_value['value']; ?></a>
+                          </li>
+                          <?php else:?>
+                              <li class="has-no-items">
+                                  <p><?php print $alpha_value['value']; ?></p>
+                              </li>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
                   <div class="text-right search-options">
                       <form class="search-wrap" action=""
                             method="get" id="views-exposed-form-glossary-page"
@@ -79,33 +83,33 @@
   <?php endif; ?>
 
   <?php if ($attachment_before): ?>
-    <div class="attachment attachment-before">
-      <?php print $attachment_before; ?>
-    </div>
+      <div class="attachment attachment-before">
+        <?php print $attachment_before; ?>
+      </div>
   <?php endif; ?>
 
-  <div class="row">
-      <div class="col-lg-12 mb-5">
-        <?php if ($rows): ?>
-            <div class="view-content">
-              <?php print $rows; ?>
-            </div>
-        <?php elseif ($empty): ?>
-            <div class="view-empty">
-              <?php print $empty; ?>
-            </div>
-        <?php endif; ?>
-      </div>
-  </div>
-    
+    <div class="row">
+        <div class="col-lg-12 mb-5">
+          <?php if ($rows): ?>
+              <div class="view-content">
+                <?php print $rows; ?>
+              </div>
+          <?php elseif ($empty): ?>
+              <div class="view-empty">
+                <?php print $empty; ?>
+              </div>
+          <?php endif; ?>
+        </div>
+    </div>
+
   <?php if ($pager): ?>
     <?php print $pager; ?>
   <?php endif; ?>
 
   <?php if ($attachment_after): ?>
-    <div class="attachment attachment-after">
-      <?php print $attachment_after; ?>
-    </div>
+      <div class="attachment attachment-after">
+        <?php print $attachment_after; ?>
+      </div>
   <?php endif; ?>
 
   <?php if ($more): ?>
@@ -113,9 +117,9 @@
   <?php endif; ?>
 
   <?php if ($feed_icon): ?>
-    <div class="feed-icon">
-      <?php print $feed_icon; ?>
-    </div>
+      <div class="feed-icon">
+        <?php print $feed_icon; ?>
+      </div>
   <?php endif; ?>
 
 </div><?php /* class view */ ?>

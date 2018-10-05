@@ -362,6 +362,10 @@
         &.active{
           color: $color;
         }
+
+        &.has-no-items:hover{
+          color: $gray;
+        }
       }
     }
   }

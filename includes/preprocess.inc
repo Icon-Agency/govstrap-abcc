@@ -20,7 +20,7 @@ function govstrap_preprocess_html(&$variables, $hook) {
   }
 
   // Set common variables.
-  $variables['base_path'] = base_path();
+  $variables['base_path']        = base_path();
   $variables['path_to_govstrap'] = drupal_get_path('theme', 'govstrap');
 
   // Send X-UA-Compatible HTTP header to force IE to use the most recent
@@ -31,11 +31,11 @@ function govstrap_preprocess_html(&$variables, $hook) {
 
   // IE8 support of HTML5 elements and media queries .
   $ie_script_s = [
-    '#browsers' => ['IE' => 'lt IE 9', '!IE' => FALSE],
-    '#tag' => 'script',
+    '#browsers'   => ['IE' => 'lt IE 9', '!IE' => FALSE],
+    '#tag'        => 'script',
     '#attributes' => [
       'type' => "text/javascript",
-      'src' => './' . $variables['path_to_govstrap'] . '/js/modernizr.js',
+      'src'  => './' . $variables['path_to_govstrap'] . '/js/modernizr.js',
 
     ],
   ];
@@ -43,11 +43,11 @@ function govstrap_preprocess_html(&$variables, $hook) {
 
   // IE8 support of HTML5 elements and media queries.
   $ie_script_r = [
-    '#browsers' => ['IE' => 'lt IE 9', '!IE' => FALSE],
-    '#tag' => 'script',
+    '#browsers'   => ['IE' => 'lt IE 9', '!IE' => FALSE],
+    '#tag'        => 'script',
     '#attributes' => [
       'type' => "text/javascript",
-      'src' => './' . $variables['path_to_govstrap'] . '/js/respond.js',
+      'src'  => './' . $variables['path_to_govstrap'] . '/js/respond.js',
     ],
   ];
   drupal_add_html_head($ie_script_r, "govstraprespond");
@@ -60,12 +60,12 @@ function govstrap_preprocess_html(&$variables, $hook) {
 
   // Accessibility settings.
   $variables['skip_link_anchor'] = check_plain(theme_get_setting('govstrap_skip_link_anchor'));
-  $variables['skip_link_text'] = check_plain(theme_get_setting('govstrap_skip_link_text'));
+  $variables['skip_link_text']   = check_plain(theme_get_setting('govstrap_skip_link_text'));
 
   // Attributes for html element.
   $variables['html_attributes_array'] = [
     'lang' => $variables['language']->language,
-    'dir' => $variables['language']->dir,
+    'dir'  => $variables['language']->dir,
   ];
 
   // Return early, so the maintenance page does not call any of the code below.
@@ -136,14 +136,14 @@ function govstrap_preprocess_page(&$variables) {
   // Get the main navigation menu tree limit to $main_menu_max_depth
 
   $main_menu_max_depth = 2;
-  $main_menu_tree = menu_build_tree('menu-site-main-menu', ['max_depth' => $main_menu_max_depth]);
+  $main_menu_tree      = menu_build_tree('menu-site-main-menu', ['max_depth' => $main_menu_max_depth]);
   foreach ($main_menu_tree as $link_item) {
     if ($link_item['link']['link_title']) {
-      $link_item_name = _human_to_machine($link_item['link']['link_title']);
-      $link_item_path = drupal_get_path_alias($link_item['link']['link_path']);
-      $variables['main_menu_tree'][$link_item_name]['tree'] = menu_tree_output([$link_item_name => $link_item]);
+      $link_item_name                                        = _human_to_machine($link_item['link']['link_title']);
+      $link_item_path                                        = drupal_get_path_alias($link_item['link']['link_path']);
+      $variables['main_menu_tree'][$link_item_name]['tree']  = menu_tree_output([$link_item_name => $link_item]);
       $variables['main_menu_tree'][$link_item_name]['title'] = $link_item['link']['link_title'];
-      $variables['main_menu_tree'][$link_item_name]['path'] = $link_item_path;
+      $variables['main_menu_tree'][$link_item_name]['path']  = $link_item_path;
     }
   }
 
@@ -168,10 +168,10 @@ function govstrap_preprocess_node(&$variables, $hook) {
   // Add a theme hook suggestion for type and view mode.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
 
-  $current_path = current_path();
+  $current_path       = current_path();
   $current_path_alias = drupal_lookup_path('alias', $current_path);
 
-  if($current_path_alias) {
+  if ($current_path_alias) {
     $current_path = $current_path_alias;
   }
 
@@ -195,9 +195,9 @@ function govstrap_preprocess_block(&$variables, $hook) {
 
   // Block template per bean type.
   if ($variables['block']->module === 'bean') {
-    $beans = $variables['elements']['bean'];
+    $beans     = $variables['elements']['bean'];
     $bean_keys = element_children($beans);
-    $bean = $beans[reset($bean_keys)];
+    $bean      = $beans[reset($bean_keys)];
     // Add template suggestions for bean types.
     $variables['theme_hook_suggestions'][] = 'block__bean__' . $bean['#bundle'];
   }
@@ -270,4 +270,63 @@ function govstrap_menu_tree_no_root($tree) {
   }
 
   return $result;
+}
+
+function govstrap_preprocess_views_view(&$vars) {
+  $function_name = '_' . __FUNCTION__ . '__' . $vars['view']->name . '__' . $vars['view']->current_display;
+  if (function_exists($function_name)) {
+    $function_name($vars);
+  }
+  else {
+    $function_name = __FUNCTION__ . '__' . $vars['view']->name;
+    if (function_exists($function_name)) {
+      $function_name($vars);
+    }
+  }
+}
+
+function _govstrap_preprocess_views_view__abcc_glossary_index_of_all_terms___page(&$vars) {
+  _govstrap_views_add_alphas($vars, 'name_1');
+}
+
+function _govstrap_views_add_alphas(&$vars, $alpha_field_id) {
+
+  if (!isset($vars['view'])) {
+    return FALSE;
+  }
+  else {
+    $view = $vars['view'];
+  }
+
+  $alphas             = drupal_map_assoc(range('a', 'z'), function ($element) {
+    return ['value' => $element, 'has_item' => FALSE];
+  });
+  $display_all_alphas = TRUE;
+
+  if (!empty($view->style_plugin->rendered_fields)) {
+    foreach ($view->style_plugin->rendered_fields as $rendered_field) {
+      if (!isset($rendered_field[$alpha_field_id])) {
+        continue;
+      }
+
+      if ($display_all_alphas){
+        $display_all_alphas = FALSE;
+      }
+
+      $current_result_key = drupal_strtolower($rendered_field[$alpha_field_id]);
+
+      if (isset($alphas[$current_result_key])) {
+        if ($alphas[$current_result_key]['has_item']){
+          continue;
+        }else{
+          $alphas[$current_result_key]['has_item'] = TRUE;
+        }
+      }else{
+        $alphas = [$current_result_key => ['value' => $current_result_key, 'has_item' => TRUE,]] + $alphas;
+      }
+    }
+  }
+
+  $vars['alphas'] = $alphas;
+  $vars['display_all_alphas'] = $display_all_alphas;
 }

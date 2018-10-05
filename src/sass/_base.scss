@@ -234,6 +234,10 @@ ul {
         color: inherit !important;
         text-decoration: none !important;
       }
+
+      &.has-no-items{
+        color: $gray;
+      }
     }
   }
 
