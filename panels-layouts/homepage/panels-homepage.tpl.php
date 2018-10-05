@@ -57,11 +57,11 @@
                         <div class="text">
                             <div class="accent color-green">
                               <?php
-                              $book_industry_updat_bid = variable_get('book_industry_update_bid', 104);
+                              $book_industry_updat_bid = variable_get('book_industry_update_bid', 32091);
                               $book_industry_updat_menu_tree = menu_tree_all_data('book-toc-' . $book_industry_updat_bid);
 
                               $latest_update = array();
-                              foreach($book_industry_updat_menu_tree["50000 Subscribe to receive Industry Update, e-alerts and media releases 8946"]["below"] as $industry_update) {
+                              foreach($book_industry_updat_menu_tree["50000 Industry updates 11451"]["below"] as $industry_update) {
                                 $link_path = $industry_update['link']['link_path'];
                                 //$node_id = str_replace('node/', '', $link_path);
                                 $node = menu_get_item($link_path);
@@ -71,7 +71,6 @@
                                   $latest_update = $industry_update;
                                   break;
                                 }
-
                               }
 
                               $book_latest_industry_update = $latest_update["below"];
