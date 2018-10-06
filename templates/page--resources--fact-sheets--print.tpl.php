@@ -21,7 +21,9 @@
     <!-- Begin custom print content -->
 
     <div class="row">
-        <?php print render($page['content']); ?>
+        <div class="col-sm-12">
+          <?php print render($page['content']); ?>
+        </div>
     </div>
     <!-- End custom print content -->
 
