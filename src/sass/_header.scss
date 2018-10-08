@@ -117,7 +117,9 @@
       }
 
       .nav-link{
-        padding-left: 25px;
+        &.dropdown-toggle {
+          padding-left: 25px;
+        }
         color: inherit;
         position: relative;
         &:after{

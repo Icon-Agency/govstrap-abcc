@@ -47,7 +47,12 @@
 
     <hr style="display: block; width: 100%; border: 0 none; border-top: 1px solid gray; float: left; margin: 7px 0;">
 
-
+    <div class="row">
+        <div class="col-sm-12 text-mini gray">
+            <p>This material is for general information only. You should seek legal advice in relation to your particular circumstances. The Australian Government, its employees and agents do not accept any liability for action taken in reliance on this document and disclaim all liability arising from any error or omission.</p>
+            <p>This fact sheet was printed on <?php print date('j F Y'); ?></p>
+        </div>
+    </div>
 
     <div style="width: 100%; line-height: 5px; height: 5px; display: block; float: left;">&nbsp;</div>
 
