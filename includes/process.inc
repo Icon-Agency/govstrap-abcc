@@ -14,8 +14,8 @@ function govstrap_process_html(&$variables, $hook) {
   // on the server.
   $path_to_public_files = variable_get('file_public_path', 'sites/default/files');
   $path_to_theme = path_to_theme();
-  $search = array('[path_to_public_files]', '%5Bpath_to_public_files%5D', '[path_to_theme]', '%5Bpath_to_theme%5D', '<a href="/%25eligibility-wizard-launch%25">Proof of eligibility assessment tool</a>');
-  $replace = array($path_to_public_files, $path_to_public_files, $path_to_theme, $path_to_theme, '<a href="#form-wizard" class="open-popup xl-popup eligibility-wizard-launch toc-filter-processed">Proof of eligibility assessment tool</a>');
+  $search = array('sites/g/files/net2406/f','[path_to_public_files]', '%5Bpath_to_public_files%5D', '[path_to_theme]', '%5Bpath_to_theme%5D', '<a href="/%25eligibility-wizard-launch%25">Proof of eligibility assessment tool</a>');
+  $replace = array($path_to_public_files, $path_to_public_files, $path_to_public_files, $path_to_theme, $path_to_theme, '<a href="#form-wizard" class="open-popup xl-popup eligibility-wizard-launch toc-filter-processed">Proof of eligibility assessment tool</a>');
   $variables['page'] = str_replace($search, $replace, $variables['page']);
 
 }
