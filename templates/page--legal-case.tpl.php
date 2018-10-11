@@ -127,6 +127,10 @@
                               </div>
                               <?php print render($node_content['field_case_status']); ?>
                               <!-- Various links to judgement -->
+                              <?php
+                                $field_related_content = render($node_content['field_related_content']);
+                                $field_current_abcc_case_url = render($node_content['field_current_abcc_case_url']);
+                              ?>
                               <?php if($decision == 'decision made'): ?>
                                 <?php
                                     $field_liability_judgement = render($node_content['field_liability_judgement']);
@@ -138,46 +142,44 @@
                                     $field_high_court_appeal_judgemenrender = render($node_content['field_high_court_appeal_judgemen']);
                                     $field_penalties = render($node_content['field_penalties']);
                                     $field_total_penalties = render($node_content['field_total_penalties']);
-                                    $field_related_content = render($node_content['field_related_content']);
-                                    $field_current_abcc_case_url = render($node_content['field_current_abcc_case_url']);
                                 ?>
-                                  <?php if ($field_liability_judgement): ?>
+                                  <?php if (_check_empty($field_liability_judgement)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           Link to liability judgement
                                       </div>
                                     <?php print $field_liability_judgement; ?>
                                   <?php endif; ?>
-                                  <?php if ($field_penalty_judgement): ?>
+                                  <?php if (_check_empty($field_penalty_judgement)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           Link to penalty judgement
                                       </div>
                                     <?php print $field_penalty_judgement; ?>
                                   <?php endif; ?>
-                                  <?php if ($field_liability_and_penalty): ?>
+                                  <?php if (_check_empty($field_liability_and_penalty)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           Link to liability and penalty judgement
                                       </div>
                                     <?php print $field_liability_and_penalty; ?>
                                   <?php endif; ?>
-                                  <?php if ($field_full_court_appeal_ref): ?>
+                                  <?php if (_check_empty($field_full_court_appeal_ref)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           Full Court appeal Commonwealth Courts Portal reference and link
                                       </div>
                                     <?php print $field_full_court_appeal_ref; ?>
                                   <?php endif; ?>
-                                  <?php if ($field_high_court_appeal_ref): ?>
+                                  <?php if (_check_empty($field_high_court_appeal_ref)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           High Court appeal Commonwealth Courts Portal reference and link
                                       </div>
                                     <?php print $field_high_court_appeal_ref; ?>
                                   <?php endif; ?>
-                                  <?php if ($field_federal_court_appeal_judge): ?>
+                                  <?php if (_check_empty($field_federal_court_appeal_judge)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           Link to Federal Court appeal judgement
                                       </div>
                                     <?php print $field_federal_court_appeal_judge; ?>
                                   <?php endif; ?>
-                                  <?php if ($field_high_court_appeal_judgemenrender): ?>
+                                  <?php if (_check_empty($field_high_court_appeal_judgemenrender)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           Link to High Court appeal judgement
                                       </div>
@@ -199,13 +201,13 @@
                               <?php endif; ?>
 
                               <?php if($decision == 'decision made'): ?>
-                                <?php if ($field_penalties): ?>
+                                <?php if (_check_empty($field_penalties)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           Penalities
                                       </div>
                                   <?php print $field_penalties; ?>
                                 <?php endif; ?>
-                                <?php if ($field_total_penalties): ?>
+                                <?php if (_check_empty($field_total_penalties)): ?>
                                       <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                           Total penalities
                                       </div>
@@ -213,14 +215,14 @@
                                 <?php endif; ?>
                               <?php endif; ?>
 
-                              <?php if ($field_related_content): ?>
+                              <?php if (_check_empty($field_related_content)): ?>
                                   <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                       Related content
                                   </div>
                                 <?php print $field_related_content; ?>
                               <?php endif; ?>
 
-                              <?php if($field_current_abcc_case_url): ?>
+                              <?php if(_check_empty($field_current_abcc_case_url)): ?>
                                   <div class="theme-color safe font-family3 text-uppercase bold block my-2">
                                       Current ABCC case URL
                                   </div>

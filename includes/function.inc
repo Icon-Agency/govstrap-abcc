@@ -383,3 +383,14 @@ function get_main_nav_sub_menu_tree($menu_tree, $item_name, $active_page_root) {
   }
   return $sub_menu_tree;
 }
+
+function _check_empty($markup) {
+  $markup = trim(html_entity_decode(strip_tags($markup)));
+  $markup = str_replace(array("\r", "\n", '&nbsp;', ' '), array('','','',''), $markup);
+  $markup = preg_replace("/[^A-Za-z0-9 ]/", '', $markup);
+  if (empty($markup)) {
+    return false;
+  } else {
+    return true;
+  }
+}
