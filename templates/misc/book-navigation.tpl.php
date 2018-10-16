@@ -47,7 +47,7 @@
           <div class="clearfix border-top border-bottom py-3 row align-items-center">
               <div class="col-5 text-left">
                 <?php if ($prev_url): ?>
-                    <a href="<?php print $prev_url; ?>" class="page-previous" title="<?php print t('Go to previous page'); ?>"><i class="fal fa-arrow-left theme-color"></i> <?php print $prev_title; ?> <span class="nav-mob-helper">Next</span></a>
+                    <a href="<?php print $prev_url; ?>" class="page-previous" title="<?php print t('Go to previous page'); ?>"><i class="fal fa-arrow-left theme-color"></i> <?php print $prev_title; ?> <span class="nav-mob-helper">Prev</span></a>
                 <?php endif; ?>
               </div>
 
@@ -61,7 +61,7 @@
 
               <div class="col-5 text-right">
                 <?php if ($next_url): ?>
-                    <a href="<?php print $next_url; ?>" class="page-next" title="<?php print t('Go to next page'); ?>"><?php print $next_title; ?> <span class="nav-mob-helper">Prev</span><i class="fal fa-arrow-right theme-color"></i></a>
+                    <a href="<?php print $next_url; ?>" class="page-next" title="<?php print t('Go to next page'); ?>"><?php print $next_title; ?> <span class="nav-mob-helper">Next</span><i class="fal fa-arrow-right theme-color"></i></a>
                 <?php endif; ?>
               </div>
 
