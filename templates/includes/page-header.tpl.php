@@ -27,7 +27,7 @@
                                 <div class="translate-indicator bounce" aria-hidden="true">
                                     <i class="fas fa-chevron-up"></i>
                                 </div>
-                                <img src="/<?php print path_to_theme(); ?>/images/google-translate-logo.png" />
+                                <img src="/<?php print path_to_theme(); ?>/images/google-translate-logo.png" alt="Google Translate service" />
                                 Translate
                             </div>
                             <a href="/" aria-label="homepage">
@@ -128,10 +128,10 @@
                               $main_nav_sub_menu_tree = get_main_nav_sub_menu_tree($main_menu_tree, 'about', $active_page_root);
                               ?>
                                 <li class="nav-item dropdown <?php print $main_nav_sub_menu_tree['active_class']; ?>">
-                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['about']['path']; ?>" id="resources" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="/<?php print $main_menu_tree['about']['path']; ?>" id="about" aria-haspopup="true" aria-expanded="false">
                                       <?php print $main_menu_tree['about']['title']; ?>
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="<?php print $main_menu_tree['about']['title']; ?>">
+                                    <div class="dropdown-menu" aria-labelledby="about">
                                       <?php print $main_nav_sub_menu_tree['markup']; ?>
                                     </div>
                                 </li>

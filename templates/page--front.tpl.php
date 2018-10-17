@@ -9,7 +9,7 @@
     <!-- page mobile header -->
     <?php include 'includes/page-header--mobile.tpl.php'; ?>
     <!-- /page mobile header -->
-    <main class="mm-content">
+    <div class="mm-content">
         <!-- page header -->
         <?php include 'includes/page-header.tpl.php'; ?>
         <!-- /page header -->
@@ -17,7 +17,7 @@
         <!-- page banner -->
         <div class="banner main-banner banner-animate animate" id="main-banner">
             <div class="bg-img" style="background-image: url(/<?php print path_to_theme(); ?>/images/banners/banner-home.jpg)">
-                <img class="mob-bg-img" src="/<?php print path_to_theme(); ?>/images/banners/banner-mobile.jpg">
+                <img class="mob-bg-img" src="/<?php print path_to_theme(); ?>/images/banners/banner-mobile.jpg" alt="main banner image showing a construction worker wearing a hard hat and a high vis vest">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
@@ -59,6 +59,7 @@
             <!-- /main page content -->
 
         </div>
+    </div>
 
         <!-- page footer -->
         <?php include 'includes/page-footer.tpl.php'; ?>

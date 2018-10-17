@@ -15,7 +15,7 @@
 <html class="lt-ie9" <?php print $html_attributes; ?>><![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
 <html <?php print $html_attributes . $rdf_namespaces; ?>><!--<![endif]-->
-<head profile="<?php print $grddl_profile ?>">
+<head>
     <meta charset="utf-8">
 
 
@@ -24,7 +24,6 @@
   } ?>
     <title><?php print $head_title ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="cleartype" content="on">
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport"
