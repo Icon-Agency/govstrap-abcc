@@ -64,7 +64,6 @@
         <!-- page footer -->
         <?php include 'includes/page-footer.tpl.php'; ?>
 
-    </div>
 </div>
 
 <!-- page mobile menu -->

@@ -8,7 +8,7 @@
 
 
                             <a href="tel:1800003338" class="item">
-                            <img src="/<?php print path_to_theme(); ?>/images/icon-call.svg">
+                            <img src="/<?php print path_to_theme(); ?>/images/icon-call.svg" alt="mobile phone icon">
 
                             <span class="text-uppercase">
                                                 Call the ABCC hotline
@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-md-6">
                         <a href="/contact" class="item">
-                            <img src="/<?php print path_to_theme(); ?>/images/icon-contact-form.svg">
+                            <img src="/<?php print path_to_theme(); ?>/images/icon-contact-form.svg" alt="webform icon">
                             <span class="text-uppercase">
                                                 See our
                                                 <strong class="text-green">
@@ -38,7 +38,7 @@
             <div class="col-lg-4">
                 <h3 class="text-white mb-4 hide-xs-down">Stay up to date</h3>
                 <a href="/news-and-media/industry-update" class="item">
-                    <img src="/<?php print path_to_theme(); ?>/images/icon-email.svg">
+                    <img src="/<?php print path_to_theme(); ?>/images/icon-email.svg" alt="an envelope icon">
                     <span class="text-uppercase">
                                         E-alerts &amp; industry updates
                                         <strong class="text-blue">

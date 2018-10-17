@@ -44,7 +44,7 @@
     <meta property="og:title" content="<?php print $head_title; ?>"/>
     <link href="/<?php print path_to_theme(); ?>/fonts/fontawesome/css/fontawesome-all.css"
           rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600|Open+Sans|Roboto+Slab:400,700"
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600%7COpen+Sans%7CRoboto+Slab:400,700"
           rel="stylesheet">
   <?php print $head ?>
   <?php print $styles ?>
