@@ -1277,3 +1277,20 @@
     }
   }
 }
+
+@media (min-width: 1200px) {
+  .content.node-page-content {
+    img {
+      max-width: none;
+    }
+  }
+}
+
+/* Using plain CSS */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .content.node-page-content {
+    img {
+      max-width: 110%;
+    }
+  }
+}
