@@ -154,8 +154,8 @@ function govstrap_preprocess_page(&$variables) {
   // Set title and breadcrumbs on dynamically generated glossary pages
   if (in_array('page__glossary__content', $variables['theme_hook_suggestions'])) {
     $arguments = arg();
-    if ($arguments[4]) {
-      drupal_set_title($arguments[4]);
+    if ($arguments[3] && $loaded_glossary_term = taxonomy_term_load($arguments[3])) {
+      $variables['title'] = $loaded_glossary_term->name;
     }
   }
 }
