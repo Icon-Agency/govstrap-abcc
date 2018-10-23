@@ -144,10 +144,10 @@ function _taxonomy_autolink_link_create ($tid, $text, $synonyms) {
   $term = $term->name;
 
   // We want to point the link to the glossary auto-search page
-  $url = 'glossary/content/'.$text.$synonyms.'/'.$tid.'/'.$term;
+  $url = 'glossary/content/'.$text.$synonyms.'/'.$tid;
 
   if ($description) {
-    $url = 'glossary/content/'.$text.$synonyms.'/'.$tid.'/'.$term;
+    $url = 'glossary/content/'.$text.$synonyms.'/'.$tid;
 
     // We do not want any tooltip text be linked again
     $description = str_replace(' ', '&#32;', $description);
