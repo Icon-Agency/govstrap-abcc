@@ -82,10 +82,12 @@
                               ?>
                               <?php if ($book_latest_industry_update): ?>
                                   <span class="font-family3 text-uppercase small"><strong
-                                          class="text-green">Issue - </strong> <a class="text-white" href="/<?php print $latest_update["link"]["link_path"]; ?>"><?php print $latest_industry_update['title']; ?></a></span>
-                                <a href="/news-and-media/industry-update"><h2 class="h1 text-green mb-4">Industry update
+                                          class="text-green">Issue - </strong> <a class="text-white" href="/<?php print drupal_get_path_alias($latest_update["link"]["link_path"]); ?>"><?php print $latest_industry_update['title']; ?></a></span>
+                                <a href="/<?php print drupal_get_path_alias($latest_update["link"]["link_path"]); ?>">
+                                    <h2 class="h1 text-green mb-4">Industry update
                                       <i class="fal fa-arrow-circle-right fa-xs ml-1"></i>
-                                    </h2></a>
+                                    </h2>
+                                </a>
                                   <ul class="list-unstyled fixed-number-list font-family3 color-white large">
                                     <?php
                                     $chapter_index = 0;
