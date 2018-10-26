@@ -1337,3 +1337,16 @@ li.with-arrow a {
     }
   }
 }
+
+.media-teaser {
+  display: inline-block;
+
+  .file-icon,
+  .file-size {
+    display: none;
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+}
