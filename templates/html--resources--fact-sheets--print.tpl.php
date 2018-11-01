@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Australian Building and Construction Commission</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <link href="css/site.css" type="text/css" rel="stylesheet" /> -->
