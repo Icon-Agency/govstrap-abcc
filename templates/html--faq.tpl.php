@@ -23,6 +23,7 @@
     $head_title = 'Australian Building and Construction Commission';
   } ?>
     <title><?php print $head_title ?></title>
+    <meta name="robots" content="noindex" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
