@@ -79,6 +79,33 @@ div.toc-filter-back-to-top {
       border-color: $link-hover-color;
     }
   }
+
+  .field-type-text-with-summary {
+    ol {
+      li {
+        ol {
+          counter-reset: list;
+          li {
+            list-style: none;
+            &:before {
+              content: '(' counter(list, lower-alpha) ')';
+              counter-increment: list;
+            }
+            ol {
+              counter-reset: list;
+              li {
+                list-style: none;
+                &:before {
+                  content: '(' counter(list, lower-roman) ')';
+                  counter-increment: list;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // External link icon
